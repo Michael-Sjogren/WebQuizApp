@@ -1,0 +1,5 @@
+# Covers Webstorm user-specific stuff
+.idea/
+
+# Ignores node_modules
+node_modules/
