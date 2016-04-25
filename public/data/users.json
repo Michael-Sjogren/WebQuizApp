@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "_id": "superadmin",
+      "name": "admin",
+      "password": "admin",
+      "role": "admin",
+      "quizzes": []
+    },
+    {
+      "_id": "samplestudent",
+      "name": "student",
+      "password": "student",
+      "role": "student"
+    }
+  ]
+}

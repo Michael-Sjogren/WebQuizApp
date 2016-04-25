@@ -1,0 +1,49 @@
+{
+  "quizzes": [
+    {
+      "title": "Java Quiz",
+      "type": "multiple-choice",
+      "questions": [
+        {
+          "question": "Which of the following is not a keyword in java?",
+          "answer": [
+            "static",
+            "boolean",
+            "void",
+            "private"
+          ],
+          "correctAns": 1
+        },
+        {
+          "question": "Can we have multiple classes in same java file?",
+          "answer": [
+            "true",
+            "false"
+          ],
+          "correctAns": 0
+        },
+        {
+          "question": "What is the default value of char variable?",
+          "answer": [
+            "\u0000",
+            "0",
+            "null",
+            "Not defined"
+          ],
+          "correctAns": 0
+        },
+        {
+          "question": "Which of the following is true about super class?",
+          "answer": [
+            "Variables, methods and constructors which are declared private can be accessed only by the members of the super class",
+            "Variables, methods and constructors which are declared protected can be accessed by any subclass of the super class.",
+            "null",
+            "Not defined"
+          ],
+          "correctAns": 0
+        }
+      ]
+    }
+
+  ]
+}
