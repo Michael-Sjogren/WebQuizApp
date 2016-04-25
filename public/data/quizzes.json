@@ -2,6 +2,7 @@
   "quizzes": [
     {
       "title": "Java Quiz",
+
       "type": "multiple-choice",
       "questions": [
         {

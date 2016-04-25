@@ -4,16 +4,24 @@ userApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/', {
         templateUrl: 'partials/userMenu.html',
-        controller: 'controller'
+
     }).
     when('/testInfo', {
         templateUrl: 'partials/testInfo.html',
-        controller:  'controller'
+
     }).when('/userMenu', {
         templateUrl: 'partials/userMenu.html',
-        controller:  'controller'
+
     }).
     otherwise({
         redirectTo: 'partials/userMenu.html'
     });
 }]);
+
+    userApp.controller('userCtrl',['$scope','$http' ,function ($scope , $http) {
+        $scope.quizzes = {};
+        $http.get('data/quizzes.json').success(function (response) {
+
+            $scope.quizData = response;
+        });
+    }]);

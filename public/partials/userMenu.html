@@ -1,14 +1,9 @@
 <section id="info-wrapper">
     <article class="info">
         <h1> Välkommen student! </h1>
-        <p>  Nedanför finns prov tillgänglig till dig </p>
+        <p>  Nedanför visas prov som är tillgängliga </p>
     </article>
-    <ul id="test-details">
-        <li>
-            <a href="#/testInfo">prov1</a>
-        </li>
-        <li>
-            <a href="#/testInfo">prov2</a>
-        </li>
+    <ul id="test-details" ng-controller="userCtrl">
+       <li ng-repeat="x in quizData"><a href="#/testInfo"> {{x[$index].title}} </a> </li>
     </ul>
 </section>
