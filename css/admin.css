@@ -1,0 +1,13 @@
+.adminBody {
+    font-family: sans-serif, Verdana;
+    word-spacing: 1em;
+    background-color: aqua;
+}
+
+#lblNewton {
+    font-size: 300%;
+    font-weight: bold;
+    margin-left: 30%;
+    color: green;
+}
+
