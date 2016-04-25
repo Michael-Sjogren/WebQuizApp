@@ -1,0 +1,33 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <!-- css -->
+    <link rel="stylesheet" href="public/css/unsemantic-grid-responsive-tablet.css" type="text/css">
+    <link rel="stylesheet" href="public/css/newtonTemplate.css" type="text/css">
+    <!-- -->
+</head>
+<body class="grid-container">
+<header>
+    <div id="logo" class="grid-100 , tablet-grid-100 , mobile-grid-100"> NewtonLogo</div>
+
+    <nav></nav>
+</header>
+<div id="page" class="grid-100 , tablet-grid-100 , mobile-grid-100">
+
+    <div ng-view>
+        <form class="form-auth" ng-submit="login()">
+            <h2>Log In</h2>
+            <p class="text-warning">{{error_message}}</p>
+            <input type="username" ng-model="user.username" placeholder="Username" class="form-control"><br>
+            <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+            <input type="submit" value="Log in" class="btn btn-primary" />
+        </form>
+    </div>
+
+    <!-- scripts -->
+    <!--  -->
+</div>
+</body>
+</html>
