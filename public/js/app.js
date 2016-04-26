@@ -2,15 +2,16 @@ var userApp = angular.module('userApp', ['ngRoute']);
 
 userApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-    when('/adm1', {
-        templateUrl: 'public/views/adm1.html',
-
+    when('/', {
+        templateUrl: 'partials/userMenu.html'
     }).
-    when('/skapaProv', {
-        templateUrl: 'public/views/skapaProv.html',
+    when('/testInfo', {
+        templateUrl: 'partials/testInfo.html'
+    }).when( '/userMenu ' ,{
+        templateUrl : 'partials/userMenu.html'
     }).
     otherwise({
-        redirectTo: 'public/views/adm1.html'
+        redirectTo: 'partials/userMenu.html'
     });
 }]);
 
