@@ -1,13 +1,32 @@
 .adminBody {
     font-family: sans-serif, Verdana;
-    word-spacing: 1em;
-    background-color: aqua;
+    word-spacing: 0.5em;
+    background-color: white;
 }
 
 #lblNewton {
-    font-size: 300%;
+    font-size: 250%;
     font-weight: bold;
-    margin-left: 30%;
-    color: green;
+    margin-left: 0%;
+    padding-left: 45%;
+    color: white;
+    background-color: #57ae6d;
+    width: auto;}
+
+ul#menuAdm {
+    padding: 0;
 }
+
+ul#menuAdm  {
+    display: inline;
+    margin-left: 3%;
+}
+.btnAdm {
+    background-color: #57ae6d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;}
+
+
 
