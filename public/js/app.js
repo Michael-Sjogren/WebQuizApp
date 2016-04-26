@@ -1,30 +1,24 @@
-var userApp = angular.module('userApp', ['ngRoute']);
+var userApp = angular.module('userApp', ['ngRoute', 'testControllers']);
 
 userApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/', {
-        templateUrl: 'partials/userMenu.html'
+        templateUrl: 'partials/userMenu.html',
+        controller: 'userCtrl'
     }).
     when('/testInfo', {
-        templateUrl: 'partials/testInfo.html'
+        templateUrl: 'partials/testInfo.html',
+        controller: 'userCtrl'
+    }).
+    when('/test', {
+        templateUrl: 'partials/test.html',
+        controller: 'testCtrl'
     }).when( '/userMenu ' ,{
-        templateUrl : 'partials/userMenu.html'
+        templateUrl : 'partials/userMenu.html',
+        controller: 'userCtrl'
     }).
     otherwise({
         redirectTo: 'partials/userMenu.html'
     });
-}]);
-
-
-userApp.controller('userCtrl',['$scope','$http' ,function ($scope , $http) {
-    /* hanterar json data  */
-    $http.get('data/quizzes.json').success(function (response) {
-        $scope.quizData  = response;
-    });
-
-    function  generateTestCtrl($scope) {
-        
-    }
-    
 }]);
 
