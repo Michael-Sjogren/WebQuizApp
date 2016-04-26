@@ -4,26 +4,9 @@
             <p>Detta provet omfattar programmering 1 ....................................</p>
         </article>
 
-        <ul id="test-details" ng-controller="">
-            <li>
-                Flervalsfrågor : ja
-            </li>
-            <li>
-                Öppna Frågor : ja
-            </li>
-            <li>
-                rangordningsfrågor : nej
-            </li>
-            <li>
-                envalsfrågor : ja
-            </li>
-            <li ng-repeat=""> antal frågor : x </li>
-            <li>
-                tidsbegränsad : ja
-            </li>
-            <li>
-                tid: x
-            </li>
+        <ul id="test-details" ng-controller="userCtrl">
+            <li ng-repeat="x in quizData" > typ av test : {{x[$index].type}}</li>
+            <li ng-repeat="x in quizData">{{x[0].questions[$index].question}}</li>
         </ul>
 
         <a href="#/"> Tillbaka </a>

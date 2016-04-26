@@ -17,10 +17,14 @@ userApp.config(['$routeProvider', function($routeProvider) {
 
 
 userApp.controller('userCtrl',['$scope','$http' ,function ($scope , $http) {
-    $scope.quizzes = {};
+    /* hanterar json data  */
     $http.get('data/quizzes.json').success(function (response) {
-
-        $scope.quizData = response;
+        $scope.quizData  = response;
     });
+
+    function  generateTestCtrl($scope) {
+        
+    }
+    
 }]);
 
