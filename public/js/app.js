@@ -15,3 +15,11 @@ userApp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 
+userApp.controller('userCtrl',['$scope','$http' ,function ($scope , $http) {
+    $scope.quizzes = {};
+    $http.get('data/quizzes.json').success(function (response) {
+
+        $scope.quizData = response;
+    });
+}]);
+
