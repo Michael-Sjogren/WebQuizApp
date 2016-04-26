@@ -2,30 +2,21 @@
  * Created by Tsiewing on 24/04/2016.
  */
 
-var appAdm1 = angular.module ('appAdm1', [
-    'ngRoute',
-    'elevControllers'
-]);
+var appAdm1 = angular.module ('appAdm1', ['ngRoute']);
 
-appAdm1.config(['$routeProvider', function($routeProvider) {
+
+userApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/', {
-        templateUrl: 'ViewHTML/skapaProv.html',
-        controller: 'ListController'
+        templateUrl: 'views/adm1.html',
+
     }).
-    when('/details/:itemId', {
-        templateUrl: 'partials/details.html',
-        controller: 'DetailsController'
+    when('/skapaProv', {
+        templateUrl: 'views/skapaProv.html',
+
     }).
     otherwise({
-        redirectTo: '/'
+        redirectTo: 'views/adm1.html'
     });
 }]);
 
-var appAdm1 = angular.module('appAdm1', []);
-app.controller('ctrlAdm1', function($scope) {
-    $scope.showSkapaProv = false;
-    $scope.myFunc = function() {
-        $scope.showSkapaProv = !$scope.showSkapaProv;
-    }
-});

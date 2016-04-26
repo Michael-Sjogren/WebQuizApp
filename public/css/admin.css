@@ -13,20 +13,22 @@
     background-color: #57ae6d;
     width: auto;}
 
-ul#menuAdm {
-    padding: 0;
-}
+ul#menuAdm   {
+    padding: 0;}
 
-ul#menuAdm  {
-    display: inline;
-    margin-left: 3%;
-}
-.btnAdm {
+ul#menuAdm li  {
+    display: inline;}
+
+ul#menuAdm li a {
     background-color: #57ae6d;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;}
+
+ul#menuAdm li a:hover {
+    background-color: orange;
+}
 
 
 

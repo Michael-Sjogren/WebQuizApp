@@ -9,31 +9,33 @@
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
     <script src="../js/angular.min.js"></script>
     <script src="../js/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="../scripts/admController.js"></script>
-    <script src="../scripts/admin1.js"></script>
+    <script src="../../scripts/admin1.js"></script>
+
 
     <title>Newton administration</title>
 </head>
-<body class="adminBody">
-<div ng-controller="ctrlAdm1">
+<body class="adminBody" ng-controller="ctrlAdm1">
+
     <div class="grid-container">
 
         <header class="grid-100">
             <h1 id="lblNewton">Newton</h1>
             <nav>
                 <ul id="menuAdm">
-                    <a class="btnAdm"  ng-click="myFunc()">Registrera</a>
-                    <a class="btnAdm" href="#/skapaProv">Skapa prov</a>
-                    <button class="btnAdm">Personal</button>
-                    <button class="btnAdm">Elever</button>
+                    <li><a class="btnAdm" ng-click="myFunc()">Registrera</a></li>
+                    <li> <a class="btmAdm" href="#views/skapaProv/">Skapa prov</a></li>
+                    <li> <a class="btnAdm">Personal</a></li>
+                    <li> <a class="btnAdm">Elever</a></li>
                 </ul>
             </nav>
         </header>
     </div>
 
-</div>
 
 
-<div class="main" ng-view></div>
+
+<div ng-view></div>
 </body>
 </html>

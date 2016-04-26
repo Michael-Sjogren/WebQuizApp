@@ -20,6 +20,3 @@ elevControllers.controller('ListController', ['$scope', '$http', function($scope
     $scope.elevOrder = 'namn';
   });
 }]);
-
-
-
