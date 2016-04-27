@@ -3,35 +3,36 @@
     <!--Test Info-->
     <div ng-if="testStatus === 'pending'" class="testInfo">
         <h1>Information</h1>
-        <p>Detta provet omfattar programmering 1 ....................................</p>
-
+        <h4>Detta provet omfattar programmering 1 ....................................</h4>
 
         <ul id="test-details" ng-controller="userCtrl">
             <li ng-repeat="x in quizData"> typ av test : {{x[$index].type}}</li>
             <li ng-repeat="x in quizData"> antal frågor : {{x[0].questions[$index].question}}</li>
         </ul>
         </article>
-        <a href="#/"> Tillbaka </a>
-        <a href="#/test" ng-click="startQuiz()"> Starta prov </a>
+
+        <button>Tillbaka</button>
+        <button ng-click="startQuiz()">Starta prov</button>
     </div>
 
     <!--Test View-->
-    <div ng-if="testStatus === 'inProgress'" class="test"  class="info">
-        <article>
-            <h1>Test: {{testTitle}}</h1>
-            <p>Fraga: {{qTitle}}</p>
-
+    <div ng-if="testStatus === 'inProgress'" class="test testView">
+            <h1>{{testTitle}}</h1>
             <div class="question_box">
+            <h3>Fraga: {{qTitle}}</h3>
+
+
                 <ul>
                    <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
                     <input type="radio" ng-checked="$first" name="Test"/>{{option}}
                    </li>
                 </ul>
-            </div>
 
-        </article>
+        <div class="buttonGroup">
         <button ng-click=" prevQuestion()"> tillbaka</button>
         <button ng-click="nextQuestion()">Nästa fråga</button>
+        </div>
+        </div>
     </div>
 
     <!--Test Overview-->

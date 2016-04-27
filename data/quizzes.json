@@ -2,7 +2,7 @@
   "quizzes": [
     {
       "title": "Java Quiz",
-
+      "description": "Ett grundläggande test i Java.",
       "type": "Flervalsfrågor",
       "limitMinutes" : 30,
       "expireDate": "2016-05-30",
