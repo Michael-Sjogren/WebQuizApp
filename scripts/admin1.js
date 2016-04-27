@@ -35,10 +35,11 @@ appAdm1.controller('adminCtrl', function($scope) {
 
 appAdm1.controller('skapaProvController', function($scope) {
     $scope.message1 = 'Ange namn på provet:';
-    $scope.message2 = 'Välj typ av fråga:'
-    $scope.message3 = 'Välj antal svarsalternativ:'
-    $scope.message4 = 'Skriv in din fråga:'
+    $scope.message2 = 'Välj typ av fråga:';
+    $scope.message3 = 'Välj antal svarsalternativ:';
+    $scope.message4 = 'Skriv in din fråga:';
     $scope.fragaNr = '';
+    $scope.styrRadio 
 });
 
 appAdm1.controller('contactController', function($scope) {

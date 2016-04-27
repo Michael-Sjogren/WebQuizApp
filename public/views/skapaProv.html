@@ -42,18 +42,17 @@
                             </form>
                             <div ng-switch="valjAntal">
                                 <div class="antalRadio" ng-switch-when="ett">
-                                    <input type="radio" ng-model="" value="svar1">
-                                    <input type="text">
+                                    <ol class="olAntalRadio">
+                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar3" value="svar3"><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar4" value="svar4"><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar5" value="svar5"><input type="text"></li>
+                                    </ol>
                                 </div>
                                 <div ng-switch="valjAntal">
                                     <div class="antalRadio" ng-switch-when="tva">
-                                        <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="" value="svar1" checked><input type="text"></li>
-                                        <li><input type="radio" ng-model="" value="svar2"><input type="text"></li>
-                                            <li><input type="radio" ng-model="" value="svar3"><input type="text"></li>
-                                            <li><input type="radio" ng-model="" value="svar4"><input type="text"></li>
-                                            <li><input type="radio" ng-model="" value="svar5"><input type="text"></li>
-                                        </ol>
+
                                     </div>
                         </div>
 
