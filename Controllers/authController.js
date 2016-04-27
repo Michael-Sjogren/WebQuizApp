@@ -4,7 +4,7 @@ app.config(function($routeProvider){
     $routeProvider
     //main display
         .when('/', {
-            templateUrl: 'index.html',
+            templateUrl: 'userIndex.html',
             controller: 'mainController'
         })
         //login display
