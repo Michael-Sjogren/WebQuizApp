@@ -47,13 +47,13 @@ testControllers.controller('testCtrl',['$scope','loadTestFactory' ,function ($sc
         $scope.qLength = $scope.activequiz.questions.length;
     };
 
-    $scope.nextQuestion = function () {
+    $scope.nextQuestion = function (checkedValue) {
         if($scope.counter < $scope.qLength) {
             $scope.counter ++;
             $scope.qTitle = $scope.activequiz.questions[$scope.counter].questionTitle;
             $scope.options = $scope.activequiz.questions[$scope.counter].answer;
         }else{
-
+            $scope.endQuiz();
            //  kalla funktion som visar test översikt i slut
         }
     }

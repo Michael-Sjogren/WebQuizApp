@@ -55,6 +55,7 @@ time, mark, audio, video {
     #info-wrapper {
         border: 1px solid black;
         padding: 10px;
+        min-height:400px;
     }
 
     .info {
@@ -70,4 +71,21 @@ time, mark, audio, video {
     #test-details > li{
        list-style: circle;
        line-height: 30px;
+    }
+
+    .test{
+        padding: 3%;
+    }
+
+    .question_box {
+        padding: 3%;
+
+
+    }
+
+    .question_box li {
+        border: 1px solid #b6b6b6;
+        border-radius: 16px;
+        padding:2px;
+        margin: 5px;
     }

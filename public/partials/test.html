@@ -16,15 +16,15 @@
     </div>
 
     <!--Test View-->
-    <div ng-if="testStatus === 'inProgress'" class="test">
-        <article class="info">
+    <div ng-if="testStatus === 'inProgress'" class="test"  class="info">
+        <article>
             <h1>Test: {{testTitle}}</h1>
             <p>Fraga: {{qTitle}}</p>
 
             <div class="question_box">
                 <ul>
-                   <li ng-repeat="option in options">
-                    <input type="radio" value="Test" name="Test"/>{{option}}
+                   <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
+                    <input type="radio" ng-checked="$first" name="Test"/>{{option}}
                    </li>
                 </ul>
             </div>
@@ -32,6 +32,23 @@
         </article>
         <button ng-click=" prevQuestion()"> tillbaka</button>
         <button ng-click="nextQuestion()">Nästa fråga</button>
+    </div>
+
+    <!--Test Overview-->
+    <div ng-if="testStatus === 'inactive'" class="test-overview">
+        <article>
+            <h1>Testöversikt</h1>
+            <table>
+                <tr>
+                    <td ng-repeat="" ng-class-even="even" ng-class-odd="odd"></td>
+                </tr>
+            </table>
+
+        </article>
+
+        <button ng-click="">Lämna in</button>
+
+
     </div>
 
 </section>
