@@ -53,6 +53,7 @@ time, mark, audio, video {
 
 
     #info-wrapper {
+        font-family: 'Roboto Condensed', sans-serif;
         border: 1px solid black;
         padding: 10px;
         min-height:400px;
