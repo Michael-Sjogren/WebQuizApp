@@ -8,18 +8,22 @@
       "expireDate": "2016-05-30",
       "questions": [
         {
+          "questionTitle": "Vilket av följande är inte ett nyckelord i Java?",
           "answer": ["static", "boolean", "void", "private"],
           "correctAns": 1
         },
         {
+          "questionTitle": "Man ha flera klasser i samma Java-fil.",
           "answer": ["Sant", "Falskt"],
           "correctAns": 0
         },
         {
+          "questionTitle": "Vad är standardvärdet av en char- variabel?",
           "answer": ["\u0000", "0", "null", "Icke definerat"],
           "correctAns": 0
         },
         {
+          "questionTitle": "Vilket av följande påståenden är sant om en superklass?",
           "answer": ["Variabler, metoder och konstruktorer som är deklarerade som privata kan endast nås av superklassens medlemmar.",
             "Variabler, metoder och konstruktorer som är deklarerade som protected kan nås av alla subklasser av superklassen."],
           "correctAns": 0
