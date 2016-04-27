@@ -3,44 +3,25 @@
     {
       "title": "Java Quiz",
 
-      "type": "multiple-choice",
+      "type": "Flervalsfrågor",
+      "limitMinutes" : 30,
+      "expireDate": "2016-05-30",
       "questions": [
         {
-          "question": "Which of the following is not a keyword in java?",
-          "answer": [
-            "static",
-            "boolean",
-            "void",
-            "private"
-          ],
+          "answer": ["static", "boolean", "void", "private"],
           "correctAns": 1
         },
         {
-          "question": "Can we have multiple classes in same java file?",
-          "answer": [
-            "true",
-            "false"
-          ],
+          "answer": ["Sant", "Falskt"],
           "correctAns": 0
         },
         {
-          "question": "What is the default value of char variable?",
-          "answer": [
-            "\u0000",
-            "0",
-            "null",
-            "Not defined"
-          ],
+          "answer": ["\u0000", "0", "null", "Icke definerat"],
           "correctAns": 0
         },
         {
-          "question": "Which of the following is true about super class?",
-          "answer": [
-            "Variables, methods and constructors which are declared private can be accessed only by the members of the super class",
-            "Variables, methods and constructors which are declared protected can be accessed by any subclass of the super class.",
-            "null",
-            "Not defined"
-          ],
+          "answer": ["Variabler, metoder och konstruktorer som är deklarerade som privata kan endast nås av superklassens medlemmar.",
+            "Variabler, metoder och konstruktorer som är deklarerade som protected kan nås av alla subklasser av superklassen."],
           "correctAns": 0
         }
       ]

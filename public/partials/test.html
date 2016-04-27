@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-</head>
-<body>
+<section id="info-wrapper">
 
-</body>
-</html>
+    <!--Test Info-->
+    <div ng-if="testStatus === 'pending'" class="testInfo">
+        <h1>Information</h1>
+        <p>Detta provet omfattar programmering 1 ....................................</p>
+
+
+        <ul id="test-details" ng-controller="userCtrl">
+            <li ng-repeat="x in quizData"> typ av test : {{x[$index].type}}</li>
+            <li ng-repeat="x in quizData">{{x[0].questions[$index].question}}</li>
+        </ul>
+        </article>
+        <a href="#/"> Tillbaka </a>
+        <a href="#/test" ng-click="startQuiz()"> Starta prov </a>
+    </div>
+
+    <!--Test View-->
+    <div ng-if="testStatus === 'inProgress'" class="test">
+        <article class="info">
+            <h1>Test: {{testTitle}}</h1>
+
+            <div class="question_box">
+                <ul>
+                   </li>
+                </ul>
+            </div>
+
+        </article>
+        <button><a href="#/">Tillbaka</a></button>
+        <button ng-click="">Nästa fråga</button>
+    </div>
+
+</section>
