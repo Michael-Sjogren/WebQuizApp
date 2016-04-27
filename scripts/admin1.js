@@ -5,18 +5,41 @@
 var appAdm1 = angular.module ('appAdm1', ['ngRoute']);
 
 
-userApp.config(['$routeProvider', function($routeProvider) {
+appAdm1.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/', {
-        templateUrl: 'views/adm1.html',
+        templateUrl: '../public/views/adm1.html',
+        controller: 'adminCtrl'
 
     }).
     when('/skapaProv', {
-        templateUrl: 'views/skapaProv.html',
+        //console.log('testingtesting');
+        templateUrl: 'skapaProv.html',
+        controller:'skapaProvController'
+
 
     }).
     otherwise({
-        redirectTo: 'views/adm1.html'
+        redirectTo: 'adm1.html'
     });
 }]);
+
+
+
+
+// create the controller and inject Angular's $scope
+appAdm1.controller('adminCtrl', function($scope) {
+
+    // create a message to display in our view
+    $scope.message = 'Everyone come and see how good I look!';
+});
+
+appAdm1.controller('skapaProvController', function($scope) {
+    $scope.message = 'Look! I am an about page.';
+});
+
+appAdm1.controller('contactController', function($scope) {
+    $scope.message = 'Contact us! JK. This is just a demo.';
+});
+
 

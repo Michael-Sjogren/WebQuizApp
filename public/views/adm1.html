@@ -16,7 +16,7 @@
 
     <title>Newton administration</title>
 </head>
-<body class="adminBody" ng-controller="ctrlAdm1">
+<body class="adminBody" ng-controller="adminCtrl">
 
     <div class="grid-container">
 
@@ -24,18 +24,24 @@
             <h1 id="lblNewton">Newton</h1>
             <nav>
                 <ul id="menuAdm">
-                    <li><a class="btnAdm" ng-click="myFunc()">Registrera</a></li>
-                    <li> <a class="btmAdm" href="#views/skapaProv/">Skapa prov</a></li>
-                    <li> <a class="btnAdm">Personal</a></li>
-                    <li> <a class="btnAdm">Elever</a></li>
+                    <li><a href="#"class="btnAdm" >Registrera</a></li>
+                    <li><a href="#skapaProv" class="btnAdm">Skapa prov</a></li>
+                    <li> <a href="#personal" class="btnAdm">Personal</a></li>
+                    <li> <a href="elever" class="btnAdm">Elever</a></li>
                 </ul>
             </nav>
         </header>
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main" ng-view>
+
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+{{message}}
+
+
+        </div>
+
     </div>
-
-
-
-
-<div ng-view></div>
 </body>
 </html>
