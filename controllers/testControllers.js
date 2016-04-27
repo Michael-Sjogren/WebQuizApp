@@ -33,6 +33,7 @@ testControllers.controller('testCtrl',['$scope','loadTestFactory' ,function ($sc
     $scope.qTitle = "";
     $scope.counter = 0;
     $scope.options = [];
+    $scope.qLength = 0;
 
     $scope.quizData2  = loadTestFactory.getData();
     
@@ -43,14 +44,28 @@ testControllers.controller('testCtrl',['$scope','loadTestFactory' ,function ($sc
         $scope.testTitle = $scope.activequiz.title;
         $scope.qTitle = $scope.activequiz.questions[0].questionTitle;
         $scope.options = $scope.activequiz.questions[0].answer;
+        $scope.qLength = $scope.activequiz.questions.length;
     };
 
     $scope.nextQuestion = function () {
-        $scope.counter ++;
-        $scope.qTitle = $scope.activequiz.questions[$scope.counter].questionTitle;
-        $scope.options = $scope.activequiz.questions[$scope.counter].answer;
-        console.log("nästa fråga" +  $scope.counter);
+        if($scope.counter < $scope.qLength) {
+            $scope.counter ++;
+            $scope.qTitle = $scope.activequiz.questions[$scope.counter].questionTitle;
+            $scope.options = $scope.activequiz.questions[$scope.counter].answer;
+        }else{
 
+           //  kalla funktion som visar test översikt i slut
+        }
+    }
+
+    $scope.prevQuestion = function () {
+        if ($scope.counter >= 0) {
+            $scope.counter --;
+            $scope.qTitle = $scope.activequiz.questions[$scope.counter].questionTitle;
+            $scope.options = $scope.activequiz.questions[$scope.counter].answer;
+        }else{
+
+        }
     }
 
     /*Add answer to answers array*/
