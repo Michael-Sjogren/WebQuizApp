@@ -4,14 +4,18 @@
 
             <section class="skapaProv">
                 <p class="pRubrik">   {{message1}} </p>
-                <form>
-                    <input type="radio" name="provNamn" value="java1" checked>Java SE<br>
-                    <input type="radio" name="provNamn" value="java2">Java EE<br>
-                    <input type="radio" name="provNamn" value="net1"> .Net<br>
-                    <input type="radio" name="provNamn" value="sakerhet1">IT-säkerhet<br>
+                <form class="dropprovNamn">
+                        <select class="dropDownProv" ng-model="provNamn">
+                            <option value="">
+                            <option value="sakerhet1">IT-säkerhetsteknik
+                            <option value="java1">Java SE
+                            <option value="java2">Java EE
+                            <option value="krav1">Kravanalys 1
+                            <option value="net1">.Net
+                        </select>
                 </form>
 
-                <p class="pRubrik">Ange provtid (min): <input type="text" ng-model="provtid"></p>
+                <p class="pRubrik">Ange provtid (min): <input type="number" ng-model="provtid"></p>
                 <br>
 
                 <article class="provFragor">
@@ -19,12 +23,26 @@
                     <p class="pFraga">Fråga nr: {{fragaNr+1}} </p>
                     <p class="pRubrik">   {{message2}} </p>
 
-                    <input type="radio" name="frageTyp" value="flerval" checked>Flervalsalternativ<br>
-                    <input type="radio" name="frageTyp" value="oppenText"> .Öppen fråga<br>
+
+                    <input type="radio" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
+                    <input type="radio" ng-model="frageTyp" value="oppenText"> .Öppen fråga<br>
+
+                    <div ng-switch="frageTyp">
+                        <div ng-switch-when="flerval">
+                            <p class="pRubrik">   {{message3}} </p>
+
+                        </div>
+                        <div ng-switch-when="oppenText">
+                            <p class="pRubrik">   {{message4}} </p>
+                           <input type="text">
+                            </div>
 
 
 
-                </article>
+
+
+
+                </div></article>
             </section>
 
 
