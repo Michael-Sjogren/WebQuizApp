@@ -1,6 +1,9 @@
 
  <div ng-controller="skapaProvController"></div>
+
+
             <section class="skapaProv">
+                <p class="pRubrik">   {{message1}} </p>
                 <form>
                     <input type="radio" name="provNamn" value="java1" checked>Java SE<br>
                     <input type="radio" name="provNamn" value="java2">Java EE<br>
@@ -8,11 +11,20 @@
                     <input type="radio" name="provNamn" value="sakerhet1">IT-säkerhet<br>
                 </form>
 
+                <p class="pRubrik">Ange provtid (min): <input type="text" ng-model="provtid"></p>
+                <br>
+
+                <article class="provFragor">
+
+                    <p class="pFraga">Fråga nr: {{fragaNr+1}} </p>
+                    <p class="pRubrik">   {{message2}} </p>
+
+                    <input type="radio" name="frageTyp" value="flerval" checked>Flervalsalternativ<br>
+                    <input type="radio" name="frageTyp" value="oppenText"> .Öppen fråga<br>
 
 
-                    {{message}}
 
-
+                </article>
             </section>
 
 

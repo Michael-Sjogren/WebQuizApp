@@ -26,7 +26,6 @@ appAdm1.config(['$routeProvider', function($routeProvider) {
 
 
 
-
 // create the controller and inject Angular's $scope
 appAdm1.controller('adminCtrl', function($scope) {
 
@@ -35,7 +34,9 @@ appAdm1.controller('adminCtrl', function($scope) {
 });
 
 appAdm1.controller('skapaProvController', function($scope) {
-    $scope.message = 'Look! I am an about page.';
+    $scope.message1 = 'Ange namn på provet:';
+    $scope.message2 = 'Välj typ av fråga:'
+    $scope.fragaNr = '';
 });
 
 appAdm1.controller('contactController', function($scope) {
