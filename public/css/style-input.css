@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif, Verdana;
+}
+
+#pageCenter {
+    text-align:center;
+}
+
+input, textarea {
+
+    margin-top: 10px;
+    border-radius: 4px;
+    horiz-align: center;
+    border: 1px solid;
+    border-color: #DF690C;
+
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+}
