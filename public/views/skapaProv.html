@@ -26,7 +26,14 @@
                     <input type="radio" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
 
+
                     <div ng-switch="frageTyp">
+
+                        <div ng-switch-when="oppenText">
+                            <p class="pRubrik">   {{message4}} </p>
+                            <input type="text">
+                        </div>
+
                         <div ng-switch-when="flerval">
                             <p class="pRubrik">   {{message4}} </p>
                             <input type="text">
@@ -40,8 +47,43 @@
                                     <option value="fem">5
                                 </select>
                             </form>
+
+
+
+
+
                             <div ng-switch="valjAntal">
                                 <div class="antalRadio" ng-switch-when="ett">
+                                    <ol class="olAntalRadio">
+                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
+                                    </ol>
+                                </div>
+
+                                    <div class="antalRadio" ng-switch-when="tva">
+                                        <ol class="olAntalRadio">
+                                            <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
+                                            <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
+                                        </ol>
+                                        </div>
+
+                                <div class="antalRadio" ng-switch-when="tre">
+                                    <ol class="olAntalRadio">
+                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar3" value="svar3"><input type="text"></li>
+                                    </ol>
+                                </div>
+
+                                <div class="antalRadio" ng-switch-when="fyra">
+                                    <ol class="olAntalRadio">
+                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar3" value="svar3"><input type="text"></li>
+                                        <li><input type="radio" ng-model="modelSvar4" value="svar4"><input type="text"></li>
+                                    </ol>
+                                </div>
+
+                                <div class="antalRadio" ng-switch-when="fem">
                                     <ol class="olAntalRadio">
                                         <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
                                         <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
@@ -50,25 +92,12 @@
                                         <li><input type="radio" ng-model="modelSvar5" value="svar5"><input type="text"></li>
                                     </ol>
                                 </div>
-                                <div ng-switch="valjAntal">
-                                    <div class="antalRadio" ng-switch-when="tva">
-
-                                    </div>
-                        </div>
-
-
-                        <div ng-switch-when="oppenText">
-                            <p class="pRubrik">   {{message4}} </p>
-                           <input type="text">
                             </div>
 
 
+
+
                         </div>
-
-
-
-
-
 
                 </div></article>
             </section>
