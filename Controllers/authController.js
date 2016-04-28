@@ -3,22 +3,22 @@ var app = angular.module('mainApp', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: '/partial/login.html'
+            templateUrl: 'partials/login.html'
         })
-        .when('/', {
+        .when('/userIndex', {
             resolve: {
                 "check": function ($location, $rootScope) {
                     if(!$rootScope.loggedIn) {
-                        $location.path('/');
+                        $location.path('userIndex.html');
                     } else {
 
                     }
                 }
             },
-            templateUrl: 'userIndex.html'
+            templateUrl: 'partials/userMenu.html'
         })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: 'partial/login.html'
         });
 });
 
@@ -27,7 +27,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope) {
 
         if($scope.username == 'student' && $scope.password == 'student') {
             $rootScope.loggedIn = true;
-            $location.path('/userIndex');
+            $location.path('userIndex');
         } else {
             alert('Wrong username or password');
         }
