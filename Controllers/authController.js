@@ -1,31 +1,35 @@
-var app = angular.module('userApp', ['ngRoute']);
+var app = angular.module('mainApp', ['ngRoute']);
 
-app.config(function($routeProvider){
+app.config(function($routeProvider) {
     $routeProvider
-    //main display
         .when('/', {
-            templateUrl: 'userIndex.html',
-            controller: 'mainController'
+            templateUrl: '/partial/login.html'
         })
-        //login display
-        .when('/partials', {
-            templateUrl: 'login.html',
-            controller: 'authController'
+        .when('/', {
+            resolve: {
+                "check": function ($location, $rootScope) {
+                    if(!$rootScope.loggedIn) {
+                        $location.path('/');
+                    } else {
+
+                    }
+                }
+            },
+            templateUrl: 'userIndex.html'
         })
+        .otherwise({
+            redirectTo: '/'
+        });
 });
 
+app.controller('loginCtrl', function ($scope, $location, $rootScope) {
+    $scope.submit = function () {
 
-
-app.controller('authController', function($scope){
-    $scope.user = {username: '', password: ''};
-    $scope.error_message = '';
-
-    $scope.login = function(){
-        $scope.error_message = 'login request for ' + $scope.user.username;
-    };
-
-    $scope.register = function(){
-        $scope.error_message = 'registeration request for ' + $scope.user.username;
+        if($scope.username == 'student' && $scope.password == 'student') {
+            $rootScope.loggedIn = true;
+            $location.path('/userIndex');
+        } else {
+            alert('Wrong username or password');
+        }
     };
 });
-

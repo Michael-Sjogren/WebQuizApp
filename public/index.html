@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../public/css/unsemantic-grid-responsive-tablet.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/newtonTemplate.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/style-input.css" type="text/css">
+    <!-- -->
+
+    <!-- scripts -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="../Controllers/authController.js"></script>
+    <!--  -->
+
+</head>
+<body class="grid-container" ng-app="mainApp">
+    <header>
+        <div id="logo" class="grid-100 , tablet-grid-100 , mobile-grid-100"> NewtonLogo</div>
+            <nav></nav>
+    </header>
+    <div id="page" class="grid-100 , tablet-grid-100 , mobile-grid-100">
+        <div ng-view></div>
+    </div>
+</body>
+</html>
