@@ -3,33 +3,29 @@
  */
 // script.js
 
-//TSIEWING TESTAR. KODEN NEDAN FÖR TESTNING INGET ANNAT!
 
-var artistControllers = angular.module('artistControllers', []);
+// create the controller and inject Angular's $scope
+adminApp.controller('adminCtrl', function($scope) {
 
-artistControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
-    $http.get('data/data.json').success(function(data) {
-        $scope.artists = data.artists;
-        $scope.artistOrder = 'name';
-    });
-}]);
+});
 
-artistControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
-    $http.get('data/data.json').success(function(data) {
-        $scope.artists = data.artists;
-        $scope.whichItem = $routeParams.itemId;
+adminApp.controller('skapaProvController', function($scope) {
+    $scope.message1 = 'Ange namn på provet:';
+    $scope.message2 = 'Välj typ av fråga:';
+    $scope.message3 = 'Välj antal svarsalternativ:';
+    $scope.message4 = 'Skriv in din fråga:';
+    $scope.fragaNr = '';
+});
 
-        if ($routeParams.itemId > 0) {
-            $scope.prevItem = Number($routeParams.itemId)-1;
-        } else {
-            $scope.prevItem = $scope.artists.length-1;
-        }
 
-        if ($routeParams.itemId < $scope.artists.length-1) {
-            $scope.nextItem = Number($routeParams.itemId)+1;
-        } else {
-            $scope.nextItem = 0;
-        }
 
-    });
-}]);
+// Variable and function applied in SkapaProv to increment the Fråga Nr.
+var addFraga = (function () {
+    var counter = 1;
+    return function () {return counter += 1;}
+})();
+
+function addFragaNr(){
+    document.getElementById("fragaCounter").innerHTML = addFraga();
+}
+

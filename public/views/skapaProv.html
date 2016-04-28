@@ -3,9 +3,11 @@
 
 
             <section class="skapaProv">
+                <form name="adminFormSkapaProv" ng-submit="submitForm()" class="mainFormSkapaProv">
                 <p class="pRubrik">   {{message1}} </p>
-                <form class="dropprovNamn">
-                        <select class="dropDownProv" ng-model="provNamn">
+
+                <div class="dropprovNamn">
+                        <select class="dropDownProv" ng-model="provNamn" required>
                             <option value="">
                             <option value="sakerhet1">IT-säkerhetsteknik
                             <option value="java1">Java SE
@@ -13,7 +15,7 @@
                             <option value="krav1">Kravanalys 1
                             <option value="net1">.Net
                         </select>
-                </form>
+                </div>
 
                 <p class="pRubrik">Ange provtid (min): <input type="number" ng-model="provtid"></p>
                 <br>
@@ -21,7 +23,6 @@
                 <article class="provFragor">
 
                     <p class="pFraga">Fråga nr: <em id="fragaCounter"></em></p>
-
 
                     <input type="radio" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
@@ -31,14 +32,14 @@
 
                         <div ng-switch-when="oppenText">
                             <p class="pRubrik">   {{message4}} </p>
-                            <input type="text">
+                            <input type="text" ng-model="modelOppenFraga" required>
                         </div>
 
                         <div ng-switch-when="flerval">
                             <p class="pRubrik">   {{message4}} </p>
-                            <input type="text">
+                            <input type="text" ng-model="modelFlerFraga">
                             <p class="pRubrik">   {{message3}} </p>
-                            <form class="dropFlerval">
+                            <div class="dropFlerval">
                                 <select class="dropAntal" ng-model="valjAntal">
                                     <option value="ett">1
                                     <option value="tva">2
@@ -46,55 +47,57 @@
                                     <option value="fyra">4
                                     <option value="fem">5
                                 </select>
-                            </form>
+                            </div>
 
                             <div ng-switch="valjAntal">
                                 <div class="antalRadio" ng-switch-when="ett">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar1" checked><input type="text"></li>
                                     </ol>
                                 </div>
 
                                     <div class="antalRadio" ng-switch-when="tva">
                                         <ol class="olAntalRadio">
-                                            <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
-                                            <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
+                                            <li><input type="radio" ng-model="radioSvar" value="svar1" checked><input type="text"></li>
+                                            <li><input type="radio" ng-model="radioSvar" value="svar2"><input type="text"></li>
                                         </ol>
                                         </div>
 
                                 <div class="antalRadio" ng-switch-when="tre">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar3" value="svar3"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar3"><input type="text"></li>
                                     </ol>
                                 </div>
 
                                 <div class="antalRadio" ng-switch-when="fyra">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar3" value="svar3"><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar4" value="svar4"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar3"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar4"><input type="text"></li>
                                     </ol>
                                 </div>
 
                                 <div class="antalRadio" ng-switch-when="fem">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="modelSvar1" value="svar1" checked><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar2" value="svar2"><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar3" value="svar3"><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar4" value="svar4"><input type="text"></li>
-                                        <li><input type="radio" ng-model="modelSvar5" value="svar5"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar1" checked><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar3"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar4"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar" value="svar5"><input type="text"></li>
                                     </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button type="button" onclick="addFragaNr()" id="btnNastaFraga">Nästa fråga</button>
+                    <button type="button" onclick="addFragaNr()"   class="btnNastaFraga">Nästa fråga</button>
+                    <button type="button" class="btnNastaFraga" id="btnklar">Klar</button>
 
                 </article>
+                </form>
             </section>
 
 
