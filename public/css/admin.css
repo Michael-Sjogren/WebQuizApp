@@ -63,5 +63,14 @@ font-size: 120%;}
     font-size: 80%;
     margin-top: 2.5%}
 
+#btnNastaFraga {
+    margin-top: 2%;
+    margin-left:38.5%;
+    border-radius: 2px;
+    color: black;
+    background-color: #cfffc5;
+    border-color: #b6b6b6;
+    border-top-color: #b6b6b6;}
+
 
 

@@ -46,4 +46,15 @@ appAdm1.controller('contactController', function($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
 });
 
+var addFraga = (function () {
+    var counter = 1;
+    return function () {return counter += 1;}
+})();
+
+function addFragaNr(){
+    document.getElementById("fragaCounter").innerHTML = addFraga();
+}
+
+
+
 

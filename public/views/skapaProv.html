@@ -20,8 +20,8 @@
 
                 <article class="provFragor">
 
-                    <p class="pFraga">Fråga nr: {{fragaNr+1}} </p>
-                    <p class="pRubrik">   {{message2}} </p>
+                    <p class="pFraga">Fråga nr: <em id="fragaCounter"></em></p>
+
 
                     <input type="radio" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
@@ -47,10 +47,6 @@
                                     <option value="fem">5
                                 </select>
                             </form>
-
-
-
-
 
                             <div ng-switch="valjAntal">
                                 <div class="antalRadio" ng-switch-when="ett">
@@ -93,13 +89,12 @@
                                     </ol>
                                 </div>
                             </div>
-
-
-
-
                         </div>
+                    </div>
 
-                </div></article>
+                    <button type="button" onclick="addFragaNr()" id="btnNastaFraga">Nästa fråga</button>
+
+                </article>
             </section>
 
 
