@@ -15,7 +15,13 @@ adminApp.controller('skapaProvController', function($scope) {
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
     $scope.message4 = 'Formulera din fråga:';
-   
+    $scope.provNamn = provNamn.value;
+    $scope.provtid = provtid;
+    $scope.modelOppenFraga = modelOppenFraga;
+    $scope.modelFlerFraga = modelFlerFraga;
+    $scope.radioSvar = radioSvar.value;
+
+
 
 
 
@@ -31,4 +37,6 @@ var addFraga = (function () {
 function addFragaNr(){
     document.getElementById("fragaCounter").innerHTML = addFraga();
 }
+
+
 
