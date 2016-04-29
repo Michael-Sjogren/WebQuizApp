@@ -4,19 +4,22 @@
 // script.js
 
 
-// create the controller and inject Angular's $scope
+// create the adminCtrl controller and inject Angular's $scope
 adminApp.controller('adminCtrl', function($scope) {
 
 });
 
+// create the skapaProvcontroller and inject Angular's $scope
 adminApp.controller('skapaProvController', function($scope) {
     $scope.message1 = 'Ange namn på provet:';
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
-    $scope.message4 = 'Skriv in din fråga:';
-    $scope.fragaNr = '';
-});
+    $scope.message4 = 'Formulera din fråga:';
+   
 
+
+
+});
 
 
 // Variable and function applied in SkapaProv to increment the Fråga Nr.
