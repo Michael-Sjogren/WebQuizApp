@@ -25,9 +25,12 @@
 
                 <ul>
                    <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
-                    <input type="radio" ng-checked="$first" name="Test" ng-value="saveRadioButtonId($index)" />{{option}}
+                       <!-- BUG :: om man tar bort ng-value så får man fram ng-checked annars så får man inte fram ng checked -->
+                    <input type="radio"  ng-checked="$first"  name="Test" ng-model="userAns.answer" ng-value="option" ng-change="addAns()">   <label> {{option}} </label>
                    </li>
                 </ul>
+
+
 
         <div class="buttonGroup">
         <button ng-click=" prevQuestion()"> tillbaka</button>
@@ -41,8 +44,8 @@
         <article>
             <h1>Testöversikt</h1>
             <table>
-                <tr>
-                    <td ng-repeat="" ng-class-even="even" ng-class-odd="odd"></td>
+                <tr ng-repeat="answer in answers">
+                    <td ng-class-even="even" ng-class-odd="odd">{{answer}}</td>
                 </tr>
             </table>
 
