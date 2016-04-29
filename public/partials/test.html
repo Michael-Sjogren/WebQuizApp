@@ -3,28 +3,29 @@
     <!--Test Info-->
     <div ng-if="testStatus === 'pending'" class="testInfo">
         <h1>Information</h1>
-        <h4>Detta provet omfattar programmering 1 ....................................</h4>
+        <h4>Detta provet omfattar programmering 1 </h4>
 
         <ul id="test-details" ng-controller="userCtrl">
             <li ng-repeat="x in quizData"> typ av test : {{x[$index].type}}</li>
-            <li ng-repeat="x in quizData"> antal frågor : {{x[0].questions[$index].question}}</li>
+            <li ng-repeat="x in quizData"> antal frågor : {{x[0].questions.length}}</li>
         </ul>
         </article>
 
         <button>Tillbaka</button>
-        <button ng-click="startQuiz()">Starta prov</button>
+        <button ng-click="startQuiz(); sortQuestions()">Starta prov</button>
     </div>
 
     <!--Test View-->
     <div ng-if="testStatus === 'inProgress'" class="test testView">
             <h1>{{testTitle}}</h1>
+
             <div class="question_box">
             <h3>Fraga: {{qTitle}}</h3>
 
 
                 <ul>
                    <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
-                    <input type="radio" ng-checked="$first" name="Test"/>{{option}}
+                    <input type="radio" ng-checked="$first" name="Test" ng-value="saveRadioButtonId($index)" />{{option}}
                    </li>
                 </ul>
 
@@ -46,10 +47,7 @@
             </table>
 
         </article>
-
         <button ng-click="">Lämna in</button>
-
-
     </div>
 
 </section>

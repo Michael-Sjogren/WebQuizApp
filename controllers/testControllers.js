@@ -34,6 +34,9 @@ testControllers.controller('testCtrl',['$scope','loadTestFactory' ,function ($sc
     $scope.counter = 0;
     $scope.options = [];
     $scope.qLength = 0;
+    $scope.allQuestions = [];
+    $scope.radioButtonID = [];
+
 
     $scope.quizData2  = loadTestFactory.getData();
     
@@ -45,6 +48,7 @@ testControllers.controller('testCtrl',['$scope','loadTestFactory' ,function ($sc
         $scope.qTitle = $scope.activequiz.questions[0].questionTitle;
         $scope.options = $scope.activequiz.questions[0].answer;
         $scope.qLength = $scope.activequiz.questions.length;
+
     };
 
     $scope.nextQuestion = function (checkedValue) {
@@ -67,6 +71,21 @@ testControllers.controller('testCtrl',['$scope','loadTestFactory' ,function ($sc
 
         }
     }
+
+
+
+    $scope.sortQuestions = function () {
+    /* merges the first array elements from the answer arrays that is in json file into one array */
+        for (var i = 0; i < $scope.qLength; i++){
+            /*puts in all the first answer elements for the active quiz in a array changes every time the user clicks on another radio button
+            * the questions get updated with the help of the page index (counter variable)
+            * */
+          $scope.allQuestions.push($scope.activequiz.questions[i].answer[0]);
+        }
+          console.table($scope.allQuestions);
+    }
+
+
 
     /*Add answer to answers array*/
     $scope.addAns = function (answer, questionIndex) {
