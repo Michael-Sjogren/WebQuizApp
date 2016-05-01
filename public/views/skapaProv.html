@@ -1,5 +1,4 @@
-
- <div ng-controller="skapaProvController"></div>
+<div ng-controller="skapaProvController" xmlns="http://www.w3.org/1999/html"></div>
 
 
             <section class="skapaProv">
@@ -10,11 +9,10 @@
                         <select class="dropDownProv" ng-model="provNamn" required
                                 ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
                         </select>
-
                     <p class="pRubrik">You selected: {{provNamn.provetsNamn}}</p>
                 </div>
 
-                <p class="pRubrik">Ange provtid (min): <input type="number" ng-model="provtid"></p>
+                <p class="pRubrik">Ange provtid (min): <input type="number" id="inputProvtid" ng-model="provtid"></p>
                 <br>
 
                 <article class="provFragor">
@@ -23,8 +21,6 @@
 
                     <input type="radio" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
-
-
                     <div ng-switch="frageTyp">
 
                         <div ng-switch-when="oppenText">
@@ -73,21 +69,30 @@
 
                                 <div class="antalRadio" ng-switch-when="fyra">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar1"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar2"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar3"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar4"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar.message"
+                                                   value="svar1"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar.message"
+                                                   value="svar2"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar.message"
+                                                   value="svar3"><input type="text"></li>
+                                        <li><input type="radio" ng-model="radioSvar.message"
+                                                   value="svar4"><input type="text"></li>
                                     </ol>
                                         <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
                                 </div>
 
                                 <div class="antalRadio" ng-switch-when="fem">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar1"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar2"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar3"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar4"><input type="text"></li>
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar5"><input type="text"></li>
+                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                                   value="svar1" id="svarEtt"><input type="text"></li>
+                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                                   value="svar2" id="svartva"><input type="text"></li>
+                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                                   value="svar3" id="svarTre"><input type="text"></li>
+                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                                   value="svar4" id="svarFyra"><input type="text"></li>
+                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                                   value="svar5" id="svarFem"><input type="text"></li>
                                     </ol>
                                     <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
                                 </div>
@@ -97,7 +102,7 @@
                     </div>
 
                     <button type="button" class="btnNastaFraga" onclick="addFragaNr()">Nästa fråga</button>
-                    <button type="button"  class="btnNastaFraga" id="btnklar">Klar</button>
+                    <button type="submit"  class="btnNastaFraga" id="btnklar" onclick="">Klar</button>
 
                 </article>
                 </form>

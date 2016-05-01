@@ -6,7 +6,6 @@
 
 // create the adminCtrl controller and inject Angular's $scope
 adminApp.controller('adminCtrl', function($scope) {
-
 });
 
 // create the skapaProvcontroller and inject Angular's $scope
@@ -23,10 +22,8 @@ adminApp.controller('skapaProvController', function($scope) {
         {provetsNamn:'.Net'}
     ];
     $scope.changedValue = function(item) {
-        alert(item);
+        console(item);
     }
-
-
 });
 
 
@@ -39,6 +36,29 @@ var addFraga = (function () {
 function addFragaNr(){
     document.getElementById("fragaCounter").innerHTML = addFraga();
 }
+
+// Creating variables and functions to access the Admin's input in SkapaProv
+var elProvtid = document.getElementById('inputProvtid');
+var elFragaNr = document.getElementById('fragaCounter');
+
+
+function checkRadio() {
+    if (document.getElementById('svarEtt').checked) {
+        return $('#svarEtt').val();
+    } else if (document.getElementById('svarTva').checked) {
+        return $('#svarTva').val();
+    } else if (document.getElementById('svarTre').checked) {
+        return $('#svarTre').val();
+    } else if (document.getElementById('svarFyra').checked) {
+        return $('#svarFyra').val();
+    } else if (document.getElementById('svarFem').checked) {
+        return $('#svarFem').val();
+    }
+}
+
+
+
+
 
 
 
