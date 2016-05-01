@@ -7,14 +7,11 @@
                 <p class="pRubrik">   {{message1}} </p>
 
                 <div class="dropprovNamn">
-                        <select class="dropDownProv" ng-model="provNamn" required>
-                            <option value="">
-                            <option value="sakerhet1">IT-säkerhetsteknik
-                            <option value="java1">Java SE
-                            <option value="java2">Java EE
-                            <option value="krav1">Kravanalys 1
-                            <option value="net1">.Net
+                        <select class="dropDownProv" ng-model="provNamn" required
+                                ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
                         </select>
+
+                    <p class="pRubrik">You selected: {{provNamn.provetsNamn}}</p>
                 </div>
 
                 <p class="pRubrik">Ange provtid (min): <input type="number" ng-model="provtid"></p>
@@ -99,8 +96,8 @@
                         </div>
                     </div>
 
-                    <button type="button" onclick="addFragaNr()"   class="btnNastaFraga">Nästa fråga</button>
-                    <button type="button" class="btnNastaFraga" id="btnklar">Klar</button>
+                    <button type="button" class="btnNastaFraga" onclick="addFragaNr()">Nästa fråga</button>
+                    <button type="button"  class="btnNastaFraga" id="btnklar">Klar</button>
 
                 </article>
                 </form>
