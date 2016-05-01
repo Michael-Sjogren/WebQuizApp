@@ -55,6 +55,8 @@ function checkRadio() {
         return $('#svarFem').val();
     }
 }
+ 
+
 
 
 
