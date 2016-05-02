@@ -2,7 +2,7 @@
 
 
             <section class="skapaProv">
-                <form novalidate name="adminFormSkapaProv" class="mainFormSkapaProv">
+
                 <p class="pRubrik">   {{message1}} </p>
 
                 <div class="dropprovNamn">
@@ -15,6 +15,7 @@
                 <p class="pRubrik">Ange provtid (min): <input type="number" id="inputProvtid" ng-model="provtid"></p>
                 <br>
 
+                <form novalidate name="adminFormSkapaProv" class="mainFormSkapaProv" id="mainFormProv">
                 <article class="provFragor">
 
                     <p class="pFraga">Fråga nr: <em id="fragaCounter"></em></p>
@@ -25,12 +26,12 @@
 
                         <div ng-switch-when="oppenText">
                             <p class="pRubrik">   {{message4}} </p>
-                            <input type="text" ng-model="modelOppenFraga" required>
+                            <input type="text" ng-model="modelOppenFraga" required id="txt_OppenFraga">
                         </div>
 
                         <div ng-switch-when="flerval">
                             <p class="pRubrik">   {{message4}} </p>
-                            <input type="text" ng-model="modelFlerFraga">
+                            <input type="text" ng-model="modelFlerFraga" id="txt_FlervalsFraga">
                             <p class="pRubrik">   {{message3}} </p>
                             <div class="dropFlerval">
                                 <select class="dropAntal" ng-model="valjAntal">
@@ -101,7 +102,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btnNastaFraga" onclick="addFragaNr()">Nästa fråga</button>
+                    <button type="button" class="btnNastaFraga"  onclick="addFragaNrReset()">Nästa fråga</button>
                     <button type="submit"  class="btnNastaFraga" id="btnklar" onclick="">Klar</button>
 
                 </article>

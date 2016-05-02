@@ -24,6 +24,9 @@ adminApp.controller('skapaProvController', function($scope) {
     $scope.changedValue = function(item) {
         console(item);
     }
+    skapProvInfo {
+        
+    }
 });
 
 
@@ -37,9 +40,20 @@ function addFragaNr(){
     document.getElementById("fragaCounter").innerHTML = addFraga();
 }
 
+function resetProv() {
+    document.getElementById("mainFormProv").reset();
+}
+
+function addFragaNrReset(){
+    addFragaNr();
+    resetProv();
+}
+
 // Creating variables and functions to access the Admin's input in SkapaProv
 var elProvtid = document.getElementById('inputProvtid');
 var elFragaNr = document.getElementById('fragaCounter');
+var elOppenFraga = document.getElementById('txt_OppenFraga');
+var elFlerValsFraga = document.getElementById('txt_FlervalsFraga');
 
 
 function checkRadio() {
@@ -55,7 +69,9 @@ function checkRadio() {
         return $('#svarFem').val();
     }
 }
- 
+
+
+
 
 
 
