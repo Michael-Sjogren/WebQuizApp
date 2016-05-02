@@ -38,11 +38,13 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
     var counter = 0;
     $scope.options = [];
     $scope.qLength = 0;
-    $scope.answers = [];
+   // $scope.answers = [];
     $scope.radioButtonID = [];
     $scope.userAns = {
-        answer : ""
+        answer : 0
     };
+
+    $scope.allQuesitons = [];
     $scope.timeFormat = 'HH:mm:ss';
 
     /*Timer * -- Liz*/
@@ -64,17 +66,22 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
         $scope.activequiz = loadTestFactory.getQuiz(0);
         $scope.testTitle = $scope.activequiz.title;
         $scope.qTitle = $scope.activequiz.questions[0].questionTitle;
-        $scope.options = $scope.activequiz.questions[0].answer;
+        $scope.options = $scope.activequiz.questions[0].options;
+        $scope.corrAns = $scope.activequiz.questions[0].correctAns;
         $scope.qLength = $scope.activequiz.questions.length;
         $scope.countdown = $scope.activequiz.limitMinutes * 60; // minutes into seconds
+        console.table($scope.options);
 
         startCountdown();
     };
 
     $scope.nextQuestion = function (checkedValue) {
         if(counter < $scope.qLength) {
+           
             $scope.qTitle = $scope.activequiz.questions[counter].questionTitle;
-            $scope.options = $scope.activequiz.questions[counter].answer;
+            $scope.options = $scope.activequiz.questions[counter].options;
+            $scope.corrAns = $scope.activequiz.questions[counter].correctAns;
+            $scope.createObjects($scope.qTitle , $scope.options , $scope.corrAns , $scope.userAns.answer);
             counter ++;
         }else if(counter >= $scope.qLength){
             //  kalla funktion som visar test översikt i slut
@@ -86,7 +93,7 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
     $scope.prevQuestion = function () {
         if (counter > 0) {
             $scope.qTitle = $scope.activequiz.questions[counter].questionTitle;
-            $scope.options = $scope.activequiz.questions[counter].answer;
+            $scope.options = $scope.activequiz.questions[counter].options;
             counter --;
         }else{  
         }
@@ -94,15 +101,28 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
 
     $scope.sortQuestions = function () {
         for (var i = 0; i < $scope.qLength; i++){
-          $scope.answers.push($scope.activequiz.questions[i].answer[0]);
+       //   $scope.answers.push($scope.activequiz.questions[i].answer[0]);
         }
     };
+
+    $scope.createObjects = function (title,options , correctAns , userAns) {
+        var object = {
+            questionTitle: title,
+            options: options,
+            correctAns: correctAns,
+            userAnswer : userAns
+        }
+        $scope.allQuesitons.push(object);
+        console.table($scope.allQuesitons);
+        console.table($scope.allQuesitons.options)
+    }
 
 
     /*Add answer to answers array*/
     $scope.addAns = function () {
 
-      $scope.answers[counter] = $scope.userAns.answer;
+    //  $scope.answers[counter] = $scope.userAns;
+        console.log($scope.userAns.answer);
 
     };
 
@@ -115,6 +135,8 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
     };
 
     $scope.endQuiz = function () {
+     
+        
         $scope.testStatus = "inactive";
     };
 

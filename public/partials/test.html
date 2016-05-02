@@ -28,9 +28,9 @@
 
 
             <ul>
-                <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
-                    <input type="radio" name="option" ng-model="userAns.answer" ng-value="option"
-                           ng-change="addAns()" ng-init="$index==0?(userAns.answer=option):''"/> <label>
+                <li ng-repeat="option in options" >
+                    <input type="radio" name="option" ng-model="userAns.answer" ng-value="$index"
+                           ng-change="addAns()"/> <label>
                     {{option}} </label>
                 </li>
             </ul>
@@ -50,8 +50,9 @@
         <div class="center-wrapper">
             <article>
                 <table>
-                    <tr ng-repeat="answer in answers">
-                        <td>{{answer}}</td>
+                    <tr ng-repeat="question in allQuesitons">
+                        <td>{{question.questionTitle}}</td>
+                        <td> {{question.options[question.userAnswer]}}</td>
                     </tr>
                 </table>
 
