@@ -8,26 +8,32 @@
 adminApp.controller('adminCtrl', function($scope) {
 });
 
-// create the skapaProvcontroller and inject Angular's $scope
-adminApp.controller('skapaProvController', function($scope) {
+
+// Create the skapaProvcontroller and inject Angular's $scope
+adminApp.controller('skapaProvController', function($scope, $http) {
     $scope.message1 = 'Ange namn på provet:';
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
     $scope.message4 = 'Formulera din fråga:';
     $scope.provNamnet = [
-        {provetsNamn:'IT-säkerhetsteknik'},
-        {provetsNamn:'Java SE'},
-        {provetsNamn:'Java EE'},
-        {provetsNamn:'Kravanalys 1'},
-        {provetsNamn:'.Net'}
+        {provetsNamn: 'IT-säkerhetsteknik'},
+        {provetsNamn: 'Java SE'},
+        {provetsNamn: 'Java EE'},
+        {provetsNamn: 'Kravanalys 1'},
+        {provetsNamn: '.Net'}
     ];
+    // Create a blank object to hold our form information.
+    // $scope will allow this to pass between controller and view.
+    $scope.adminProv = {};
+
+
+
     $scope.changedValue = function(item) {
         console(item);
     }
-    skapProvInfo {
-        
-    }
+
 });
+
 
 
 // Variable and function applied in SkapaProv to increment the Fråga Nr.
