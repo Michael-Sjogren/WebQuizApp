@@ -84,10 +84,10 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
     };
 
     $scope.prevQuestion = function () {
-        if (counter > -1) {
-            counter --;
+        if (counter > 0) {
             $scope.qTitle = $scope.activequiz.questions[counter].questionTitle;
             $scope.options = $scope.activequiz.questions[counter].answer;
+            counter --;
         }else{  
         }
     };
