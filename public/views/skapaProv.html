@@ -1,10 +1,8 @@
 <div ng-controller="skapaProvController" xmlns="http://www.w3.org/1999/html"></div>
 
-
-
             <section class="skapaProv">
 
-                <form novalidate name="adminFormSkapaProv"
+                <form ng-submit="processForm()" novalidate name="adminFormSkapaProv"
                       class="mainFormSkapaProv" id="mainFormProv">
 
                 <p class="pRubrik">   {{message1}} </p>
@@ -17,7 +15,6 @@
 
                 <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
                 <br>
-
 
                 <article class="provFragor">
 
@@ -126,7 +123,7 @@
                     </div>
 
                     <button type="button" class="btnNastaFraga"  onclick="addFragaNr()">Nästa fråga</button>
-                    <input type="submit" value="Klar"  class="btnNastaFraga" id="btnklar" onclick="">
+                    <button type="button" value="Klar"  class="btnNastaFraga" id="btnklar" onclick="">Klar</button>
 
                     <!--Show data from inputs as they are being typed -->
                     <pre>{{adminProv}}</pre>

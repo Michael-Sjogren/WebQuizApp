@@ -26,14 +26,40 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
 
+    // Process the form
+    $scope.processForm = function () {
+        $http({
+            method : 'POST',
+            url : 'process.php',
+            data : $.param($scope.adminProv), // Pass in data as strings
+            headers : {'Content-Type':'application/x-www-form-urlencoded'}
+        })
+            .success(function(data) {
+                console.log(data);
+
+                if(!data.success) {
+                    // If not success, bind errors to error variables
+                    $scope.errorprovNamn = data.errors.provNamn;
+                    $scope.errorprovtid = data.errors.provtid;
+                    $scope.errorfragaCounter = data.errors.fragaCounter;
+                    $scope.erroroppenFraga = data.errors.oppenFraga;
+                    $scope.errorflerFraga = data.errors.flerFraga;
+                    $scope.errorsvarsAlt1 = data.errors.svarsAlt1;
+                    $scope.errorsvarsAlt2 = data.errors.svarsAlt2;
+                    $scope.errorsvarsAlt3 = data.errors.svarsAlt3;
+                    $scope.errorsvarsAlt4 = data.errors.svarsAlt4;
+                    $scope.errorsvarsAlt5 = data.errors.svarsAlt5;
+                }else {
+                    // If successful bind succes message to message.
+                    $scope.message = data.message;
+                }
+            });
+
+    };
 
 
-    $scope.changedValue = function(item) {
-        console(item);
-    }
 
 });
-
 
 
 // Variable and function applied in SkapaProv to increment the Fråga Nr.
