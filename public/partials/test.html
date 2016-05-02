@@ -5,14 +5,17 @@
         <h1>Information</h1>
         <h4>Detta provet omfattar programmering 1 </h4>
 
-        <ul id="test-details" ng-controller="userCtrl">
-            <li ng-repeat="x in quizData"> typ av test : {{x[$index].type}}</li>
-            <li ng-repeat="x in quizData"> antal frågor : {{x[0].questions.length}}</li>
-        </ul>
-        </article>
-
-        <button>Tillbaka</button>
-        <button ng-click="startQuiz(); sortQuestions()">Starta prov</button>
+        <div class="center-wrapper">
+            <ul id="test-details" ng-controller="userCtrl">
+                <li ng-repeat="x in quizData"> typ av test : {{x[$index].type}}</li>
+                <li ng-repeat="x in quizData"> antal frågor : {{x[0].questions.length}}</li>
+            </ul>
+            </article>
+            <div class="buttonGroup">
+                <button>Tillbaka</button>
+                <button ng-click="startQuiz(); sortQuestions()">Starta prov</button>
+            </div>
+        </div>
     </div>
 
     <!--Test View-->
@@ -20,14 +23,15 @@
         <h1>{{testTitle}}</h1>
         <div id="timer">Tid kvar: {{countdown | formatTime | date: timeFormat}}</div>
 
-        <div class="question-box">
+        <div class="center-wrapper">
             <h3>{{qTitle}}</h3>
 
 
             <ul>
                 <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
                     <input type="radio" name="option" ng-model="userAns.answer" ng-value="option"
-                           ng-change="addAns()" ng-init="$index==0?(userAns.answer=option):''"/> <label> {{option}} </label>
+                           ng-change="addAns()" ng-init="$index==0?(userAns.answer=option):''"/> <label>
+                    {{option}} </label>
                 </li>
             </ul>
 
@@ -41,16 +45,19 @@
 
     <!--Test Overview-->
     <div ng-if="testStatus === 'inactive'" class="test-overview">
-        <article>
-            <h1>Testöversikt</h1>
-            <table>
-                <tr ng-repeat="answer in answers">
-                    <td>{{answer}}</td>
-                </tr>
-            </table>
 
-        </article>
-        <button ng-click="pushData(answers)">Lämna in</button>
+        <h1>Testöversikt</h1>
+        <div class="center-wrapper">
+            <article>
+                <table>
+                    <tr ng-repeat="answer in answers">
+                        <td>{{answer}}</td>
+                    </tr>
+                </table>
+
+            </article>
+            <span class="buttonGroup"><button ng-click="pushData(answers)">Lämna in</button></span>
+        </div>
     </div>
 
 </section>

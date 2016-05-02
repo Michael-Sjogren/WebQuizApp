@@ -82,6 +82,9 @@ a:link, a:visited, a:hover, a:active{
 }
 
 #info-wrapper button:hover {
+    color: #DF690C;
+    background: #FFF;
+    box-shadow: 1px 1px 5px #888888;
 }
 
 #info-wrapper button {
@@ -158,4 +161,19 @@ a:link, a:visited, a:hover, a:active{
 #timer {
     font-size: small;
     padding: 10px;
+}
+
+#info-wrapper .buttonGroup {
+    bottom: 0;
+    position: absolute;
+}
+
+.testView ul {
+    padding: 10px;
+}
+
+.center-wrapper {
+    padding: 3%;
+    position: relative;
+    min-height:300px;
 }
