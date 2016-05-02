@@ -1,4 +1,4 @@
-<section id="info-wrapper">
+<section id="info-wrapper" ng-controller="testCtrl">
 
     <!--Test Info-->
     <div ng-if="testStatus === 'pending'" class="testInfo">
@@ -17,25 +17,25 @@
 
     <!--Test View-->
     <div ng-if="testStatus === 'inProgress'" class="test testView">
-            <h1>{{testTitle}}</h1>
+        <h1>{{testTitle}}</h1>
+        <div id="timer">Tid kvar: {{countdown | formatTime | date: timeFormat}}</div>
 
-            <div class="question_box">
-            <h3>Fraga: {{qTitle}}</h3>
-
-
-                <ul>
-                   <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
-                       <!-- BUG :: om man tar bort ng-value så får man fram ng-checked annars så får man inte fram ng checked -->
-                    <input type="radio"  ng-checked="$first"  name="Test" ng-model="userAns.answer" ng-value="option" ng-change="addAns()">   <label> {{option}} </label>
-                   </li>
-                </ul>
+        <div class="question-box">
+            <h3>{{qTitle}}</h3>
 
 
+            <ul>
+                <li ng-repeat="option in options" ng-class-odd="odd" ng-class-even="even">
+                    <input type="radio" name="option" ng-model="userAns.answer" ng-value="option"
+                           ng-change="addAns()" ng-init="$index==0?(userAns.answer=option):''"/> <label> {{option}} </label>
+                </li>
+            </ul>
 
-        <div class="buttonGroup">
-        <button ng-click=" prevQuestion()"> tillbaka</button>
-        <button ng-click="nextQuestion()">Nästa fråga</button>
-        </div>
+
+            <div class="buttonGroup">
+                <button ng-click=" prevQuestion()"> tillbaka</button>
+                <button ng-click="nextQuestion()">Nästa fråga</button>
+            </div>
         </div>
     </div>
 
@@ -45,12 +45,12 @@
             <h1>Testöversikt</h1>
             <table>
                 <tr ng-repeat="answer in answers">
-                    <td ng-class-even="even" ng-class-odd="odd">{{answer}}</td>
+                    <td>{{answer}}</td>
                 </tr>
             </table>
 
         </article>
-        <button ng-click="">Lämna in</button>
+        <button ng-click="pushData(answers)">Lämna in</button>
     </div>
 
 </section>

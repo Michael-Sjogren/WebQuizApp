@@ -4,7 +4,7 @@
       "title": "Java Quiz",
       "description": "Ett grundläggande test i Java.",
       "type": "Flervalsfrågor",
-      "limitMinutes" : 30,
+      "limitMinutes" : 10,
       "expireDate": "2016-05-30",
       "questions": [
         {
@@ -18,9 +18,9 @@
           "correctAns": 0
         },
         {
-          "questionTitle": "Vad är standardvärdet av en char- variabel?",
-          "answer": ["\u0000", "0", "null", "Icke definerat"],
-          "correctAns": 0
+          "questionTitle": "Vad är ett gränssnitt(interface)?",
+          "answer": ["En samling abstrakta metoder", "En abstract klass", "En konkret klass", "Inget av ovanstående"],
+          "correctAns": 2
         },
         {
           "questionTitle": "Vilket av följande påståenden är sant om en superklass?",

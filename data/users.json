@@ -2,16 +2,20 @@
   "users": [
     {
       "_id": "superadmin",
-      "name": "admin",
+      "username": "admin",
+      "fName": "Ingemo",
+      "lName": "Ilander",
       "password": "admin",
-      "role": "admin",
-      "quizzes": []
+      "role": "admin"
     },
     {
       "_id": "samplestudent",
-      "name": "student",
+      "username": "student",
       "password": "student",
-      "role": "student"
+      "fName": "Erik",
+      "lName": "Johansson",
+      "role": "student",
+      "email" : "student@website.com"
     }
   ]
 }

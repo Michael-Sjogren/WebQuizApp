@@ -1,10 +1,11 @@
-<section id="info-wrapper">
+<section id="info-wrapper" ng-controller="userCtrl">
     <article class="info">
         <h1> Välkommen student! </h1>
         <p>  Nedanför visas prov som är tillgängliga </p>
     </article>
-
+    <div ng-show="quizData">
     <ul id="test-details">
        <li ng-repeat="x in quizData"><a href="#/test"> {{x[$index].title}}</a> </li>
     </ul>
+    </div>
 </section>

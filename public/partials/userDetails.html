@@ -1,0 +1,16 @@
+<!--Återanvända kod genom nginclude från admin delen istallet for det har??
+Ev anvanda denna inuti admin delen.. // Liz-->
+
+<div id="userDetails" ng-controller="userCtrl">
+
+    <h2>Profil</h2>
+
+    <ul>
+        <li>Namn: {{activeuser.username}}</li>
+        <li>{{activeuser.fname}} + " " + {{activeuser.lname}}</li>
+        <li>{{activeuser.email}}</li><button>Ändra</button>
+        <li>{{activeuser.address}}</li> <button>Ändra</button>
+        <li>{{activeuser.phoneNumber}}</li><button>Ändra</button>
+    </ul>
+
+</div>

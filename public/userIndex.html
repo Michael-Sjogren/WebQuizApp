@@ -14,23 +14,32 @@
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="../controllers/userCtrl.js"></script>
     <script src="../controllers/testControllers.js"></script>
+    <script src="../services/userService.js"></script>
+
+
     <!--  -->
 </head>
 
-<body class="grid-container" ng-app="userApp" >
+<body class="grid-container" ng-app="userApp">
+<div ng-controller="userCtrl">
     <header>
-        <div id="logo" class="grid-100 , tablet-grid-100 , mobile-grid-100"> Newton</div>
-         <nav>
-
-         </nav>
+        <div id="logo" class="grid-100 , tablet-grid-100 , mobile-grid-100"> Newton
+            <nav class="main-nav">
+                <ul>
+                    <li>Mina test</li>
+                    <li ng-click="">Min profil</li>
+                    <li ng-click="userService.logoutUser()">Logga ut</li>
+                </ul>
+            </nav>
+        </div>
     </header>
-<div id="page" class="grid-100 , tablet-grid-100 , mobile-grid-100">
 
-
-    <div ng-view>
+    <div id="page" class="grid-100 , tablet-grid-100 , mobile-grid-100">
+        <div ng-view>
+        </div>
     </div>
-
 </div>
 </body>
 </html>
