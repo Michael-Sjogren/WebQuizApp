@@ -10,19 +10,18 @@
                 <p class="pRubrik">   {{message1}} </p>
 
                 <div class="dropprovNamn">
-                        <select class="dropDownProv" ng-model="provNamn" required
+                        <select class="dropDownProv" name="provNamn" ng-model="adminProv.provNamn" required
                                 ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
                         </select>
-                    <p class="pRubrik">You selected: {{provNamn.provetsNamn}}</p>
                 </div>
 
-                <p class="pRubrik">Ange provtid (min): <input type="number" id="inputProvtid" ng-model="provtid"></p>
+                <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
                 <br>
 
 
                 <article class="provFragor">
 
-                    <p class="pFraga">Fråga nr: <em id="fragaCounter"></em></p>
+                    <p class="pFraga">Fråga nr: <em name="fragaNr" ng-model="adminProv.fragaCounter" id="fragaCounter"></em></p>
 
                     <input type="radio" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
