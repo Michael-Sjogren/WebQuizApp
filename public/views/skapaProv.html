@@ -46,76 +46,76 @@
                             <div ng-switch="valjAntal">
                                 <div class="antalRadio" ng-switch-when="ett">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar1">
+                                        <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
                                             <input type="text" ng-model="adminProv.svarsAlt1"></li>
                                     </ol>
-                                        <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
+                                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                                 </div>
 
                                     <div class="antalRadio" ng-switch-when="tva">
                                         <ol class="olAntalRadio">
-                                            <li><input type="radio" ng-model="radioSvar.message" value="svar1">
+                                            <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
                                                 <input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
-                                            <li><input type="radio" ng-model="radioSvar.message" value="svar2">
+                                            <li><input type="radio" name="radio2" ng-model="adminProv.rattSvar" value="svar2">
                                                 <input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
                                         </ol>
-                                            <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
+                                            <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                                         </div>
 
                                 <div class="antalRadio" ng-switch-when="tre">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar1">
+                                        <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
                                             <input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
 
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar2">
+                                        <li><input type="radio" name="radio2" ng-model="adminProv.rattSvar" value="svar2">
                                             <input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
 
-                                        <li><input type="radio" ng-model="radioSvar.message" value="svar3">
+                                        <li><input type="radio" name="radio3" ng-model="adminProv.rattSvar" value="svar3">
                                             <input type="text" name="svarsAlt3" ng-model="adminProv.svarsAlt3"></li>
                                     </ol>
-                                        <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
+                                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                                 </div>
 
                                 <div class="antalRadio" ng-switch-when="fyra">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio" ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar"
                                                    value="svar1"><input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
 
-                                        <li><input type="radio" ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio2" ng-model="adminProv.rattSvar"
                                                    value="svar2"><input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
 
-                                        <li><input type="radio" ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio3" ng-model="adminProv.rattSvar"
                                                    value="svar3"><input type="text" name="svarsAlt3" ng-model="adminProv.svarsAlt3"></li>
 
-                                        <li><input type="radio" ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio4" ng-model="adminProv.rattSvar"
                                                    value="svar4"><input type="text" name="svarsAlt4" ng-model="adminProv.svarsAlt4"></li>
                                     </ol>
-                                        <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
+                                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                                 </div>
 
                                 <div class="antalRadio" ng-switch-when="fem">
                                     <ol class="olAntalRadio">
-                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar"
                                                    value="svar1" id="svarEtt">
                                             <input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
 
-                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio2"  ng-model="adminProv.rattSvar"
                                                    value="svar2" id="svartva">
                                             <input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
 
-                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio3" ng-model="adminProv.rattSvar"
                                                    value="svar3" id="svarTre">
                                             <input type="text" name="svarsAlt3" ng-model="adminProv.svarsAlt3"></li>
 
-                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio4"  ng-model="adminProv.rattSvar"
                                                    value="svar4" id="svarFyra">
                                             <input type="text" name="svarsAlt4" ng-model="adminProv.svarsAlt4"></li>
 
-                                        <li><input type="radio"  ng-model="radioSvar.message"
+                                        <li><input type="radio" name="radio5"  ng-model="adminProv.rattSvar"
                                                    value="svar5" id="svarFem">
                                             <input type="text" name="svarsAlt5" ng-model="adminProv.svarsAlt5"></li>
                                     </ol>
-                                    <p class="pRubrik">Du angav: {{radioSvar.message}} som det rätta svarsalternativet.</p>
+                                    <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                                 </div>
 
                             </div>
