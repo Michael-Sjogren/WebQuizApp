@@ -1,7 +1,7 @@
-<div ng-controller="loginCtrl">
+<div id="login-form" ng-controller="loginCtrl">
     <form action="/" id="myLogin">
         Username: <input type="text" id="username" ng-model="username"><br>
         Password: <input type="password" id="password" ng-model="password"><br>
-        <button type="button" ng-click="submit()">Login</button>
+        <button type="button" ng-click="attemptLogin()">Login</button>
     </form>
 </div>

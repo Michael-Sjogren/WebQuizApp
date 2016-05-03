@@ -6,6 +6,10 @@
       "type": "Flervalsfrågor",
       "limitMinutes" : 10,
       "expireDate": "2016-05-30",
+      "adminId" : "superadmin",
+      "assignedUsers": [
+        {"userId": "samplestudent"}
+      ],
       "questions": [
         {
           "questionTitle": "Vilket av följande är inte ett nyckelord i Java?",
@@ -29,6 +33,7 @@
           "correctAns": 0
         }
       ]
+
     }
 
   ]

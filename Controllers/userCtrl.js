@@ -4,20 +4,15 @@
  */
 
 
-angular.module('userApp')
-    .controller('userCtrl', ['$scope', 'userService', 'loadTestFactory',
+angular.module('app')
+    .controller('userCtrl', ['$scope', 'loginService', 'loadTestFactory',
         function ($scope, userService, loadTestFactory) {
             $scope.activeuser;
             $scope.logString = "userCtrl loaded...";
             $scope.quizData = loadTestFactory.getData();
             console.log($scope.logString);
             var menuItems = [];
-            
-            
 
-            $scope.getMenuItems = function () {
-                return menuItems;
-            };
 
             $scope.checkLoginStatus = function () {
 

@@ -1,29 +1,7 @@
 var testControllers = angular.module('testController', []);
 
-/*Factory that loads data from json file*/
-userApp.factory('loadTestFactory', function ($http) {
-    var quizData = [];
-
-    function loadData() {
-        $http.get('../data/quizzes.json').success(function (response) {
-            quizData = response;
-            console.log('quizdata loaded...');
-        });
-    }
-
-    return {
-        getData: function () {
-            return quizData;
-        },
-        getQuiz: function (quizIndex) {
-            return quizData.quizzes[ quizIndex ];
-        },
-        loadData: loadData
-    }
-});
-
 /*Filter for displaying time format  -- Liz*/
-userApp.filter('formatTime', function () {
+app.filter('formatTime', function () {
     return function (sec) {
         return new Date(1970, 0, 1).setSeconds(sec);
     }
