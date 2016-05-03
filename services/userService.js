@@ -63,7 +63,7 @@ angular.module('userApp')
                 isLoggedIn = false;
             };
 
-            var isLoggedIn = function () {
+            var getLoginStatus = function () {
                 return isLoggedIn;
             };
             var getUser = function () {
@@ -76,7 +76,7 @@ angular.module('userApp')
             return {
                 loginUser: login,
                 logoutUser: logout,
-                isLoggedIn: isLoggedIn,
+                getLoginStatus: getLoginStatus,
                 getUser: getUser
             };
 
