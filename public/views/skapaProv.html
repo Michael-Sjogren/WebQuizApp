@@ -2,7 +2,7 @@
 
             <section class="skapaProv">
 
-                <form ng-submit="processForm()" novalidate name="adminFormSkapaProv"
+                <form ng-submit="" novalidate name="adminFormSkapaProv"
                       class="mainFormSkapaProv" id="mainFormProv">
 
                 <p class="pRubrik">   {{message1}} </p>
@@ -12,6 +12,7 @@
                                 ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
                         </select>
                 </div>
+                    </div>
 
                 <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
                 <br>
@@ -122,8 +123,8 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btnNastaFraga"  onclick="addFragaNr()">Nästa fråga</button>
-                    <button type="button" value="Klar"  class="btnNastaFraga" id="btnklar" onclick="">Klar</button>
+                    <input type="button" class="btnNastaFraga"  ng-click ="addFragaNr(); btnNasta();" value="Nästa fråga">
+                    <button type="button" value="Klar"  class="btnNastaFraga" id="btnklar">Klar</button>
 
                     <!--Show data from inputs as they are being typed -->
                     <pre>{{adminProv}}</pre>
