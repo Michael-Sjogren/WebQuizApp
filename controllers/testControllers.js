@@ -6,18 +6,19 @@ userApp.factory('loadTestFactory', function ($http) {
 
     function loadData() {
         $http.get('../data/quizzes.json').success(function (response) {
-            quizData  = response;
+            quizData = response;
             console.log('quizdata loaded...');
         });
     }
-    return{
+
+    return {
         getData: function () {
             return quizData;
         },
-        getQuiz: function(quizIndex){
-            return quizData.quizzes[quizIndex];
+        getQuiz: function (quizIndex) {
+            return quizData.quizzes[ quizIndex ];
         },
-        loadData:loadData
+        loadData: loadData
     }
 });
 
@@ -29,7 +30,7 @@ userApp.filter('formatTime', function () {
 });
 
 
-testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,function ($scope, $interval, loadTestFactory) {
+testControllers.controller('testCtrl', ['$scope', '$interval', 'loadTestFactory', function ($scope, $interval, loadTestFactory) {
     $scope.testStatus = "pending";
     $scope.quizId = null;
     $scope.testTitle = "";
@@ -38,24 +39,19 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
     var counter = 0;
     $scope.options = [];
     $scope.qLength = 0;
-   // $scope.answers = [];
-    $scope.radioButtonID = [];
-    $scope.userAns = {
-        answer : 0
-    };
-
+    $scope.userAns = {answer: 0};
     $scope.allQuesitons = [];
     $scope.timeFormat = 'HH:mm:ss';
 
     /*Timer * -- Liz*/
     var decrCountdown = function () {
         $scope.countdown -= 1;
-        if($scope.countdown < 1){
+        if ($scope.countdown < 1) {
             endQuiz(); // calling endquiz method if countdown ends
             console.log('calling endquiz from timer');
         }
     };
-
+    /* timer */
     var startCountdown = function () {
         $interval(decrCountdown, 1000, $scope.countdown);
     };
@@ -65,25 +61,30 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
         $scope.testStatus = "inProgress";
         $scope.activequiz = loadTestFactory.getQuiz(0);
         $scope.testTitle = $scope.activequiz.title;
-        $scope.qTitle = $scope.activequiz.questions[0].questionTitle;
-        $scope.options = $scope.activequiz.questions[0].options;
-        $scope.corrAns = $scope.activequiz.questions[0].correctAns;
+        $scope.questions = $scope.activequiz.questions;
+        $scope.qTitle = $scope.activequiz.questions[ counter ].questionTitle;
+        $scope.options = $scope.activequiz.questions[ counter ].options;
+        $scope.corrAns = $scope.activequiz.questions[ counter ].correctAns;
         $scope.qLength = $scope.activequiz.questions.length;
         $scope.countdown = $scope.activequiz.limitMinutes * 60; // minutes into seconds
-        console.table($scope.options);
+        for (var i = 0; i < $scope.qLength; i++){
 
+        $scope.saveToObject($scope.questions[i].questionTitle, $scope.questions[i].options, $scope.questions[i].correctAns , $scope.userAns.answer);
+        }
+        console.log("filling test data");
         startCountdown();
     };
 
     $scope.nextQuestion = function (checkedValue) {
-        if(counter < $scope.qLength) {
-           
-            $scope.qTitle = $scope.activequiz.questions[counter].questionTitle;
-            $scope.options = $scope.activequiz.questions[counter].options;
-            $scope.corrAns = $scope.activequiz.questions[counter].correctAns;
-            $scope.saveToObject($scope.qTitle , $scope.options , $scope.corrAns , $scope.userAns.answer);
-            counter ++;
-        }else if(counter >= $scope.qLength){
+        console.log(counter);
+        counter++;
+        if (counter < $scope.qLength) {
+            $scope.qTitle = $scope.activequiz.questions[ counter ].questionTitle;
+            $scope.options = $scope.activequiz.questions[ counter ].options;
+            $scope.corrAns = $scope.activequiz.questions[ counter ].correctAns;
+
+        } else if (counter >= $scope.qLength) {
+            counter = $scope.qLength;
             //  kalla funktion som visar test översikt i slut
             $scope.endQuiz();
             console.log('endquiz called from nextquestion function');
@@ -91,49 +92,39 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
     };
 
     $scope.prevQuestion = function () {
+        counter--;
         if (counter > 0) {
-            $scope.qTitle = $scope.activequiz.questions[counter].questionTitle;
-            $scope.options = $scope.activequiz.questions[counter].options;
-            counter --;
-        }else{  
+            $scope.qTitle = $scope.activequiz.questions[ counter ].questionTitle;
+            $scope.options = $scope.activequiz.questions[ counter ].options;
+            $scope.corrAns = $scope.activequiz.questions[ counter ].correctAns;
+        }else{
+            counter = 0;
         }
     };
 
-    $scope.saveToObject = function (title,options , correctAns , userAns) {
+    $scope.saveToObject = function (title, options, correctAns , answer) {
         var object = {
             questionTitle: title,
             options: options,
             correctAns: correctAns,
-            userAnswer : userAns
+            userAns : answer
         }
 
         $scope.allQuesitons.push(object);
-        console.table($scope.allQuesitons);
-        console.table($scope.allQuesitons.options)
     }
 
 
     /*Add answer to answers array*/
     $scope.addAns = function () {
 
-    //  $scope.answers[counter] = $scope.userAns;
-        console.log($scope.userAns.answer);
-
     };
 
-    $scope.saveAnswers = function (answers) {
-
-    };
 
     $scope.getResult = function () {
-
     };
 
     $scope.endQuiz = function () {
-     
-        
         $scope.testStatus = "inactive";
     };
 
 
-}]);
