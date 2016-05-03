@@ -13,7 +13,7 @@
           "correctAns": 1
         },
         {
-          "questionTitle": "Man ha flera klasser i samma Java-fil.",
+          "questionTitle": "Man kan ha flera klasser i samma Java-fil.",
           "options": ["Sant", "Falskt"],
           "correctAns": 0
         },

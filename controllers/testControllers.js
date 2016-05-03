@@ -17,7 +17,7 @@ userApp.factory('loadTestFactory', function ($http) {
         getQuiz: function(quizIndex){
             return quizData.quizzes[quizIndex];
         },
-        loadData :loadData
+        loadData:loadData
     }
 });
 
