@@ -14,7 +14,7 @@ userApp.factory('loadTestFactory', function ($http) {
         getData: function () {
             return quizData;
         },
-        getQuiz: function (quizIndex) {
+        getQuiz: function(quizIndex){
             return quizData.quizzes[quizIndex];
         },
         loadData :loadData
@@ -81,7 +81,7 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
             $scope.qTitle = $scope.activequiz.questions[counter].questionTitle;
             $scope.options = $scope.activequiz.questions[counter].options;
             $scope.corrAns = $scope.activequiz.questions[counter].correctAns;
-            $scope.createObjects($scope.qTitle , $scope.options , $scope.corrAns , $scope.userAns.answer);
+            $scope.saveToObject($scope.qTitle , $scope.options , $scope.corrAns , $scope.userAns.answer);
             counter ++;
         }else if(counter >= $scope.qLength){
             //  kalla funktion som visar test översikt i slut
@@ -99,19 +99,14 @@ testControllers.controller('testCtrl',['$scope', '$interval','loadTestFactory' ,
         }
     };
 
-    $scope.sortQuestions = function () {
-        for (var i = 0; i < $scope.qLength; i++){
-       //   $scope.answers.push($scope.activequiz.questions[i].answer[0]);
-        }
-    };
-
-    $scope.createObjects = function (title,options , correctAns , userAns) {
+    $scope.saveToObject = function (title,options , correctAns , userAns) {
         var object = {
             questionTitle: title,
             options: options,
             correctAns: correctAns,
             userAnswer : userAns
         }
+
         $scope.allQuesitons.push(object);
         console.table($scope.allQuesitons);
         console.table($scope.allQuesitons.options)
