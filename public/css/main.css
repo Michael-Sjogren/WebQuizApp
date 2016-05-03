@@ -20,31 +20,6 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-html, body {
-  margin: 0;
-  background: #eee;
-  font-family: "Roboto Condensed"; }
-
-body {
-  min-height: 600px;
-  width: 100%;
-  background-color: #eee; }
-
-#page {
-  min-height: 700px;
-  margin: auto;
-  background: #FFF;
-  border: 1px solid #e9e9e9;
-  padding: 50px 50px 0; }
-
-.center-wrapper {
-  padding: 3%;
-  position: relative;
-  min-height: 300px; }
-
-.question-box {
-  padding: 3%; }
-
 #info-wrapper {
   font-family: 'Roboto Condensed', sans-serif;
   border: 1px solid black;
@@ -75,6 +50,31 @@ body {
   bottom: 0;
   position: absolute; }
 
+html, body {
+  margin: 0;
+  background: #eee;
+  font-family: "Roboto Condensed"; }
+
+body {
+  min-height: 600px;
+  width: 100%;
+  background-color: #eee; }
+
+#page {
+  min-height: 700px;
+  margin: auto;
+  background: #FFF;
+  border: 1px solid #e9e9e9;
+  padding: 50px 50px 0; }
+
+.center-wrapper {
+  padding: 3%;
+  position: relative;
+  min-height: 300px; }
+
+.question-box {
+  padding: 3%; }
+
 header {
   background-color: #DF690C;
   padding: 20px;
@@ -104,9 +104,6 @@ header {
 .buttonGroup {
   bottom: 0;
   position: absolute; }
-
-button:hover {
-  background-color: #35c217; }
 
 .testView ul {
   padding: 10px; }

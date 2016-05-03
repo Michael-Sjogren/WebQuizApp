@@ -136,7 +136,7 @@ a:link, a:visited, a:hover, a:active{
     padding: 10px;
 }
 
-#test-details > li {
+#test-details li {
     list-style: none;
     line-height: 30px;
     font-size:small;
