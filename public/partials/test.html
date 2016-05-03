@@ -1,7 +1,7 @@
 <section id="info-wrapper" ng-controller="testCtrl">
 
     <!--Test Info-->
-    <div ng-if="testStatus === 'pending'" class="testInfo">
+    <div ng-if="testStatus === 'pending'" class="test testInfo">
         <h1>Information</h1>
         <h4>Detta provet omfattar programmering 1 </h4>
 
@@ -26,15 +26,13 @@
         <div class="center-wrapper">
             <h3>{{qTitle}}</h3>
 
-
             <ul>
-                <li ng-repeat="option in options" >
+                <li ng-repeat="option in options">
                     <input type="radio" name="option" ng-model="userAns.answer" ng-value="$index"
                            ng-change="addAns()"/> <label>
                     {{option}} </label>
                 </li>
             </ul>
-
 
             <div class="buttonGroup">
                 <button ng-click=" prevQuestion()"> tillbaka</button>
@@ -44,20 +42,29 @@
     </div>
 
     <!--Test Overview-->
-    <div ng-if="testStatus === 'inactive'" class="test-overview">
+    <div ng-if="testStatus === 'inactive'" class="test test-overview">
 
         <h1>Testöversikt</h1>
         <div class="center-wrapper">
             <article>
-                <table>
-                    <tr ng-repeat="question in allQuesitons">
-                        <td>{{question.questionTitle}}</td>
-                        <td> {{question.options[question.userAnswer]}}</td>
+                <table id="test-answers">
+                    <tr>
+                        <td>Fråga</td>
+                        <td>Ditt svar</td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="question in allQuesitons" ng-class-odd="'odd'" ng-class-even="'even'">
+                        <div>
+                            <td>{{question.questionTitle}}</td>
+                            <td> {{question.options[question.userAnswer]}}</td>
+                            <td>
+                            </td>
+                        </div>
                     </tr>
                 </table>
 
             </article>
-            <span class="buttonGroup"><button ng-click="pushData(answers)">Lämna in</button></span>
+            <span class="buttonGroup"><button id="submit-test" ng-click="pushData(answers)">Lämna in</button></span>
         </div>
     </div>
 

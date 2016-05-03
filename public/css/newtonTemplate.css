@@ -74,7 +74,7 @@ a:link, a:visited, a:hover, a:active{
     font-family: 'Roboto Condensed', sans-serif;
     border: 1px solid black;
     padding: 10px;
-    min-height: 400px;
+    min-height: 500px;
 }
 
 #info-wrapper button:active {
@@ -156,6 +156,33 @@ a:link, a:visited, a:hover, a:active{
     border-radius: 16px;
     padding: 2px;
     margin: 5px;
+}
+
+#test-answers {
+    text-align: center;
+    font-size: small;
+}
+
+#test-answers tr:first-child{
+    padding: 10px;
+    font-size: medium;
+}
+
+
+#test-answers td{
+    padding:5px;
+}
+
+#test-answers .even{
+    background: #fcfcfc;;
+}
+
+#test-answers .odd{
+    background-color: rgba(255, 97, 12, 0.05);
+}
+
+#test-answers #submit-test button:hover {
+    background-color: #35c217;
 }
 
 #timer {
