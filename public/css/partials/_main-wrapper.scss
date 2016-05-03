@@ -1,0 +1,38 @@
+#info-wrapper {
+  font-family: 'Roboto Condensed', sans-serif;
+  border: 1px solid black;
+  padding: 10px;
+  min-height: 500px;
+}
+
+#info-wrapper button:active {
+
+}
+
+#info-wrapper button:hover {
+  color: #DF690C;
+  background: #FFF;
+  box-shadow: 1px 1px 5px #888888;
+}
+
+#info-wrapper button {
+  outline: none !important;
+  text-transform: uppercase;
+  background-color: #DF690C;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: smaller;
+  font-family: 'Oswald' !important;
+  border-style: none;
+
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#info-wrapper .buttonGroup {
+  bottom: 0;
+  position: absolute;
+}

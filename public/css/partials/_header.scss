@@ -1,0 +1,30 @@
+header {
+  background-color: #DF690C;
+  padding: 20px;
+  margin: auto;
+  border: 1px solid #e9e9e9;
+}
+
+#logo {
+  color: white;
+  font-size: 30px;
+  padding: 10px 0px 10px;
+  text-align: left;
+  border-bottom: double 3px rgba(255, 255, 255, 0.7);
+}
+
+#logo .main-nav {
+  font-size: 16px;
+  display: inline;
+}
+
+#logo .main-nav ul  {
+  list-style-type: none;
+  overflow: hidden;
+}
+#logo .main-nav ul li  {
+  float: left;
+  padding-right:20px;
+  padding-top:10px;
+
+}

@@ -127,4 +127,4 @@ testControllers.controller('testCtrl', ['$scope', '$interval', 'loadTestFactory'
         $scope.testStatus = "inactive";
     };
 
-
+}]);

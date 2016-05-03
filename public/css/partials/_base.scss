@@ -1,0 +1,24 @@
+// Colors
+$bgColor1: #eee;
+$bgColor2: #fff;
+$newton_orange: #DF690C;
+
+//Fonts
+$main_font: 'Roboto Condensed';
+$button_font: 'Oswald';
+
+// Sizing
+$min-height: "300px";
+
+// Mixin
+@mixin border-radius($radius: 10px){
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  border-radius:$radius;
+}
+
+@mixin box-shadow($inset:"" $hoff $voff $blur $color){
+  -webkit-box-shadow: unquote($inset) $hoff $voff $blur $color;
+  -moz-box-shadow: unquote($inset) $hoff $voff $blur $color;
+  box-shadow: unquote($inset) $hoff $voff $blur $color;
+}

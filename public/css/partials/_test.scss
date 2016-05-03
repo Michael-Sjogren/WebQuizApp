@@ -1,0 +1,60 @@
+.testView ul {
+  padding: 10px;
+}
+
+#test-details {
+  padding: 10px;
+}
+
+#test-details li {
+  list-style: none;
+  line-height: 30px;
+  font-size: small;
+}
+
+.test {
+  padding: 3%;
+}
+
+.question-box {
+  padding: 3%;
+}
+
+#test-details li, .question_box li {
+  border: 1px solid #b6b6b6;
+  border-radius: 16px;
+  padding: 2px;
+  margin: 5px;
+}
+
+#test-answers {
+  text-align: center;
+  font-size: small;
+}
+
+#test-answers tr:first-child {
+  padding: 10px;
+  font-size: medium;
+}
+
+#test-answers td {
+  padding: 5px;
+}
+
+#test-answers .even {
+  background: #fcfcfc;;
+}
+
+#test-answers .odd {
+  background-color: rgba(255, 97, 12, 0.05);
+}
+
+#test-answers #submit-test button:hover {
+  background-color: #35c217;
+}
+
+
+#timer {
+  font-size: small;
+  padding: 10px;
+}

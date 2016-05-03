@@ -1,0 +1,59 @@
+// Import base style variables and mixins
+@import "partials/_base.scss"
+
+/* Reset Styles */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  list-style: none
+  margin: 0
+  padding: 0
+  border: 0
+  font: inherit
+  font-size: 100%
+  vertical-align: baseline
+
+html, body
+  margin: 0
+  background: $bgColor1
+  font-family: $main_font
+
+body
+  min-height: 600px
+  width: 100%
+  background-color: $bgColor1
+
+
+#page
+  min-height: 700px
+  margin: auto
+  background: #FFF
+  border: 1px solid #e9e9e9
+  padding: 50px 50px 0
+
+.center-wrapper
+  padding: 3%
+  position: relative
+  min-height: unquote($min-height)
+
+.question-box
+  padding: 3%
+
+// Imports
+
+@import "partials/_main-wrapper"
+@import "partials/_header.scss"
+@import "partials/_buttons.scss"
+@import "partials/_user.scss"
+@import "partials/_test.scss"
