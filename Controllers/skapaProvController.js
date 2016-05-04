@@ -22,6 +22,12 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         {provetsNamn: 'Kravanalys 1'},
         {provetsNamn: '.Net'}
     ];
+
+    $scope.count = 1;
+    $scope.counterFraga = function() {
+        $scope.count ++;
+    }
+
     // Create a blank object to hold our form information.
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
@@ -43,41 +49,18 @@ adminApp.controller('skapaProvController', function($scope, $http) {
 });
 
 
-// Variable and function applied in SkapaProv to increment the Fråga Nr.
-var addFraga = (function () {
-    var counter = 1;
-    return function () {return counter += 1;}
-})();
-
-function addFragaNr(){
-    document.getElementById("fragaCounter").innerHTML = addFraga();
-}
-
 function resetProv() {
     document.getElementById("mainFormProv").reset();
 }
 
 function addFragaNrReset(){
-    addFragaNr();
     resetProv();
+    counterFraga();
 }
 
 
 
 
-function checkRadio() {
-    if (document.getElementById('svarEtt').checked) {
-        return $('#svarEtt').val();
-    } else if (document.getElementById('svarTva').checked) {
-        return $('#svarTva').val();
-    } else if (document.getElementById('svarTre').checked) {
-        return $('#svarTre').val();
-    } else if (document.getElementById('svarFyra').checked) {
-        return $('#svarFyra').val();
-    } else if (document.getElementById('svarFem').checked) {
-        return $('#svarFem').val();
-    }
-}
 
 
 

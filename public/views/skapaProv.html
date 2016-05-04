@@ -2,8 +2,8 @@
 
             <section class="skapaProv">
 
-                <form ng-submit="" novalidate name="adminFormSkapaProv"
-                      class="mainFormSkapaProv" id="mainFormProv">
+
+
 
                 <p class="pRubrik">   {{message1}} </p>
 
@@ -17,9 +17,13 @@
                 <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
                 <br>
 
+                <form ng-submit="" novalidate name="adminFormSkapaProv"
+                      class="mainFormSkapaProv" id="mainFormProv">
+
                 <article class="provFragor">
 
-                    <p class="pFraga">Fråga nr: <em name="fragaNr" ng-model="adminProv.fragaCounter" id="fragaCounter"></em></p>
+                    <p class="pFraga">Fråga nr: <em name="fragaNr" ng-model="adminProv.fragaCounter" id="fragaCounter" >{{count}}</em></p>
+
 
                     <input type="radio" class="radioA" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" class="radioA" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
@@ -123,7 +127,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btnAdmin"  ng-click="addFragaNr()" value="Nästa fråga">Nästa fråga</button>
+                    <button type="button" class="btnAdmin" ng-click="counterFraga()" value="Nästa fråga">Nästa fråga</button>
                     <button type="button" class="btnAdmin" ng-click="saveAdminProv()" value="Klar"  class="btnNastaFraga" id="btnklar">Avsluta</button>
 
                     <!--Show data from inputs as they are being typed -->
