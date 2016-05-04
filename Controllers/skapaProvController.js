@@ -24,14 +24,22 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     ];
 
     $scope.count = 1;
-    $scope.counterFraga = function() {
-        $scope.count ++;
+    $scope.counterFraga = function () {
+        $scope.count++;
     }
 
     // Create a blank object to hold our form information.
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
 
+    $scope.reset = function () {
+        $scope.adminProv;
+    }
+    $scope.reset();
+
+
+   
+    
     $scope.saveAdminProv = function() {
         $http({
             method: 'POST',
@@ -39,14 +47,14 @@ adminApp.controller('skapaProvController', function($scope, $http) {
             data: $.param($scope.adminProv), // pass in data as strings
             headers: {'Content-type': 'application/x-www-form-urlencoded'} // set the headers so angular passing info as form data, not request payload.
         })
-            .success(function(data) {
-                console.log(data);
-        }
-
-        )
-        
+            .success(function (data) {
+                    console.log(data);
+                }
+            )
     }
-});
+
+    });
+
 
 
 function resetProv() {
