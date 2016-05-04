@@ -1,0 +1,24 @@
+{
+  "elev":[
+    {
+      "namn":"Liz",
+      "efternam":"Dahlström",
+      "kurser":"Java"
+    },
+    {
+      "namn":"Mikael",
+      "efternamn":"Sjöberg",
+      "kurser":"Java"
+    },
+    {
+      "namn":"Tsiewing",
+      "efternamn":"Fredriksson",
+      "kurser":"ITsäkerhet"
+    },
+    {
+      "namn":"Mikael",
+      "efternamn":"Persson",
+      "kurser":"Java"
+    }
+  ]
+}

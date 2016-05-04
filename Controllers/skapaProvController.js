@@ -26,7 +26,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
 
-    var adminProvArray = [];
+    
     
     $scope.btnNasta = function() {
         $scope.json = angular.toJSON($scope.adminProv);
