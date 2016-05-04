@@ -71,7 +71,7 @@ testControllers.controller('testCtrl', ['$scope', '$interval', 'loadTestFactory'
 
     $scope.prevQuestion = function () {
         counter--;
-        if (counter > 0) {
+        if (counter >= 0) {
             $scope.qTitle = $scope.activequiz.questions[ counter ].questionTitle;
             $scope.options = $scope.activequiz.questions[ counter ].options;
             $scope.corrAns = $scope.activequiz.questions[ counter ].correctAns;
@@ -92,14 +92,12 @@ testControllers.controller('testCtrl', ['$scope', '$interval', 'loadTestFactory'
     }
 
 
-    /*Add answer to answers array*/
+    /*updates answers to object array allQuestions */
     $scope.addAns = function () {
-
+        $scope.allQuesitons[counter].userAns = $scope.userAns.answer;
+        console.table($scope.allQuesitons);
     };
 
-
-    $scope.getResult = function () {
-    };
 
     $scope.endQuiz = function () {
         $scope.testStatus = "inactive";
