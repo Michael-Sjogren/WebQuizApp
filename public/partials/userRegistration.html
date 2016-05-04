@@ -1,0 +1,56 @@
+<section id="userRegistry" ng-controller="userRegistryCtrl">
+    <article class="registryForm">
+        <h2>Register User</h2>
+        <p> </p>
+    </article>
+    <div  id="register-details">
+        <form novalidate name="userForm" >
+            <label>Förnamn: </label><input type="text" ng-model="userForm.firstName" required>
+            <span style="color:red" ng-show="userForm.firstName.$dirty && userForm.firstName.$invalid">
+            <span ng-show="userForm.firstName.$error.required">Skriv in förnamn</span></span><br>
+
+            <label>Efternamn: </label><input type="text" ng-model="userForm.lastName" required><br>
+            <label>Användarnamn: </label><input type="text" ng-model="userForm.userName" required><br>
+            <label>Lösenord: </label><input type="text" ng-model="userForm.password" required><br>
+            <label>Personummer: </label><input type="text" ng-model="userForm.ssn" required><br>
+            <label>Adress: </label><input type="text" ng-model="userForm.address" required><br>
+
+            <label>Postort: </label><input type="text" ng-model="userForm.postalCode" required><br>
+            <label>Stad: </label><input type="text" ng-model="userForm.city" required><br>
+            <label>Telefonummer: </label><input type="text" ng-model="userForm.phone" required><br>
+            <label>E-mail: </label><input type="text" ng-model="userForm.email" required><br>
+            <span ng-show="userForm.email.$error.email">Not a valid e-mail address</span>
+            <label>Registrerad datum: </label><input type="text" ng-model="userForm.email" required><br>
+            <label>Avregistrerad datum: </label><input type="text" ng-model="userForm.deregistered" required><br>
+            <br>
+            <label>Välj tillhörighet:</label>
+            <select ng-model="userForm.userAttachment" required>
+                <option value="">
+                <option value="student">Student
+                <option value="employee">Anställd
+                <option value="consultants">Konsult
+            </select><br>  <br>
+            <label>Välj status:</label>
+            <select ng-model="userForm.userStatus" required>
+                <option value="">
+                <option value="active">Aktiv
+                <option value="onHold">Paus
+                <option value="deregistered">Avregistrerad
+            </select><br>  <br>
+
+
+            <button ng-click="reset()">RESET</button>
+            <button ng-click="open()">ÖPPNA</button>
+            <button ng-click="save()">SPARA</button>
+            <button ng-click="cancel()">CANCEL</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('registerCtrl', function($scope) {
+        $scope.user = 'John Doe';
+        $scope.email = 'john.doe@gmail.com';
+    });
+</script>
