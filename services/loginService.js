@@ -8,6 +8,7 @@ angular.module('app')
     /*Authentication filter*/
     /*TODO: Make work -- Liz*/
     .filter('authFilter', function () {
+        console.log('calling authFilter..');
         return function (users, name, password) {
             var user;
             for (var i = 0; i <= users.length; i++) {
@@ -40,17 +41,26 @@ angular.module('app')
             var isLoggedIn = false;
 
 
-            var loadUsers = function () {
+            /*var loadUsers = function () {
                 $http.get('../data/users.json')
                     .then(function (response) {
-                        return response.data;
+                        users = response.data;
+                        return users;
                     })
 
-            };
+            };*/
+
+        function loadUsers() {
+            $http.get('../data/users.json')
+                .success(function (response) {
+                    users = response;
+                    console.log('users logged...');
+                })
+        };
 
             var login = function (userName, userPassword) {
-                
-                users = loadUsers(); 
+
+                /*users = loadUsers(); */
 
                 user = $filter('authFilter')(users, userName, userPassword);
 
@@ -105,7 +115,8 @@ angular.module('app')
                 loginUser: login,
                 logoutUser: logout,
                 getLoginStatus: getLoginStatus,
-                getUser: getUser
+                getUser: getUser,
+                loadUsers: loadUsers
             };
 
         }

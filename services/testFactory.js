@@ -2,7 +2,8 @@
  * Created by Liz on 2016-05-03.
  */
 
-app.factory('loadTestFactory', function ($http) {
+angular.module('app')
+    .factory('loadTestFactory', function ($http) {
     var quizData = [];
 
     function loadData() {
@@ -11,15 +12,7 @@ app.factory('loadTestFactory', function ($http) {
             console.log('quizdata loaded...');
         });
     }
-    
-    function getUserQuizzez(userId) {
 
-        angular.forEach(quizData, function (key, value) {
-
-        });
-
-        return quizData;
-    }
     return{
         getData: function () {
             return quizData;
