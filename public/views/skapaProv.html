@@ -123,8 +123,8 @@
                         </div>
                     </div>
 
-                    <input type="button" class="btnNastaFraga"  onclick ="addFragaNr()" value="Nästa fråga">
-                    <button type="button" value="Klar"  class="btnNastaFraga" id="btnklar">Klar</button>
+                    <button type="button" class="btnNastaFraga"  ng-click="addFragaNr()" value="Nästa fråga">Nästa fråga</button>
+                    <button type="button" ng-click="saveAdminProv()" value="Klar"  class="btnNastaFraga" id="btnklar">Avsluta</button>
 
                     <!--Show data from inputs as they are being typed -->
                     <pre>{{adminProv}}</pre>

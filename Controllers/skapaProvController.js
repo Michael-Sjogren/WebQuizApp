@@ -26,15 +26,20 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
 
-    
-    
-    $scope.btnNasta = function() {
-        $scope.json = angular.toJSON($scope.adminProv);
+    $scope.saveAdminProv = function() {
+        $http({
+            method: 'POST',
+            url: 'Projektets.nodejs.url',
+            data: $.param($scope.adminProv), // pass in data as strings
+            headers: {'Content-type': 'application/x-www-form-urlencoded'} // set the headers so angular passing info as form data, not request payload.
+        })
+            .success(function(data) {
+                console.log(data);
+        }
 
+        )
+        
     }
-
-
-
 });
 
 
@@ -57,11 +62,7 @@ function addFragaNrReset(){
     resetProv();
 }
 
-// Creating variables and functions to access the Admin's input in SkapaProv
-var elProvtid = document.getElementById('inputProvtid');
-var elFragaNr = document.getElementById('fragaCounter');
-var elOppenFraga = document.getElementById('txt_OppenFraga');
-var elFlerValsFraga = document.getElementById('txt_FlervalsFraga');
+
 
 
 function checkRadio() {
