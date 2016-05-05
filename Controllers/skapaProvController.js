@@ -28,18 +28,29 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         $scope.count++;
     }
 
+
+
     // Create a blank object to hold our form information.
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
 
-    $scope.reset = function () {
-        $scope.adminProv;
-    }
+    // reset() and save functions.
+    $scope.master = {};
+
+    $scope.update = function(adminProv) {
+        $scope.master = angular.copy(adminProv);
+    };
+
+    $scope.reset = function() {
+        $scope.adminProv = angular.copy($scope.master);
+
+    };
     $scope.reset();
-
-
-   
     
+
+
+
+    // This function is supposed to save the input in the database server.
     $scope.saveAdminProv = function() {
         $http({
             method: 'POST',
@@ -57,14 +68,8 @@ adminApp.controller('skapaProvController', function($scope, $http) {
 
 
 
-function resetProv() {
-    document.getElementById("mainFormProv").reset();
-}
 
-function addFragaNrReset(){
-    resetProv();
-    counterFraga();
-}
+
 
 
 

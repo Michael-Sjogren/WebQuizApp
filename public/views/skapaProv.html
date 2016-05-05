@@ -7,6 +7,9 @@
 
                 <p class="pRubrik">   {{message1}} </p>
 
+                <form novalidate name="formSkapaProv"
+                      class="mainFormSkapaProv" id="mainFormProv">
+
                 <div class="dropprovNamn">
                         <select class="dropDownProv" name="provNamn" ng-model="adminProv.provNamn" required
                                 ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
@@ -17,8 +20,7 @@
                 <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
                 <br>
 
-                <form ng-submit="" novalidate name="adminFormSkapaProv"
-                      class="mainFormSkapaProv" id="mainFormProv">
+
 
 
 
@@ -127,8 +129,10 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btnAdmin" ng-click="counterFraga();" value="Nästa fråga">Nästa fråga</button>
-                    <button type="button" class="btnAdmin" ng-click="saveAdminProv()" value="Klar"  class="btnNastaFraga" id="btnklar">Avsluta</button>
+                    <button type="button" class="btnAdmin" ng-click= "counterFraga(); reset(); saveAdminProv();" value="Nästa fråga">Nästa fråga</button>
+
+                    <button type="button" class="btnAdmin" ng-click="update(adminProv);"
+                    value="Avsluta"  class="btnNastaFraga" id="btnklar">Spara & Avsluta</button>
 
 
 
