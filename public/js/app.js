@@ -33,6 +33,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/adminCreateTest', {
             templateUrl: 'partials/adminCreateTest.html'
         })
+        .when('/userRegistration', {
+            templateUrl: 'partials/userRegistration.html'
+        })
         
         
         
