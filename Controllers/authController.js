@@ -16,4 +16,8 @@ angular.module('app')
             $scope.hack = function(){
                 $location.path('/userMenu');
             }
+            $scope.hack2 = function(){
+                $location.path('/adminMenu');
+            }
+            
         }]);

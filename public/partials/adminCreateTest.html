@@ -1,0 +1,146 @@
+<div ng-controller="skapaProvController" xmlns="http://www.w3.org/1999/html"></div>
+
+<section class="skapaProv">
+
+
+
+
+    <p class="pRubrik">   {{message1}} </p>
+
+    <form novalidate name="formSkapaProv"
+          class="mainFormSkapaProv" id="mainFormProv">
+
+        <div class="dropprovNamn">
+            <select class="dropDownProv" name="provNamn" ng-model="adminProv.provNamn" required
+                    ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
+            </select>
+        </div>
+        </div>
+
+        <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
+        <br>
+
+
+
+
+
+        <p class="pFraga">Fråga nr: <em name="fragaNr" ng-model="adminProv.fragaCounter" id="fragaCounter" >{{count}}</em></p>
+
+
+        <input type="radio" class="radioA" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
+        <input type="radio" class="radioA" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
+        <div ng-switch="frageTyp">
+
+            <div ng-switch-when="oppenText">
+                <p class="pRubrik">   {{message4}} </p>
+                <input type="text" class="formuleraFraga" name="oppenFraga" ng-model="adminProv.oppenFraga" required id="txt_OppenFraga">
+            </div>
+
+            <div ng-switch-when="flerval">
+                <p class="pRubrik">   {{message4}} </p>
+                <input type="text" class="formuleraFraga" name="flerFraga" ng-model="adminProv.flerFraga" id="txt_FlervalsFraga">
+                <p class="pRubrik">   {{message3}} </p>
+                <div class="dropFlerval">
+                    <select class="dropAntal" ng-model="valjAntal">
+                        <option value="ett">1
+                        <option value="tva">2
+                        <option value="tre">3
+                        <option value="fyra">4
+                        <option value="fem">5
+                    </select>
+                </div>
+
+                <div ng-switch="valjAntal">
+                    <div class="antalRadio" ng-switch-when="ett">
+                        <ol class="olAntalRadio">
+                            <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
+                                <input type="text" ng-model="adminProv.svarsAlt1"></li>
+                        </ol>
+                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
+                    </div>
+
+                    <div class="antalRadio" ng-switch-when="tva">
+                        <ol class="olAntalRadio">
+                            <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
+                                <input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
+                            <li><input type="radio" name="radio2" ng-model="adminProv.rattSvar" value="svar2">
+                                <input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
+                        </ol>
+                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
+                    </div>
+
+                    <div class="antalRadio" ng-switch-when="tre">
+                        <ol class="olAntalRadio">
+                            <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
+                                <input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
+
+                            <li><input type="radio" name="radio2" ng-model="adminProv.rattSvar" value="svar2">
+                                <input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
+
+                            <li><input type="radio" name="radio3" ng-model="adminProv.rattSvar" value="svar3">
+                                <input type="text" name="svarsAlt3" ng-model="adminProv.svarsAlt3"></li>
+                        </ol>
+                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
+                    </div>
+
+                    <div class="antalRadio" ng-switch-when="fyra">
+                        <ol class="olAntalRadio">
+                            <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar"
+                                       value="svar1"><input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
+
+                            <li><input type="radio" name="radio2" ng-model="adminProv.rattSvar"
+                                       value="svar2"><input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
+
+                            <li><input type="radio" name="radio3" ng-model="adminProv.rattSvar"
+                                       value="svar3"><input type="text" name="svarsAlt3" ng-model="adminProv.svarsAlt3"></li>
+
+                            <li><input type="radio" name="radio4" ng-model="adminProv.rattSvar"
+                                       value="svar4"><input type="text" name="svarsAlt4" ng-model="adminProv.svarsAlt4"></li>
+                        </ol>
+                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
+                    </div>
+
+                    <div class="antalRadio" ng-switch-when="fem">
+                        <ol class="olAntalRadio">
+                            <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar"
+                                       value="svar1" id="svarEtt">
+                                <input type="text" name="svarsAlt1" ng-model="adminProv.svarsAlt1"></li>
+
+                            <li><input type="radio" name="radio2"  ng-model="adminProv.rattSvar"
+                                       value="svar2" id="svartva">
+                                <input type="text" name="svarsAlt2" ng-model="adminProv.svarsAlt2"></li>
+
+                            <li><input type="radio" name="radio3" ng-model="adminProv.rattSvar"
+                                       value="svar3" id="svarTre">
+                                <input type="text" name="svarsAlt3" ng-model="adminProv.svarsAlt3"></li>
+
+                            <li><input type="radio" name="radio4"  ng-model="adminProv.rattSvar"
+                                       value="svar4" id="svarFyra">
+                                <input type="text" name="svarsAlt4" ng-model="adminProv.svarsAlt4"></li>
+
+                            <li><input type="radio" name="radio5"  ng-model="adminProv.rattSvar"
+                                       value="svar5" id="svarFem">
+                                <input type="text" name="svarsAlt5" ng-model="adminProv.svarsAlt5"></li>
+                        </ol>
+                        <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btnAdmin" ng-click= "counterFraga(); reset(); saveAdminProv();" value="Nästa fråga">Nästa fråga</button>
+
+        <button type="button" class="btnAdmin" ng-click="update(adminProv);"
+                value="Avsluta"  class="btnNastaFraga" id="btnklar">Spara & Avsluta</button>
+
+
+
+        <!--Show data from inputs as they are being typed -->
+
+        <pre>{{adminProv | json}}</pre>
+        <pre>{{master | json}}</pre>
+
+        </article>
+    </form>
+</section>

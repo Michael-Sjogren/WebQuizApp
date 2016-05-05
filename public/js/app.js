@@ -26,6 +26,18 @@ app.config(['$routeProvider', function ($routeProvider) {
 
             }
         })
+
+        .when('/adminMenu', {
+            templateUrl: 'partials/adminMenu.html'
+        })
+        .when('/adminCreateTest', {
+            templateUrl: 'partials/adminCreateTest.html'
+        })
+        
+        
+        
+        
+        
         .otherwise({
             redirectTo: 'partials/login.html'
         });
