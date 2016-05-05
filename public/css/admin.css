@@ -30,12 +30,20 @@ ul#menuAdm li a {
 ul#menuAdm li a:hover {
     background-color: orange;}
 
-.pRubrik {
+.pRubrik  {
     font-weight: bold;
     margin-left: -40%;
     margin-top: 2.5%;
     margin-bottom: 1%;
     font-size: 100%;
+    color: #35c217;}
+
+.oversikt {
+    font-weight: bolder;
+    margin-left: -40%;
+    margin-top: 2.5%;
+    margin-bottom: 1%;
+    font-size: 150%;
     color: #35c217;}
 
 .dropprovNamn {
@@ -71,7 +79,7 @@ font-size: 120%;}
 .skapaProv {
     margin-left: 32%;
     font-size: 80%;
-    margin-top: 2.5%}
+    margin-top: 4%;}
 
 .btnAdmin  {
     margin-top: 2%;

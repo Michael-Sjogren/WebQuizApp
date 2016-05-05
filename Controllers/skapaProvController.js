@@ -39,6 +39,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
 
     $scope.update = function(adminProv) {
         $scope.master = angular.copy(adminProv);
+        alert("Provet är sparat");
     };
 
     $scope.reset = function() {
@@ -46,7 +47,6 @@ adminApp.controller('skapaProvController', function($scope, $http) {
 
     };
     $scope.reset();
-    
 
 
 
