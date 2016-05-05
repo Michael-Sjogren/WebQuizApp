@@ -43,7 +43,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     };
 
     $scope.reset = function() {
-        $scope.adminProv = angular.copy($scope.master);
+        $scope.adminProv = "";
 
     };
     $scope.reset();
