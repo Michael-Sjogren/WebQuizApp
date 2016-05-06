@@ -34,6 +34,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     // $scope will allow this to pass between controller and view.
     $scope.adminProv = {};
 
+
     // reset() and save functions.
     $scope.master = {};
 
@@ -55,7 +56,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         $http({
             method: 'POST',
             url: 'Projektets.nodejs.url',
-            data: $.param($scope.adminProv), // pass in data as strings
+            data: $.param($scope.adminProv,$scope.adminProvNamn,$scope.adminProvTid), // pass in data as strings
             headers: {'Content-type': 'application/x-www-form-urlencoded'} // set the headers so angular passing info as form data, not request payload.
         })
             .success(function (data) {

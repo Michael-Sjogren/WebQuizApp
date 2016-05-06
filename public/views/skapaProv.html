@@ -1,6 +1,6 @@
 <div ng-controller="skapaProvController" xmlns="http://www.w3.org/1999/html"></div>
 
-            <section class="skapaProv">
+            <section class="skapaProv" class="grid-50">
 
 
 
@@ -17,7 +17,7 @@
                 </div>
                     </div>
 
-                <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid"></p>
+                <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid" required></p>
                 <br>
 
 
@@ -131,7 +131,7 @@
 
                     <button type="button" class="btnAdmin" ng-click= "counterFraga(); reset(); saveAdminProv();" value="Nästa fråga">Nästa fråga</button>
 
-                    <button type="button" class="btnAdmin" ng-click="update(adminProv);"
+                    <button type="button" class="btnAdmin" ng-click="update(adminProv,adminProvNamn);"
                     value="Avsluta"  class="btnNastaFraga" id="btnklar">Spara & Avsluta</button>
 
 
