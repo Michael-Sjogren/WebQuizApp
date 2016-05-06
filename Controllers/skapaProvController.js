@@ -15,6 +15,10 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
     $scope.message4 = 'Formulera din fråga:';
+    $scope.adminProvArray = [];
+    $scope.adminProv = {};
+    $scope.master = {};
+
     $scope.provNamnet = [
         {provetsNamn: 'IT-säkerhetsteknik'},
         {provetsNamn: 'Java SE'},
@@ -39,27 +43,32 @@ adminApp.controller('skapaProvController', function($scope, $http) {
 
     // Create a blank object to hold our form information.
     // $scope will allow this to pass between controller and view.
-    $scope.adminProv = {};
+
 
 
     // reset() and save functions.
-    $scope.master = {};
 
-    $scope.update = function(adminProv) {
-        $scope.master = angular.copy(adminProv);
-        alert("Provet är sparat");
+
+    $scope.update = function() {
+      //  $scope.master = angular.copy($scope.adminProv);
+       // alert("Provet är sparat");
+        //console.log($scope.master);
     };
 
     $scope.reset = function() {
-        $scope.adminProv = "";
-
+        $scope.adminProv = {};
     };
-    $scope.reset();
+
 
 
 
     // This function is supposed to save the input in the database server.
     $scope.saveAdminProv = function() {
+        $scope.adminProvArray.push($scope.adminProv);
+        console.table($scope.adminProvArray);
+        $scope.reset();
+        
+        /*
         $http({
             method: 'POST',
             url: 'Projektets.nodejs.url',
@@ -70,6 +79,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
                     console.log(data);
                 }
             )
+            */
     }
 
     function InstantSearchController ($scope){

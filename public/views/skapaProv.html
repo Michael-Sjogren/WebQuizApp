@@ -1,4 +1,4 @@
-<div ng-controller="skapaProvController" xmlns="http://www.w3.org/1999/html"></div>
+<div ng-controller="skapaProvController"></div>
 
             <section class="skapaProv" class="grid-40">
 
@@ -119,14 +119,13 @@
                                     </ol>
                                     <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
 
-                    <button type="button" class="btnAdmin" ng-click= "counterFraga(); reset(); saveAdminProv();" value="Nästa fråga">Nästa fråga</button>
+                    <button type="button" class="btnAdmin" ng-click= "counterFraga(); saveAdminProv();" value="Nästa fråga">Nästa fråga</button>
 
-                    <button type="button" class="btnAdmin" ng-click="update(adminProv,adminProvNamn);"
+                    <button type="button" class="btnAdmin"
                     value="Avsluta"  class="btnNastaFraga" id="btnklar">Spara & Avsluta</button>
 
 
