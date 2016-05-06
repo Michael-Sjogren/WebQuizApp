@@ -39,27 +39,20 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         $scope.count++;
     }
 
-
-
+    
     // Create a blank object to hold our form information.
     // $scope will allow this to pass between controller and view.
 
 
 
     // reset() and save functions.
-
-
     $scope.update = function() {
-      //  $scope.master = angular.copy($scope.adminProv);
-       // alert("Provet är sparat");
-        //console.log($scope.master);
+          alert("Provet är sparat och avslutat.");
     };
 
     $scope.reset = function() {
         $scope.adminProv = {};
     };
-
-
 
 
     // This function is supposed to save the input in the database server.
@@ -68,7 +61,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         console.table($scope.adminProvArray);
         $scope.reset();
         
-        /*
+
         $http({
             method: 'POST',
             url: 'Projektets.nodejs.url',
@@ -79,57 +72,40 @@ adminApp.controller('skapaProvController', function($scope, $http) {
                     console.log(data);
                 }
             )
-            */
     }
-
-    function InstantSearchController ($scope){
-
-        // The data model. These items would normally be requested via AJAX,
-        // but are hardcoded here for simplicity. See the next example for
-        // tips on using AJAX.
-
-        $scope.items = [
-            {
-                url: 'http://www.tutorialspoint.com/android/',
-                title: 'Android tutorials',
-                image: 'http://www.tutorialspoint.com/android/images/android-mini-logo.jpg'
-            },
-            {
-                url: 'http://www.tutorialspoint.com/angularjs/',
-                title: 'AngularJs Tutorials ',
-                image: 'http://www.tutorialspoint.com/angularjs/images/angularjs-mini-logo.jpg'
-            },
-            {
-                url: 'http://www.tutorialspoint.com/html5/',
-                title: 'HTML5 Tutorials',
-                image: 'http://www.tutorialspoint.com/html5/images/html5-mini-logo.jpg'
-            },
-            {
-                url: 'http://www.tutorialspoint.com/css/',
-                title: 'CSS Tutorials',
-                image: 'http://www.tutorialspoint.com/css/images/css-mini-logo.jpg'
-            },
-            {
-                url: 'http://www.tutorialspoint.com/java/',
-                title: 'Java Tutorials',
-                image: 'http://www.tutorialspoint.com/java/images/java-mini-logo.jpg'
-            },
-            {
-                url: 'http://www.tutorialspoint.com/joomla/',
-                title: 'Joomla Tutorials',
-                image: 'http://www.tutorialspoint.com/joomla/images/joomla-mini-logo.jpg'
-            },
-            {
-                url: 'http://www.tutorialspoint.com/html/',
-                title: 'HTML Tutorials ',
-                image: 'http://www.tutorialspoint.com/html/images/html-mini-logo.jpg'
-            }
-        ];
+    });
 
 
-    }
+var allUserControllers = angular.module('allUserControllers', []);
+
+allUserControllers.controller('skapaProvController', ['$scope', '$http', function($scope, $http) {
+    $http.get('data/users.json').success(function(data) {
+        $scope.users = data.users;
+        $scope.userOrder = 'fName';
+    });
+}]);
+
+allUserControllers.controller('skapaProvController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
+    $http.get('data/users.json').success(function(data) {
+        $scope.users = data.users;
+        $scope.whichItem = $routeParams.itemId;
+
+        if ($routeParams.itemId > 0) {
+            $scope.prevItem = Number($routeParams.itemId)-1;
+        } else {
+            $scope.prevItem = $scope.users.length-1;
+        }
+
+        if ($routeParams.itemId < $scope.users.length-1) {
+            $scope.nextItem = Number($routeParams.itemId)+1;
+        } else {
+            $scope.nextItem = 0;
+        }
 
     });
+}]);
+   
+    
 
 
 

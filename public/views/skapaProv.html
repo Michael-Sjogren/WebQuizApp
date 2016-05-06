@@ -125,13 +125,10 @@
 
                     <button type="button" class="btnAdmin" ng-click= "counterFraga(); saveAdminProv();" value="Nästa fråga">Nästa fråga</button>
 
-                    <button type="button" class="btnAdmin"
+                    <button type="button" class="btnAdmin" ng-click="update();"
                     value="Avsluta"  class="btnNastaFraga" id="btnklar">Spara & Avsluta</button>
 
-
-
                     <!--Show data from inputs as they are being typed -->
-
                     <pre class="oversikt">(Test: Vid Nästa fråga){{adminProv | json}}</pre>
                     <pre class="oversikt">(Test: Vid Spara & Avsluta) {{master | json}}</pre>
 
@@ -159,9 +156,11 @@
                  the custom search filter "searchFor". It takes the value of the
                  searchString model as an argument.
              -->
-            <li id="searchli" ng-repeat="i in items | searchFor:searchString">
-                <a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
-                <p>{{i.title}}</p>
+            <li id="searchli" ng-repeat="item in users | filter: query | orderBy: userOrder:direction">
+                <a href="#/skapaProv/{{users.indexOf(item)}}">
+                    <img ng-src="images/{{item.shortname}}.jpg" alt="Photo of {{item.fName}}">
+                    <h2>{{item.name}}</h2>
+                    </a>
             </li>
         </ul>
 
