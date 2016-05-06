@@ -1,6 +1,6 @@
 <div ng-controller="skapaProvController" xmlns="http://www.w3.org/1999/html"></div>
 
-            <section class="skapaProv" class="grid-50">
+            <section class="skapaProv" class="grid-40">
 
 
                 <p class="pRubrik">   {{message1}} </p>
@@ -140,11 +140,33 @@
                 </form>
             </section>
 
-<section class="skapaProv2" class="grid-50">
+<section class="skapaProv2">
 
+    <article class="grid-60">
     <label class="pRubrik2">Välj prov att tilldela:</label>
+    <div class="dropprovNamn2">
+        <select name="provNamn" ng-model="provTilldel" required
+                ng-options="x.provTilldel for x in provTilldela" ng-change="changedValue(provNamn.provTilldela)">
+        </select>
+    </div>
 
+        <div class="bar">
+            <!-- Create a binding between the searchString model and the text field -->
+            <input type="text" ng-model="searchString" placeholder="Välj klass eller elev att tilldela provet" />
+        </div>
 
+        <ul id="search">
+            <!-- Render a li element for every entry in the items array. Notice
+                 the custom search filter "searchFor". It takes the value of the
+                 searchString model as an argument.
+             -->
+            <li id="searchli" ng-repeat="i in items | searchFor:searchString">
+                <a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+                <p>{{i.title}}</p>
+            </li>
+        </ul>
+
+    </article>
 
 </section>
 
