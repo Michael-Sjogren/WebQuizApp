@@ -184,3 +184,19 @@ ul #search li #searchli p{
     color:#6e7a7f;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+
+}
+

@@ -146,23 +146,35 @@
         </select>
     </div>
 
+
         <div class="bar">
             <!-- Create a binding between the searchString model and the text field -->
-            <input type="text" ng-model="searchString" placeholder="Välj klass eller elev att tilldela provet" />
+            <input type="text" ng-model="searchText" placeholder="Välj klass eller elev att tilldela provet" />
+        </div>
+        <br/><br/>
+        <ul id="search">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Efternamn</th>
+                <th>Klass</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="elev in elever | filter: searchText">
+                <td>{{elev.fName}}</td>
+                <td>{{elev.lName}}</td>
+                <td>{{elev.class}}</td>
+            </tr>
+            </tbody>
+        </table>
+        </ul>
+
+
         </div>
 
-        <ul id="search">
-            <!-- Render a li element for every entry in the items array. Notice
-                 the custom search filter "searchFor". It takes the value of the
-                 searchString model as an argument.
-             -->
-            <li id="searchli" ng-repeat="item in users | filter: query | orderBy: userOrder:direction">
-                <a href="#/skapaProv/{{users.indexOf(item)}}">
-                    <img ng-src="images/{{item.shortname}}.jpg" alt="Photo of {{item.fName}}">
-                    <h2>{{item.name}}</h2>
-                    </a>
-            </li>
-        </ul>
 
     </article>
 

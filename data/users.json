@@ -15,6 +15,7 @@
       "fName": "Erik",
       "lName": "Johansson",
       "role": "student",
+      "class": "Java 1",
       "email" : "student@website.com"
     }
   ]

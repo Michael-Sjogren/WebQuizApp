@@ -9,6 +9,7 @@ adminApp.controller('adminCtrl', function($scope) {
 });
 
 
+
 // Create the skapaProvcontroller and inject Angular's $scope
 adminApp.controller('skapaProvController', function($scope, $http) {
     $scope.message1 = 'Ange namn på provet:';
@@ -18,6 +19,7 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     $scope.adminProvArray = [];
     $scope.adminProv = {};
     $scope.master = {};
+
 
     $scope.provNamnet = [
         {provetsNamn: 'IT-säkerhetsteknik'},
@@ -38,11 +40,6 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     $scope.counterFraga = function () {
         $scope.count++;
     }
-
-    
-    // Create a blank object to hold our form information.
-    // $scope will allow this to pass between controller and view.
-
 
 
     // reset() and save functions.
@@ -73,37 +70,24 @@ adminApp.controller('skapaProvController', function($scope, $http) {
                 }
             )
     }
-    });
 
 
-var allUserControllers = angular.module('allUserControllers', []);
+    var elever = [
+        {fName:"Matilda", lName:"Danielsson", class: "Java"},
+        {fName:"Olof", lName:"Svensson", class: "Java"},
+        {fName:"Soraya", lName:"Re", class: ".Net"},
+    ];
 
-allUserControllers.controller('skapaProvController', ['$scope', '$http', function($scope, $http) {
-    $http.get('data/users.json').success(function(data) {
-        $scope.users = data.users;
-        $scope.userOrder = 'fName';
-    });
-}]);
+    $scope.elever = elever;
 
-allUserControllers.controller('skapaProvController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
-    $http.get('data/users.json').success(function(data) {
-        $scope.users = data.users;
-        $scope.whichItem = $routeParams.itemId;
 
-        if ($routeParams.itemId > 0) {
-            $scope.prevItem = Number($routeParams.itemId)-1;
-        } else {
-            $scope.prevItem = $scope.users.length-1;
-        }
 
-        if ($routeParams.itemId < $scope.users.length-1) {
-            $scope.nextItem = Number($routeParams.itemId)+1;
-        } else {
-            $scope.nextItem = 0;
-        }
+});
 
-    });
-}]);
+
+
+
+
    
     
 
