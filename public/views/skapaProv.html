@@ -9,22 +9,23 @@
                       class="mainFormSkapaProv" id="mainFormProv">
 
                 <div class="dropprovNamn">
-                        <select class="dropDownProv" name="provNamn" ng-model="adminProv.provNamn" required
+                        <select class="dropDownProv" name="provNamn" ng-model="adminProv1.provNamn" required
                                 ng-options="x.provetsNamn for x in provNamnet" ng-change="changedValue(provNamn.provetsNamn)">
                         </select>
                 </div>
                     </div>
 
-                <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv.provtid" required></p>
+                <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv1.provtid" required></p>
                 <br>
 
 
                     <p class="pFraga">Fråga nr: <em name="fragaNr" ng-model="adminProv.fragaCounter" id="fragaCounter" >{{count}}</em></p>
 
 
-                    <input type="radio" class="radioA" ng-model="frageTyp" value="flerval" checked>Flervalsalternativ<br>
-                    <input type="radio" class="radioA" ng-model="frageTyp" value="oppenText">Öppen fråga<br>
-                    <div ng-switch="frageTyp">
+                    <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="flerval" checked>Flervalsalternativ<br>
+                    <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="oppenText">Öppen fråga<br>
+
+                    <div ng-switch="adminProv.frageTyp">
 
                         <div ng-switch-when="oppenText">
                             <p class="pRubrik">   {{message4}} </p>
@@ -147,7 +148,6 @@
         </select>
     </div>
 
-
         <div class="bar">
             <!-- Create a binding between the searchString model and the text field -->
             <input type="text" ng-model="searchText" placeholder="Välj klass eller elev att tilldela provet" />
@@ -181,11 +181,14 @@
             <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
         </md-content>
             <br/><br/>
-            <md-content>
+            <md-content class="datePicker2">
                 <p class="pRubrik2">Provet blir ogiltigt den:</p>
                 <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
             </md-content>
         </div>
+
+        <br/><br/>
+        <button type="button" class="btnAdmin" id="btnAdmin2" ng-click= "" value="Tilldela">Tilldela</button>
 
 
 

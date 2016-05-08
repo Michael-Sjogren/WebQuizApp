@@ -41,34 +41,22 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         $scope.count++;
     }
 
-
     // reset() and save functions.
     $scope.update = function() {
-          alert("Provet är sparat och avslutat.");
+        alert("Provet är sparat och avslutat.");
     };
+
 
     $scope.reset = function() {
         $scope.adminProv = {};
     };
 
 
-    // This function is supposed to save the input in the database server.
+    // When the user clicks the 'Nästa' or 'Avsluta' knappen.
     $scope.saveAdminProv = function() {
-        $scope.adminProvArray.push($scope.adminProv);
+        $scope.adminProvArray.push($scope.adminProv,$scope.adminProv1);
         console.table($scope.adminProvArray);
         $scope.reset();
-        
-
-        $http({
-            method: 'POST',
-            url: 'Projektets.nodejs.url',
-            data: $.param($scope.adminProv), // pass in data as strings
-            headers: {'Content-type': 'application/x-www-form-urlencoded'} // set the headers so angular passing info as form data, not request payload.
-        })
-            .success(function (data) {
-                    console.log(data);
-                }
-            )
     }
 
 
@@ -76,6 +64,12 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         {fName:"Matilda", lName:"Danielsson", class: "Java"},
         {fName:"Olof", lName:"Svensson", class: "Java"},
         {fName:"Soraya", lName:"Re", class: ".Net"},
+        {fName:"Henrik", lName:"Jonstone", class: "C++"},
+        {fName:"Urban", lName:"Krans", class: ".Net"},
+        {fName:"Liz", lName:"Dahlström", class: "Java"},
+        {fName:"Mikael", lName:"Sjögren", class: "Java"},
+        {fName:"Mikael", lName:"Person", class: "Java"},
+        {fName:"Tsiewing", lName:"Fredriksson", class: "Java"},
     ];
 
     $scope.elever = elever;
