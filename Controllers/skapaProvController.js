@@ -19,6 +19,8 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
     $scope.adminProvArray = [];
     $scope.adminProv = {};
     $scope.adminProv1 = {};
+    $scope.tilldelProv = {};
+    $scope.tilldelProvArray = [];
 
 
     $scope.provNamnet = [
@@ -39,7 +41,7 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
     $scope.count = 1;
     $scope.counterFraga = function () {
         $scope.count++;
-    }
+    };
 
     // reset() and save functions.
     $scope.update = function () {
@@ -51,16 +53,23 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
         $scope.adminProv = {};
     };
 
-
-
-
+    $scope.resetTilldela = function() {
+        $scope.tilldelProv = {};
+    };
 
     // When the user clicks the 'Nästa' or 'Avsluta' knappen.
     $scope.saveAdminProv = function() {
         $scope.adminProvArray.push($scope.adminProv,$scope.adminProv1);
         console.table($scope.adminProvArray);
         $scope.reset();
-    }
+    };
+
+    //When the user clicks the 'Tilldela' knappen.
+    $scope.saveTilldela = function() {
+        $scope.tilldelProvArray.push($scope.tilldelProv);
+        console.table($scope.tilldelProvArray);
+        $scope.resetTilldela();
+    };
 
 
     var elever = [
@@ -93,7 +102,7 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
     }
 
 
-
+    
     
 
 
