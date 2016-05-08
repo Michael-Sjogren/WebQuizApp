@@ -11,14 +11,14 @@ adminApp.controller('adminCtrl', function($scope) {
 
 
 // Create the skapaProvcontroller and inject Angular's $scope
-adminApp.controller('skapaProvController', function($scope, $http) {
+adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
     $scope.message1 = 'Ange namn på provet:';
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
     $scope.message4 = 'Formulera din fråga:';
     $scope.adminProvArray = [];
     $scope.adminProv = {};
-    $scope.master = {};
+    $scope.adminProv1 = {};
 
 
     $scope.provNamnet = [
@@ -42,14 +42,17 @@ adminApp.controller('skapaProvController', function($scope, $http) {
     }
 
     // reset() and save functions.
-    $scope.update = function() {
+    $scope.update = function () {
         alert("Provet är sparat och avslutat.");
     };
 
 
-    $scope.reset = function() {
+    $scope.reset = function () {
         $scope.adminProv = {};
     };
+
+
+
 
 
     // When the user clicks the 'Nästa' or 'Avsluta' knappen.
@@ -91,8 +94,10 @@ adminApp.controller('skapaProvController', function($scope, $http) {
 
 
 
+    
 
-});
+
+        });
 
 
 
