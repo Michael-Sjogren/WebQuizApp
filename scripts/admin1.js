@@ -2,7 +2,7 @@
  * Created by Tsiewing on 24/04/2016.
  */
 
-var adminApp = angular.module ('appAdm1', ['ngRoute']);
+var adminApp = angular.module ('appAdm1', ['ngRoute','ngMaterial','ngMessages']);
 
 
 adminApp.config(['$routeProvider', function($routeProvider) {

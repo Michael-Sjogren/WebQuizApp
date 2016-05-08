@@ -133,6 +133,7 @@
                     <pre class="oversikt">(Test: Vid Spara & Avsluta) {{master | json}}</pre>
 
                 </article>
+                    </div>
                 </form>
             </section>
 
@@ -172,8 +173,22 @@
         </table>
         </ul>
 
+        <br/><br/>
 
+        <div ng-cloak>
+        <md-content>
+            <p class="pRubrik2">Provet blir giltigt den:</p>
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+        </md-content>
+            <br/><br/>
+            <md-content>
+                <p class="pRubrik2">Provet blir ogiltigt den:</p>
+                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            </md-content>
         </div>
+
+
+
 
 
     </article>
