@@ -1,56 +1,206 @@
 <section id="userRegistry" ng-controller="userRegistryCtrl">
     <article class="registryForm">
         <h2>Register User</h2>
-        <p> </p>
+        <p> </p><br>
     </article>
-    <div  id="register-details">
-        <form novalidate name="userForm" >
-            <label>Förnamn: </label><input type="text" ng-model="userForm.firstName" required>
-            <span style="color:red" ng-show="userForm.firstName.$dirty && userForm.firstName.$invalid">
-            <span ng-show="userForm.firstName.$error.required">Skriv in förnamn</span></span><br>
+    <div  class=register-details">
 
-            <label>Efternamn: </label><input type="text" ng-model="userForm.lastName" required><br>
-            <label>Användarnamn: </label><input type="text" ng-model="userForm.userName" required><br>
-            <label>Lösenord: </label><input type="text" ng-model="userForm.password" required><br>
-            <label>Personummer: </label><input type="text" ng-model="userForm.ssn" required><br>
-            <label>Adress: </label><input type="text" ng-model="userForm.address" required><br>
+        <form ng-submit="onSubmit(userForm.$valid)"
+              name="userForm"
+              novalidate="novalidate">
 
-            <label>Postort: </label><input type="text" ng-model="userForm.postalCode" required><br>
-            <label>Stad: </label><input type="text" ng-model="userForm.city" required><br>
-            <label>Telefonummer: </label><input type="text" ng-model="userForm.phone" required><br>
-            <label>E-mail: </label><input type="text" ng-model="userForm.email" required><br>
-            <span ng-show="userForm.email.$error.email">Not a valid e-mail address</span><br>
-            <label>Registrerad datum: </label><input type="text" ng-model="userForm.email" required><br>
-            <label>Avregistrerad datum: </label><input type="text" ng-model="userForm.deregistered" required><br>
+            <div class="form-group">
+                <label for="firstName">Förnamn</label>
+                <input name="firstName"
+                       type="text"
+                       ng-model="userForm.firstName"
+                       class="formControl"
+                       id="firstName"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Efternamn</label>
+                <input name="lastName"
+                       type="text"
+                       ng-model="userForm.lastName"
+                       class="formControl"
+                       id="lastName"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="userName">Användarnamn</label>
+                <input name="userName"
+                       type="text"
+                       ng-model="userForm.userName"
+                       class="formControl"
+                       id="userName"
+                       required="required">
+            </div>
+
+            <div class="form-group">
+                <label for="password" >Lösenord</label>
+                <input name="password"
+                       type="password"
+                       id="password"
+                       class="formControl"
+                       ng-model="password"
+                       required="required">
+
+            </div>
+
+            <div class="form-group">
+                <label for="ssn" >Personummer</label>
+                <input name="ssn"
+                       type="text"
+                       id="ssn"
+                       class="formControl"
+                       ng-model="userForm.ssn"
+                       required="required">
+            </div>
+
+            <div class="form-group">
+                <label for="address" >Adress</label>
+                <input name="address"
+                       type="text"
+                       id="address"
+                       class="formControl"
+                       ng-model="userForm.address"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="postalCode" >Postnummer</label>
+                <input name="postalCode"
+                       type="text"
+                       id="postalCode"
+                       class="formControl"
+                       ng-model="userForm.postalCode"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="city" >Stad</label>
+                <input name="city"
+                       type="text"
+                       id="city"
+                       class="formControl"
+                       ng-model="userForm.city"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" >Telefon</label>
+                <input name="phone"
+                       type="text"
+                       id="phone"
+                       class="formControl"
+                       ng-model="userForm.phone"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group" ng-class="
+            {
+            'has-error':!userForm.email.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.email.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
+                <label for="email">E-mail</label>
+                <input type="email"
+                       name="email"
+                       ng-model="userForm.email"
+                       class="formControl"
+                       id="email"
+                       required="required">
+
+                <p class="help-block" ng-show="userForm.email.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i
+                </p>
+                <p class="help-block" ng-show="userForm.email.$error.email && (!userForm.$pristine || userForm.$submitted)">
+                    E-mail måste innehålla @ symbol
+                </p>
+
+            </div>
+
+            <div class="form-group">
+                <label for="class">Klass</label>
+                <input name="class"
+                       type="text"
+                       id="class"
+                       class="formControl"
+                       ng-model="userForm.class"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="registrerad">Registrerad Datum</label>
+                <input name="registrerad"
+                       type="text"
+                       id="registrerad"
+                       class="formControl"
+                       ng-model="userForm.registrerad"
+                       required="required"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="deregistered">Avregistrerad Datum</label>
+                <input name="deregistered"
+                       type="text"
+                       id="deregistered"
+                       class="formControl"
+                       ng-model="userForm.deregistered"
+                       required="required"><br>
             <br>
-            <label>Välj tillhörighet:</label>
-            <select ng-model="userForm.userAttachment" required>
-                <option value="">
-                <option value="student">Student
-                <option value="employee">Anställd
-                <option value="consultants">Konsult
-            </select><br>  <br>
-            <label>Välj status:</label>
-            <select ng-model="userForm.userStatus" required>
-                <option value="">
-                <option value="active">Aktiv
-                <option value="onHold">Paus
-                <option value="deregistered">Avregistrerad
-            </select><br>  <br>
+            </div>
+
+            <div class="form-group">
+                <label for="userAttachment">Behörighet</label>
+                <select name="userAttachment"
+                        id="userAttachment"
+                        class="formControl"
+                        ng-model="userForm.userAttachment"
+                        required="required">
+                    <option value="">Välj Behörighet</option>
+                    <option value="student">Student</option>
+                    <option value="employee">Anställd</option>
+                    <option value="consultants">Konsult</option>
+                </select><br>  <br>
+            </div>
+
+            <div class="form-group">
+                <label for="userStatus">Status</label>
+                <select name="userStatus"
+                        id="userStatus"
+                        class="formControl"
+                        ng-model="userForm.userStatus"
+                        required="required">
+                    <option value="">Välj Status</option>
+                    <option value="active">Aktiv</option>
+                    <option value="onHold">Paus</option>
+                    <option value="deregistered">Avregistrerad</option>
+                </select><br>  <br>
+            </div>
+
+        <div class="form-group">
+            <button ng-click="reset()">
+                    RESET
+            </button>
+
+            <button class="btnSubmit"
+                    type="submit">Spara
+                    ng-disabled='userForm.$invalid'
+            </button>
+
+            <button ng-click="cancel()">
+                    CANCEL
+            </button>
+        </div>
+
+            <pre>{{ userForm | json }}</pre>
 
 
-            <button ng-click="reset()">RESET</button>
-            <button ng-click="open()">ÖPPNA</button>
-            <button ng-click="save()">SPARA</button>
-            <button ng-click="cancel()">CANCEL</button>
         </form>
+
     </div>
 </section>
-
-<script>
-    var app = angular.module('myApp', []);
-    app.controller('registerCtrl', function($scope) {
-        $scope.user = 'John Doe';
-        $scope.email = 'john.doe@gmail.com';
-    });
-</script>

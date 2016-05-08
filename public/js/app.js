@@ -1,5 +1,6 @@
 var app = angular.module('app', ['ngRoute', 'testController']);
 
+<!-- vid användande av auto validate ska jcs-autoValidate vara i module -->
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
