@@ -81,13 +81,17 @@ ul#menuAdm li a:hover {
 .pFraga {
     margin-left: -40%;
     margin-top: 1%;
-    font-size: 125%;}
+    font-size: 150%;
+    font-weight: bolder;}
 
 .skapaProv {
     margin-left: 32%;
     font-size: 80%;
     margin-top: 5.5%;
     font-weight:bolder;}
+
+#fragaCounter {
+    font-weight: bolder;}
 
 .skapaProv2 {
     margin-top: -25.6%;

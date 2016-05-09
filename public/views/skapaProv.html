@@ -25,7 +25,7 @@
                     <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="oppenText">Öppen fråga<br>
                     <br/><br/>
-                    <p class="pRubrik">Välj om det ska vara en G eller VG-fråga:</p>
+                    <p class="pRubrik">Välj om det ska vara en G eller Vg-fråga:</p>
                     <input type="radio" class="radioA" ng-model="adminProv.fragaBetyg" value="g" checked>Godkänd<br>
                     <input type="radio" class="radioA" ng-model="adminProv.fragaBetyg" value="vg">Väl godkänd<br>
 
@@ -168,7 +168,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="elev in elever | filter: tilldelProv.searchText">
+            <tr ng-repeat="elev in myData | filter: tilldelProv.searchText">
                 <td>{{elev.fName}}</td>
                 <td>{{elev.lName}}</td>
                 <td>{{elev.class}}</td>
@@ -192,7 +192,7 @@
         </div>
 
         <br/><br/>
-        <button type="button" class="btnAdmin" id="btnAdmin2" ng-click= "saveTilldela()" value="Tilldela">Tilldela</button>
+        <button type="button" class="btnAdmin" id="btnAdmin2" ng-click= "saveTilldela(); loadUserData();" value="Tilldela">Tilldela</button>
 
     </article>
 

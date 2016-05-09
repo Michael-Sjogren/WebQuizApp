@@ -9,7 +9,9 @@ adminApp.controller('adminCtrl', function($scope) {
 });
 
 // Create the skapaProvcontroller and inject Angular's $scope
-adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
+adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
+
+
     $scope.message1 = 'Ange namn på provet:';
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
@@ -19,6 +21,7 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
     $scope.adminProv1 = {};
     $scope.tilldelProv = {};
     $scope.tilldelProvArray = [];
+
 
 
     $scope.provNamnet = [
@@ -35,6 +38,7 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
         {provTilldel: 'Kravanalys 1'},
         {provTilldel: '.Net'}
     ];
+
 
     $scope.count = 1;
     $scope.counterFraga = function () {
@@ -69,20 +73,11 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
         $scope.resetTilldela();
     };
 
+    $http.get("elever.json").then(function(response) {
+        $scope.myData = response.data.elever;
+    });
 
-    var elever = [
-        {fName:"Matilda", lName:"Danielsson", class: "Java"},
-        {fName:"Olof", lName:"Svensson", class: "Java"},
-        {fName:"Soraya", lName:"Re", class: ".Net"},
-        {fName:"Henrik", lName:"Jonstone", class: "C++"},
-        {fName:"Urban", lName:"Krans", class: ".Net"},
-        {fName:"Liz", lName:"Dahlström", class: "Java"},
-        {fName:"Mikael", lName:"Sjögren", class: "Java"},
-        {fName:"Mikael", lName:"Person", class: "Java"},
-        {fName:"Tsiewing", lName:"Fredriksson", class: "Java"},
-    ];
-
-    $scope.elever = elever;
+    
 
 
     $scope.myDate = new Date();
@@ -98,8 +93,14 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
         var day = date.getDay();
         return day === 0 || day === 6;
     }
+    
+
+
+
 
         });
+
+
 
 
 

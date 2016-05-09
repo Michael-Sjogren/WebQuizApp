@@ -16,7 +16,8 @@
       "lName": "Johansson",
       "role": "student",
       "class": "Java 1",
-      "email" : "student@website.com"
+      "email" : "student@website.com",
+      "isActive": "Yes"
     }
   ]
 }
