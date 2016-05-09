@@ -1,19 +1,19 @@
 /**
  * Created by Michael Sjögren on 2016-05-07.
  */
-var users = require('./webquiz.server.UsersModel');
-var address = require('./webquiz.server.AdressModel');
+var users = require('../models/webquiz.server.UsersModel');
+var address = require('../models/webquiz.server.AdressModel');
 
 exports.createUser = function (req , res) {
     var Users = new users({
-        username : String,
-        fName : String,
-        lName : String,
-        password : String,
-        role : String,
-        email : String,
-        isActive : Boolean,
-        phone : String
+        username : req.body.username,
+        fName : req.body.firstname,
+        lName : req.body.lastname,
+        password : req.body.password,
+        role : req.body.role,
+        email : req.body.email,
+        isActive : req.body.isActive,
+        phone : req.body.phone
     });
 
     Users.save();

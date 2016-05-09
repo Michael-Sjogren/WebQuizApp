@@ -4,20 +4,20 @@
 
 var mongoose = require('mongoose');
 var addressSchema = require('./webquiz.server.AdressModel.js');
-var Schema = mongoose.schema;
+var Schema = mongoose.Schema;
 
 var usersSchema = new Schema({
 
    username : String,
-   fName : String,
-   lName : String,
-   password : String,
-   role : String,
-   email : String,
+   fName : {type:String , required : true},
+   lName : {type:String , required : true},
+   password : {type:String , required : true},
+   role : {type:String , required : true},
+   email : {type: String , required : true},
    isActive : Boolean,
-   phone : String,
+   phone : {type: String , required : true},
   // assignedTests : tests,
    address : [addressSchema]
 });
 
-moudle.exports = mongoose.model('usersSchema',usersSchema);
+module.exports = mongoose.model('UsersModel',usersSchema);

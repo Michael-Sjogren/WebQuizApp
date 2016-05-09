@@ -5,9 +5,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var addressSchema = new Schema({
-    street:String,
-    zip : String,
-    city : String
+    street:{type:String},
+    zip : {type:String},
+    city : {type:String}
 });
 
-modules.exports = mongoose.model('addressSchema', addressSchema);
+module.exports = mongoose.model('addressSchema', addressSchema);
