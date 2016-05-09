@@ -8,8 +8,6 @@
 adminApp.controller('adminCtrl', function($scope) {
 });
 
-
-
 // Create the skapaProvcontroller and inject Angular's $scope
 adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
     $scope.message1 = 'Ange namn på provet:';
@@ -100,11 +98,6 @@ adminApp.controller('skapaProvController', function($scope, $http, $mdDialog) {
         var day = date.getDay();
         return day === 0 || day === 6;
     }
-
-
-    
-    
-
 
         });
 

@@ -24,6 +24,10 @@
 
                     <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="oppenText">Öppen fråga<br>
+                    <br/><br/>
+                    <p class="pRubrik">Välj om det ska vara en G eller VG-fråga:</p>
+                    <input type="radio" class="radioA" ng-model="adminProv.fragaBetyg" value="g" checked>Godkänd<br>
+                    <input type="radio" class="radioA" ng-model="adminProv.fragaBetyg" value="vg">Väl godkänd<br>
 
 
                     <div ng-switch="adminProv.frageTyp">
