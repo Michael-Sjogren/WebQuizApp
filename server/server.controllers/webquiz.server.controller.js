@@ -1,8 +1,8 @@
 /**
  * Created by Michael Sjögren on 2016-05-07.
  */
-var users = require('../models/webquiz.server.UsersModel');
-var address = require('../models/webquiz.server.AdressModel');
+var users = require('./webquiz.server.UsersModel');
+var address = require('./webquiz.server.AdressModel');
 
 exports.createUser = function (req , res) {
     var Users = new users({
