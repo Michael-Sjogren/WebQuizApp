@@ -8,8 +8,8 @@ var adminApp = angular.module ('appAdm1', ['ngRoute','ngMaterial','ngMessages'])
 adminApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     when('/', {
-        templateUrl: '../public/views/adm1.html',
-        controller: 'adminCtrl'
+        templateUrl: '../public/views/adm1.html'
+
     }).
     when('/skapaProv', {
         //console.log('testingtesting');

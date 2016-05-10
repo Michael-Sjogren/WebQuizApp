@@ -1,6 +1,7 @@
 var app = angular.module('app', ['ngRoute', 'testController']);
 
-<!-- vid användande av auto validate ska jcs-autoValidate vara i module -->
+<!-- vid användande av auto validate ska 'jcs-autoValidate' vara i module -->
+
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -37,7 +38,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/userRegistration', {
             templateUrl: 'partials/userRegistration.html'
         })
-        
+        .when('/userChangeDetails', {
+            templateUrl: 'partials/userChangeDetails.html'
+        })
         
         
         
@@ -45,5 +48,16 @@ app.config(['$routeProvider', function ($routeProvider) {
         .otherwise({
             redirectTo: 'partials/login.html'
         });
+
+    
+    /*
+    app.run(function (defaultErrorMessageResolver) {
+        defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+            errorMessages['userName'] = 'Användarnamn kan bara innehålla nummer och bokstäver';
+        }); 
+
+    });
+     */
+
 }]);
 

@@ -32,12 +32,14 @@ app.controller('userRegistryCtrl', function($scope, $http) {
             console.log("I'm So klicked");
             console.log($scope.userForm);
 
-            //    $http.post('https://minmax-server.herokuapp.com/register/, $scope.userForm').
-            //         success(function (data) {
-            //         console.log(":)")
-            //     }).error(function (data) {
-            //         console.log(":(")
-            //});
+                $http.get('../data/users.json').success(function (response) {
+                    $scope.myData = response;
+                });
+                     success(function (data) {
+                     console.log(":)")
+                }).error(function (data) {
+                     console.log(":(")
+            });
         } else {
             console.log("Invalid Form!")
         }

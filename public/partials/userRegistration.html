@@ -1,103 +1,230 @@
-<section id="userRegistry" ng-controller="userRegistryCtrl">
-    <article class="registryForm">
-        <h2>Register User</h2>
-        <p> </p><br>
-    </article>
-    <div  class=register-details">
+
+    <div  class=register-details" id="userRegistry" ng-controller="userRegistryCtrl">
 
         <form ng-submit="onSubmit(userForm.$valid)"
-              name="userForm"
-              novalidate="novalidate">
+            method="post"
+            action="userRegistration"
+            name="userForm"
+            novalidate="novalidate">
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.firstName.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.email.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="firstName">Förnamn</label>
                 <input name="firstName"
                        type="text"
                        ng-model="userForm.firstName"
+                       ng-pattern="/^[A-Za-z]{1,15}$/"
                        class="formControl"
                        id="firstName"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.firstName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ.
+                </p>
+                <p class="help-block" ng-show="userForm.firstName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ.
+                </p>
             </div>
 
             <div class="form-group">
+                <label for="midName">Mellanamn</label>
+                <input name="midName"
+                       type="text"
+                       ng-model="userForm.midName"
+                       ng-pattern="/^[A-Za-z0-9]{1,15}$/"
+                       class="formControl"
+                       id="midName">
+            </div>
+
+            <div class="form-group
+            {
+            'has-error':!userForm.lastName.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.lastName.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="lastName">Efternamn</label>
                 <input name="lastName"
                        type="text"
                        ng-model="userForm.lastName"
+                       ng-pattern="/^[A-Za-z]{1,15}$/"
                        class="formControl"
                        id="lastName"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.lastName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ.
+                </p>
+                <p class="help-block" ng-show="userForm.lastName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.userName.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.userName.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="userName">Användarnamn</label>
                 <input name="userName"
                        type="text"
                        ng-model="userForm.userName"
+                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
+                       ng-minlength="6"
+                       ng-pattern-err-type="userName"
                        class="formControl"
                        id="userName"
                        required="required">
+
+                <p class="help-block" ng-show="userForm.userName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med minst 6 Bokstäver aA-zZ och siffror 0-9.
+                </p>
+                <p class="help-block" ng-show="userForm.userName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med minst 6 Bokstäver aA-zZ och siffror 0-9.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.password.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.password.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="password" >Lösenord</label>
                 <input name="password"
                        type="password"
                        id="password"
                        class="formControl"
                        ng-model="password"
+                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
+                       ng-minlength="10"
                        required="required">
 
+                <p class="help-block" ng-show="userForm.password.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med minst 10 Bokstäver aA-zZ och siffror 0-9.
+                </p>
+                <p class="help-block" ng-show="userForm.password.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med minst 10 Bokstäver aA-zZ och siffror 0-9.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.ssn.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.ssn.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="ssn" >Personummer</label>
                 <input name="ssn"
                        type="text"
                        id="ssn"
                        class="formControl"
                        ng-model="userForm.ssn"
+                       ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/"
                        required="required">
+
+                <p class="help-block" ng-show="userForm.ssn.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format YYYY-MM-DD
+                </p>
+                <p class="help-block" ng-show="userForm.ssn.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format YYYY-MM-DD
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.address.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.address.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="address" >Adress</label>
                 <input name="address"
                        type="text"
                        id="address"
                        class="formControl"
                        ng-model="userForm.address"
+                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.address.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ och siffror 0-9.
+                </p>
+                <p class="help-block" ng-show="userForm.address.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ och siffror 0-9.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.postalCode.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.postalCode.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="postalCode" >Postnummer</label>
                 <input name="postalCode"
                        type="text"
                        id="postalCode"
                        class="formControl"
                        ng-model="userForm.postalCode"
+                       ng-pattern="/\d{3}\s?\d{2}/"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.postalCode.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format 12345.
+                </p>
+                <p class="help-block" ng-show="userForm.postalCode.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format 12345.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.city.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.city.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="city" >Stad</label>
                 <input name="city"
                        type="text"
                        id="city"
                        class="formControl"
                        ng-model="userForm.city"
+                       ng-pattern="/^[A-Za-z]{1,15}$/"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.city.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ.
+                </p>
+                <p class="help-block" ng-show="userForm.city.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.phone.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.phone.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="phone" >Telefon</label>
                 <input name="phone"
                        type="text"
                        id="phone"
                        class="formControl"
                        ng-model="userForm.phone"
+                       ng-pattern="/^[0-9+]{1,15}$"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.phone.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med tecken + och siffror 0-9.
+                </p>
+                <p class="help-block" ng-show="userForm.phone.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med tecken + och siffror 0-9.
+                </p>
             </div>
 
             <div class="form-group" ng-class="
@@ -123,38 +250,82 @@
 
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.class.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.class.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="class">Klass</label>
                 <input name="class"
                        type="text"
                        id="class"
                        class="formControl"
                        ng-model="userForm.class"
+                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.class.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ och siffror 0-9.
+                </p>
+                <p class="help-block" ng-show="userForm.class.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med Bokstäver aA-zZ och siffror 0-9.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.registrerad.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.registrerad.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="registrerad">Registrerad Datum</label>
                 <input name="registrerad"
                        type="text"
                        id="registrerad"
                        class="formControl"
                        ng-model="userForm.registrerad"
+                       ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.registrerad.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format YYYY-MM-DD.
+                </p>
+                <p class="help-block" ng-show="userForm.registrerad.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format YYYY-MM-DD.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.deregistered.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.deregistered.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="deregistered">Avregistrerad Datum</label>
                 <input name="deregistered"
                        type="text"
                        id="deregistered"
                        class="formControl"
                        ng-model="userForm.deregistered"
+                       ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/"
                        required="required"><br>
+
+                <p class="help-block" ng-show="userForm.deregistered.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format YYYY-MM-DD.
+                </p>
+                <p class="help-block" ng-show="userForm.deregistered.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste fyllas i med format YYYY-MM-DD.
+                </p>
             <br>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.userAttachment.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.userAttachment.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="userAttachment">Behörighet</label>
                 <select name="userAttachment"
                         id="userAttachment"
@@ -166,9 +337,21 @@
                     <option value="employee">Anställd</option>
                     <option value="consultants">Konsult</option>
                 </select><br>  <br>
+
+                <p class="help-block" ng-show="userAttachment.userAttachment.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste ett val göras.
+                </p>
+                <p class="help-block" ng-show="userAttachment.userAttachment.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste ett val göras.
+                </p>
             </div>
 
-            <div class="form-group">
+            <div class="form-group
+            {
+            'has-error':!userForm.userStatus.$valid && (!userForm.$pristine || userForm.$submitted),
+            'has-error':userForm.userStatus.$valid && (!userForm.$pristine || userForm.$submitted)
+            }
+            ">
                 <label for="userStatus">Status</label>
                 <select name="userStatus"
                         id="userStatus"
@@ -180,6 +363,13 @@
                     <option value="onHold">Paus</option>
                     <option value="deregistered">Avregistrerad</option>
                 </select><br>  <br>
+
+                <p class="help-block" ng-show="userStatus.deregistered.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste ett val göras.
+                </p>
+                <p class="help-block" ng-show="userStatus.deregistered.$error.required && (!userForm.$pristine || userForm.$submitted)">
+                    Detta fält måste ett val göras.
+                </p>
             </div>
 
         <div class="form-group">
@@ -187,14 +377,14 @@
                     RESET
             </button>
 
-            <button class="btnSubmit"
-                    type="submit">Spara
-                    ng-disabled='userForm.$invalid'
+            <button
+            input class="btnSubmit" type="submit" ng-disabled="userForm.$invalid">Spara</input>
             </button>
 
             <button ng-click="cancel()">
                     CANCEL
             </button>
+            <a href="adminMenu.html" alt="Tillbaka">&laquo; Tillbaka</a>
         </div>
 
             <pre>{{ userForm | json }}</pre>
@@ -203,4 +393,4 @@
         </form>
 
     </div>
-</section>
+
