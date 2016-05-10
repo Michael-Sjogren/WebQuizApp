@@ -1,11 +1,12 @@
 
     <div  class=register-details" id="userRegistry" ng-controller="userRegistryCtrl">
 
+
         <form ng-submit="onSubmit(userForm.$valid)"
-            method="post"
-            action="userRegistration"
-            name="userForm"
-            novalidate="novalidate">
+              method="post"
+              action="userRegistration"
+              name="userForm"
+              novalidate="novalidate">
 
             <div class="form-group
             {
@@ -380,6 +381,9 @@
             <button
             input class="btnSubmit" type="submit" ng-disabled="userForm.$invalid">Spara</input>
             </button>
+            <input class="btnSubmit"
+                    type="submit" ng-disabled='userForm.$invalid'>Spara
+            </input>
 
             <button ng-click="cancel()">
                     CANCEL

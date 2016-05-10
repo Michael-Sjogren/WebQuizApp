@@ -2,7 +2,7 @@
  * Created by Tsiewing on 24/04/2016.
  */
 
-var adminApp = angular.module ('appAdm1', ['ngRoute','ngMaterial','ngMessages']);
+var adminApp = angular.module ('appAdm1', ['ngRoute','ngMaterial','ngMessages',]);
 
 
 adminApp.config(['$routeProvider', function($routeProvider) {
@@ -20,6 +20,7 @@ adminApp.config(['$routeProvider', function($routeProvider) {
         redirectTo: 'adm1.html'
     });
 }]);
+
 
 
 

@@ -8,17 +8,20 @@
 adminApp.controller('adminCtrl', function($scope) {
 });
 
-
-
 // Create the skapaProvcontroller and inject Angular's $scope
-adminApp.controller('skapaProvController', function($scope, $http) {
+adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
+
+
     $scope.message1 = 'Ange namn på provet:';
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
     $scope.message4 = 'Formulera din fråga:';
     $scope.adminProvArray = [];
     $scope.adminProv = {};
-    $scope.master = {};
+    $scope.adminProv1 = {};
+    $scope.tilldelProv = {};
+    $scope.tilldelProvArray = [];
+
 
 
     $scope.provNamnet = [
@@ -36,43 +39,45 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         {provTilldel: '.Net'}
     ];
 
+
     $scope.count = 1;
     $scope.counterFraga = function () {
         $scope.count++;
-    }
+    };
 
     // reset() and save functions.
-    $scope.update = function() {
+    $scope.update = function () {
         alert("Provet är sparat och avslutat.");
     };
 
 
-    $scope.reset = function() {
+    $scope.reset = function () {
         $scope.adminProv = {};
     };
 
+    $scope.resetTilldela = function() {
+        $scope.tilldelProv = {};
+    };
 
     // When the user clicks the 'Nästa' or 'Avsluta' knappen.
     $scope.saveAdminProv = function() {
         $scope.adminProvArray.push($scope.adminProv,$scope.adminProv1);
         console.table($scope.adminProvArray);
         $scope.reset();
-    }
+    };
 
+    //When the user clicks the 'Tilldela' knappen.
+    $scope.saveTilldela = function() {
+        $scope.tilldelProvArray.push($scope.tilldelProv);
+        console.table($scope.tilldelProvArray);
+        $scope.resetTilldela();
+    };
 
-    var elever = [
-        {fName:"Matilda", lName:"Danielsson", class: "Java"},
-        {fName:"Olof", lName:"Svensson", class: "Java"},
-        {fName:"Soraya", lName:"Re", class: ".Net"},
-        {fName:"Henrik", lName:"Jonstone", class: "C++"},
-        {fName:"Urban", lName:"Krans", class: ".Net"},
-        {fName:"Liz", lName:"Dahlström", class: "Java"},
-        {fName:"Mikael", lName:"Sjögren", class: "Java"},
-        {fName:"Mikael", lName:"Person", class: "Java"},
-        {fName:"Tsiewing", lName:"Fredriksson", class: "Java"},
-    ];
+    $http.get("elever.json").then(function(response) {
+        $scope.myData = response.data.elever;
+    });
 
-    $scope.elever = elever;
+    
 
 
     $scope.myDate = new Date();
@@ -88,11 +93,14 @@ adminApp.controller('skapaProvController', function($scope, $http) {
         var day = date.getDay();
         return day === 0 || day === 6;
     }
+    
 
 
 
 
-});
+        });
+
+
 
 
 

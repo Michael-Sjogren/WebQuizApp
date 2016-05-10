@@ -24,9 +24,13 @@
 
                     <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="flerval" checked>Flervalsalternativ<br>
                     <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="oppenText">Öppen fråga<br>
+                    <br/><br/>
+                    <p class="pRubrik">Välj om det ska vara en G eller Vg-fråga:</p>
+                    <input type="radio" class="radioA" ng-model="adminProv.fragaBetyg" value="g" checked>Godkänd<br>
+                    <input type="radio" class="radioA" ng-model="adminProv.fragaBetyg" value="vg">Väl godkänd<br>
+
 
                     <div ng-switch="adminProv.frageTyp">
-
                         <div ng-switch-when="oppenText">
                             <p class="pRubrik">   {{message4}} </p>
                             <input type="text" class="formuleraFraga" name="oppenFraga" ng-model="adminProv.oppenFraga" required id="txt_OppenFraga">
@@ -130,8 +134,8 @@
                     value="Avsluta"  class="btnNastaFraga" id="btnklar">Spara & Avsluta</button>
 
                     <!--Show data from inputs as they are being typed -->
-                    <pre class="oversikt">(Test: Vid Nästa fråga){{adminProv | json}}</pre>
-                    <pre class="oversikt">(Test: Vid Spara & Avsluta) {{master | json}}</pre>
+                    <pre  class="oversikt">Översikt: {{adminProv1 | json}}{{adminProv | json}}</pre>
+
 
                 </article>
                     </div>
@@ -143,14 +147,14 @@
     <article class="grid-60">
     <label class="pRubrik2">Välj prov att tilldela:</label>
     <div class="dropprovNamn2">
-        <select name="provNamn" ng-model="provTilldel" required
+        <select name="provNamn" ng-model="tilldelProv.provTilldel" required
                 ng-options="x.provTilldel for x in provTilldela" ng-change="changedValue(provNamn.provTilldela)">
         </select>
     </div>
 
         <div class="bar">
             <!-- Create a binding between the searchString model and the text field -->
-            <input type="text" ng-model="searchText" placeholder="Välj klass eller elev att tilldela provet" />
+            <input type="text" ng-model="tilldelProv.searchText" placeholder="Välj klass eller elev att tilldela provet" />
         </div>
         <br/><br/>
         <ul id="search">
@@ -164,7 +168,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="elev in elever | filter: searchText">
+            <tr ng-repeat="elev in myData | filter: tilldelProv.searchText">
                 <td>{{elev.fName}}</td>
                 <td>{{elev.lName}}</td>
                 <td>{{elev.class}}</td>
@@ -178,25 +182,21 @@
         <div ng-cloak>
         <md-content>
             <p class="pRubrik2">Provet blir giltigt den:</p>
-            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            <md-datepicker ng-model="tilldelProv.startDate" md-placeholder="Enter date"></md-datepicker>
         </md-content>
             <br/><br/>
             <md-content class="datePicker2">
                 <p class="pRubrik2">Provet blir ogiltigt den:</p>
-                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                <md-datepicker ng-model="tilldelProv.endDate" md-placeholder="Enter date"></md-datepicker>
             </md-content>
         </div>
 
         <br/><br/>
-        <button type="button" class="btnAdmin" id="btnAdmin2" ng-click= "" value="Tilldela">Tilldela</button>
-
-
-
-
+        <button type="button" class="btnAdmin" id="btnAdmin2" ng-click= "saveTilldela(); loadUserData();" value="Tilldela">Tilldela</button>
 
     </article>
 
-</section>
+   </section>
 
 
 
