@@ -10,4 +10,4 @@ var addressSchema = new Schema({
     city : {type:String}
 });
 
-module.exports = mongoose.model('addressSchema', addressSchema);
+module.exports = mongoose.model('Addresses', addressSchema);

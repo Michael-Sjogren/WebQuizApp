@@ -24,11 +24,11 @@ app.use('/', router);
 dbHost.on('error', console.error.bind(console, 'connection error:'));
 
 
-
 dbHost.once('open', function(){
     console.log("Connected to DB");
     console.log(path.join(__dirname + '/../'));
+    app.listen(3000);
 });
 console.log("server running");
 
-app.listen(3000);
+

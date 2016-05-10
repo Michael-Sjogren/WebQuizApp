@@ -8,16 +8,17 @@ var Schema = mongoose.Schema;
 
 var usersSchema = new Schema({
 
-   username : String,
+   username :{type:String , required : true},
    fName : {type:String , required : true},
    lName : {type:String , required : true},
    password : {type:String , required : true},
+   ssn: {type:String , required : true},
    role : {type:String , required : true},
    email : {type: String , required : true},
-   isActive : Boolean,
+   isActive : {type: String , required : true},
    phone : {type: String , required : true},
   // assignedTests : tests,
    address : [addressSchema]
 });
 
-module.exports = mongoose.model('UsersModel',usersSchema);
+module.exports = mongoose.model('Users',usersSchema);

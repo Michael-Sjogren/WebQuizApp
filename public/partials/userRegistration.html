@@ -5,7 +5,7 @@
     </article>
     <div  class=register-details">
 
-        <form ng-submit="onSubmit(userForm.$valid)"
+        <form ng-submit="onSubmit(userForm.$valid)" method="post" action="userRegistration"
               name="userForm"
               novalidate="novalidate">
 
@@ -187,10 +187,9 @@
                     RESET
             </button>
 
-            <button class="btnSubmit"
-                    type="submit">Spara
-                    ng-disabled='userForm.$invalid'
-            </button>
+            <input class="btnSubmit"
+                    type="submit" ng-disabled='userForm.$invalid'>Spara
+            </input>
 
             <button ng-click="cancel()">
                     CANCEL
