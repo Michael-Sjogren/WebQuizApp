@@ -4,7 +4,7 @@
 
 var usersCtrl = require('../server.controllers/webquiz.server.controller');
 module.exports = (function() {
-
+    var index = 0;
     var router = require('express').Router();
 
   router.get('/adminMenu', function (req , res) {
@@ -12,11 +12,9 @@ module.exports = (function() {
   });
 
     router.post('/userRegistration' , function (req , res) {
-
-       console.log("post is happening");
-        return usersCtrl.createUser(req,res) , usersCtrl.createAddress(req,res);
-
-
+        
+        return usersCtrl.createUser(req,res);
+        console.log("post success" , index , req);
     });
 
     return router;

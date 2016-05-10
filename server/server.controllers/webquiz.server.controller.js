@@ -2,9 +2,14 @@
  * Created by Michael Sjögren on 2016-05-07.
  */
 var users = require('../models/webquiz.server.UsersModel');
-var address = require('../models/webquiz.server.AdressModel');
+var userAddress = {};
 
 exports.createUser = function (req , res) {
+    var address = [];
+
+     userAddress = {city : req.body.city ,street : req.body.address , zip : req.body.postalCode };
+
+    address.push(userAddress);
     var Users = new users({
         username : req.body.userName,
         fName : req.body.firstName,
@@ -14,19 +19,15 @@ exports.createUser = function (req , res) {
         role : req.body.userAttachment,
         email :req.body.email ,
         isActive :req.body.userStatus,
-        phone : req.body.phone
-        // assignedTests : tests,
+        phone : req.body.phone,
+        address : address
     });
 
-    Users.save();
-};
-
-exports.createAddress = function (req ,res) {
-    var Address = new address({
-        street:req.body.address,
-        zip : req.body.postalCode,
-        city : req.body.city
+    Users.save(function (err){
+        if(err) return console.error(err);
+        else {
+            console.log("save successful");
+        }
     });
-
-    Address.save();
 };
+
