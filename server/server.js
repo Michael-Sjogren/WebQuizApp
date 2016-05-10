@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname + '/../')));
 app.use(express.static(path.join(__dirname + '/../public')));
 
 app.use('/', router);
-app.use('/', testRouter())
+app.use('/', testRouter)
 
 
 

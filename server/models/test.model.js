@@ -17,11 +17,11 @@ var testTitleValidator = [function (val) {
 
 // validates string
 var requireStringValidator = [
-    function (val) {
+    /*function (val) {
         var testVal = val.trim();
         return (testVal.length > 0)
     }, //error msg
-    '{{PATH}} cannot be empty'];
+    '{{PATH}} cannot be empty'*/];
 
 //validates numbers
 var requireNumberValidator = [
@@ -31,16 +31,24 @@ var requireNumberValidator = [
     'Invalid number'
 ];
 
+// SCHEMA: questions
+var questionSchema = new Schema({
+    title: {type: String, required: true, default: 'Icke namngivet', validation: requireStringValidator},
+    description: {type: String, required: false, validation: requireStringValidator},
+    type: {type: String, required: true, validation: requireStringValidator},
+    options: [{option: String, required:false, validation: requireStringValidator}]
+});
+
 //SCHEMA: test
 var testSchema = new Schema({
-    title: {type: String, required: true, validate: testTitleValidator},
-    description: {type: String, required: false, validate: requireStringValidator},
+    title: {type: String, required: true, validation: testTitleValidator},
+    description: {type: String, required: false, validation: requireStringValidator},
     isActive: {type: Boolean, required: true, default: false},
-    course: {type: String, required: false, validate: requireStringValidator},
-    limitMinutes: {type: Number, required: true, default: 10, validate: requireNumberValidator},
-    questions: [ Questions ],
+    course: {type: String, required: false, validation: requireStringValidator},
+    limitMinutes: {type: Number, required: true, default: 10, validation: requireNumberValidator},
+    questions: [ questionSchema ],
     expireDate: {type: Date, required: false},
-    testAdmin: Users,
+    testAdmin: {type:Schema.ObjectId, ref: Users},
     assignedUsers: [ Users ]
 });
 

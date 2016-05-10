@@ -1,6 +1,7 @@
 /**
  * Created by Liz on 5/4/2016.
  */
+/*
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -13,4 +14,4 @@ var questionSchema = new Schema({
     options: [{option: String, required:false, validate: requireStringValidator}]
 });
 
-module.exports = mongoose.model('Questions', questionSchema);
+module.exports = mongoose.model('Questions', questionSchema);*/
