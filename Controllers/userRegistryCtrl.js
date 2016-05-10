@@ -46,3 +46,12 @@ app.controller('userRegistryCtrl', function($scope, $http) {
     };
 
 });
+
+/* controller för att hämta data
+app.controller('getUserCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get('').success(function(data) {
+        $scope.user = data.artists;
+        $scope.userOrder = 'name';
+    });
+}]);
+    */

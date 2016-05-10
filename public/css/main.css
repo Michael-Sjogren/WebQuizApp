@@ -152,4 +152,13 @@ header {
   font-size: small;
   padding: 10px; }
 
+.column1of2 {
+  float: left;
+  margin: 10px;
+}
+
+.column2of2 {
+  float: right;
+  margin-left: 10px;
+}
 /*# sourceMappingURL=main.css.map */
