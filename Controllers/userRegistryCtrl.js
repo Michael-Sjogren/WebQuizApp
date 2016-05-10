@@ -44,8 +44,41 @@ app.controller('userRegistryCtrl', function($scope, $http) {
             console.log("Invalid Form!")
         }
     };
+    
+    userRegistryCtrl.$inject = ['Service', '$rootScope'];
+    function userRegistryCtrl(Service, $rootScope) {
+        var gu = this;
 
+        gu.user = null;
+        gu.allUsers = [];
+
+        initController();
+
+        function initController() {
+            loadCurrentUser();
+            loadAllUsers();
+        }
+
+        function loadCurrentUser() {
+            Service.GetByUsername($rootScope.globals.currentUser.username)
+                .then(function (user) {
+                    gu.user = user;
+                });
+        }
+
+        function loadAllUsers() {
+            Service.GetAll()
+                .then(function (users) {
+                    gu.allUsers = users;
+                });
+        }
+
+
+
+    };
+    
 });
+
 
 /* controller för att hämta data
 app.controller('getUserCtrl', ['$scope', '$http', function($scope, $http) {

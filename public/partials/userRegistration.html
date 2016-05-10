@@ -1,9 +1,9 @@
 <section class="grid-95 prefix-5 tablet-grid-95 mobile-grid-100 tablet-prefix-5 grid-parent">
-
+    <h1>Användare</h1><br /><Br />
         <div  class=register-details" id="userRegistry" ng-controller="userRegistryCtrl">
             <article class="grid-50 mobile-grid-100 tablet-grid-50">
             <div class="column1of2">
-            <h2>Registrera/Ändra användare</h2>
+            <h2>Registrera/ändra</h2>
             <form ng-submit="onSubmit(userForm.$valid)"
               method="post"
               action="userRegistration"
@@ -19,7 +19,7 @@
                 <label for="firstName">Förnamn</label>
                 <input name="firstName"
                        type="text"
-                       ng-model="userForm.firstName"
+                       ng-model="firstName"
                        ng-pattern="/^[A-Za-z]{1,15}$/"
                        class="formControl"
                        id="firstName"
@@ -35,8 +35,7 @@
                 <label for="midName">Mellanamn</label>
                 <input name="midName"
                        type="text"
-                       ng-model="userForm.midName"
-                       ng-pattern="/^[A-Za-z0-9]{1,15}$/"
+                       ng-model="midName"
                        class="formControl"
                        id="midName">
             </div>
@@ -50,7 +49,7 @@
                 <label for="lastName">Efternamn</label>
                 <input name="lastName"
                        type="text"
-                       ng-model="userForm.lastName"
+                       ng-model="lastName"
                        ng-pattern="/^[A-Za-z]{1,15}$/"
                        class="formControl"
                        id="lastName"
@@ -71,12 +70,12 @@
                 <label for="userName">Användarnamn</label>
                 <input name="userName"
                        type="text"
-                       ng-model="userForm.userName"
+                       class="formControl"
+                       id="userName"
+                       ng-model="userName"
                        ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
                        ng-minlength="6"
                        ng-pattern-err-type="userName"
-                       class="formControl"
-                       id="userName"
                        required="required">
 
                 <p class="help-block" ng-show="userForm.userName.$error.required && (!userForm.$pristine || userForm.$submitted)">
@@ -97,7 +96,7 @@
                        id="password"
                        class="formControl"
                        ng-model="password"
-                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
+                       ng-pattern="/^[A-Za-z0-9]{1,15}$/"
                        ng-minlength="10"
                        required="required">
 
@@ -115,11 +114,12 @@
             ">
                 <label for="ssn" >Personummer</label>
                 <input name="ssn"
+                       placeholder="YYYYMMDD"
                        type="text"
                        id="ssn"
                        class="formControl"
-                       ng-model="userForm.ssn"
-                       ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/"
+                       ng-model="ssn"
+                       ng-pattern="/^(?:19|20)[0-9]{2}(?:(?:0[1-9]|1[0-2])(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])(?:30))|(?:(?:0[13578]|1[02])-31))$/"
                        required="required">
 
                 <p class="help-block" ng-show="userForm.ssn.$error.required && (!userForm.$pristine || userForm.$submitted)">
@@ -139,8 +139,8 @@
                        type="text"
                        id="address"
                        class="formControl"
-                       ng-model="userForm.address"
-                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
+                       ng-model="address"
+                       ng-pattern="/^[A-Za-z0-9]{1,15}$/"
                        required="required"><br>
 
                 <p class="help-block" ng-show="userForm.address.$error.required && (!userForm.$pristine || userForm.$submitted)">
@@ -160,7 +160,7 @@
                        type="text"
                        id="postalCode"
                        class="formControl"
-                       ng-model="userForm.postalCode"
+                       ng-model="postalCode"
                        ng-pattern="/\d{3}\s?\d{2}/"
                        required="required"><br>
 
@@ -181,7 +181,7 @@
                        type="text"
                        id="city"
                        class="formControl"
-                       ng-model="userForm.city"
+                       ng-model="city"
                        ng-pattern="/^[A-Za-z]{1,15}$/"
                        required="required"><br>
 
@@ -202,7 +202,7 @@
                        type="text"
                        id="phone"
                        class="formControl"
-                       ng-model="userForm.phone"
+                       ng-model="phone"
                        ng-pattern="/^[0-9+]{1,15}$"
                        required="required"><br>
 
@@ -221,7 +221,7 @@
                 <label for="email">E-mail</label>
                 <input type="email"
                        name="email"
-                       ng-model="userForm.email"
+                       ng-model="email"
                        class="formControl"
                        id="email"
                        required="required">
@@ -244,8 +244,8 @@
                        type="text"
                        id="class"
                        class="formControl"
-                       ng-model="userForm.class"
-                       ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
+                       ng-model="class"
+                       ng-pattern="/^[A-Za-z0-9]{1,15}$/"
                        required="required"><br>
 
                 <p class="help-block" ng-show="userForm.class.$error.required && (!userForm.$pristine || userForm.$submitted)">
@@ -262,39 +262,29 @@
             ">
                 <label for="registrerad">Registrerad Datum</label>
                 <input name="registrerad"
+                       placeholder="YYYYMMDD"
                        type="text"
                        id="registrerad"
                        class="formControl"
-                       ng-model="userForm.registrerad"
-                       ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/"
+                       ng-model="registrerad"
+                       ng-pattern="/^(?:[0-9]{2}(?:(?:0[1-9]|1[0-2])(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])(?:30))|(?:(?:0[13578]|1[02])-31))$/"
                        required="required"><br>
 
                 <p class="help-block" ng-show="userForm.registrerad.$error.required && (!userForm.$pristine || userForm.$submitted)">
-                    Detta fält måste fyllas i med format YYYY-MM-DD.
+                    Detta fält måste fyllas i med format YYYYMMDD.
                 </p>
 
             </div>
 
-            <div class="form-group
-            {
-            'has-error':!userForm.deregistered.$valid && (!userForm.$pristine || userForm.$submitted),
-            'has-error':userForm.deregistered.$valid && (!userForm.$pristine || userForm.$submitted)
-            }
-            ">
+            <div class="form-group">
                 <label for="deregistered">Avregistrerad Datum</label>
                 <input name="deregistered"
                        type="text"
                        id="deregistered"
                        class="formControl"
-                       ng-model="userForm.deregistered"
-                       ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/"
-                       required="required"><br>
+                       ng-model="deregistered">
 
-                <p class="help-block" ng-show="userForm.deregistered.$error.required && (!userForm.$pristine || userForm.$submitted)">
-                    Detta fält måste fyllas i med format YYYY-MM-DD.
-                </p>
-
-            <br>
+            <br /><br />
             </div>
 
             <div class="form-group
@@ -307,7 +297,7 @@
                 <select name="userAttachment"
                         id="userAttachment"
                         class="formControl"
-                        ng-model="userForm.userAttachment"
+                        ng-model="userAttachment"
                         required="required">
                     <option value="">Välj Behörighet</option>
                     <option value="student">Student</option>
@@ -331,7 +321,7 @@
                 <select name="userStatus"
                         id="userStatus"
                         class="formControl"
-                        ng-model="userForm.userStatus"
+                        ng-model="userStatus"
                         required="required">
                     <option value="">Välj Status</option>
                     <option value="active">Aktiv</option>
@@ -371,8 +361,8 @@
 
         <article class="grid-50 mobile-grid-100 tablet-grid-50">
             <div class="column2of2">
-                <h2>Sök användare</h2><br>
-                Sök: <input type="text" placeholder="search User" ng-model="searchText" />
+                <h2>Sök</h2><br>
+                Sök: <input type="text" placeholder="Sök användare" ng-model="searchText" />
                 <br /><br />
                 <table>
                     <thead>
@@ -380,10 +370,21 @@
                             <th>Förnamn</th>
                             <th>Mellanamn</th>
                             <th>Efternamn</th>
-
                         </tr>
                     </thead>
                 </table>
+                <ul>
+                    <li ng-repeat="user in gu.allUsers">
+                        {{user.username}} ({{user.firstName}} {{user.lastName}})
+                        {{user.address}}
+                        {{user.postalCode}}
+                        {{user.city}}
+                        {{user.phone}}
+                        {{user.email}}
+                        - <a href="#" ng-click="gu.deleteUser(user.id)">Delete</a>
+                        - <a href="#" ng-click="gu.updateUser(user.id)">Update</a>
+                    </li>
+                </ul>
             </div>
         </article>
     </div>
