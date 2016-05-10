@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
 var router = require('./routing/routes');
+var testRouter = require('./routing/test.route');
 var path = require('path');
 var app = express();
 
@@ -19,6 +20,8 @@ app.use(express.static(path.join(__dirname + '/../')));
 app.use(express.static(path.join(__dirname + '/../public')));
 
 app.use('/', router);
+app.use('/', testRouter())
+
 
 
 dbHost.on('error', console.error.bind(console, 'connection error:'));
