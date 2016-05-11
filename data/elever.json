@@ -1,0 +1,12 @@
+{
+  "elever":
+[{"fName":"Matilda","lName":"Danielsson","class":"Java"},
+  {"fName":"Olof","lName":"Svensson","class":"Java"},
+  {"fName":"Soraya","lName":"Re","class":".Net"},
+  {"fName":"Henrik","lName":"Jonstone","class":"C++"},
+  {"fName":"Urban","lName":"Krans","class":".Net"},
+  {"fName":"Liz","lName":"Dahlström","class":"Java"},
+  {"fName":"Mikael","lName":"Sjögren","class":"Java"},
+  {"fName":"Mikael","lName":"Person","class":"Java"},
+  {"fName":"Tsiewing","lName":"Fredriksson","class":"Java"}]
+}

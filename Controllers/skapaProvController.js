@@ -71,7 +71,7 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
 
 
 
-    $http.get('/elever.json').then(function(response) {
+    $http.get('../../data/elever.json').then(function(response) {
         $scope.myData = response.data.elever;
     });
 
@@ -100,7 +100,7 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
 
 
 
-   
+
 
 
 
