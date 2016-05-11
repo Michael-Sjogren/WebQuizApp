@@ -1,36 +1,20 @@
 
-<div id="changeDetailsForm" ng-controller="userRegistryCtrl">
+<h1>Hi {{user.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li ng-repeat="user in users">
+        {{user._id}} ({{user.username}} {{user.fName}})
+        {{user.lName}}
+        {{user.password}}
+        {{user.role}}
 
-        <div>
-            <h2>Sök och ändra användare</h2><br>
-            Sök: <input type="text" placeholder="Sök användare" ng-model="searchText" />
-            <br /><br />
-            <table>
-                <thead>
-                <tr>
-                    <th>Förnamn</th>
-                    <th>Efternamn</th>
-                    <th>Personummer</th>
-                    <th>Telefon</th>
-                    <th>Klass</th>
-                    <th>Behörighet</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="user in users">
-                    <td>
-                        {{user.fName}}</td>
-                    <td>{{user.lName}}</td>
-                </tr>
-                </tbody>
-            </table>
+        console.log()
 
-        </div>
-        <div class="listCtrl" ng-app="app">
+        - <a href="#" ng-click="gu.deleteUser(user.id)">Delete</a>
+        - <a href="#" ng-click="gu.updateUser(user.id)">Update</a>
+    </li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="#/login" class="btn btn-primary">Logout</a></p>
 
-            <div ng-controller="listCtrl"></div>
-
-        </div>
-        <pre>{{ listCtrl | json }}</pre>
-</div>
