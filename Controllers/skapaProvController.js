@@ -4,14 +4,9 @@
 // script.js
 
 
-// create the adminCtrl controller and inject Angular's $scope
-adminApp.controller('adminCtrl', function($scope) {
-});
 
 // Create the skapaProvcontroller and inject Angular's $scope
-adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
-
-
+app.controller('skapaProvController',function($scope, $http,$mdDialog) {
     $scope.message1 = 'Ange namn på provet:';
     $scope.message2 = 'Välj typ av fråga:';
     $scope.message3 = 'Välj antal svarsalternativ:';
@@ -22,22 +17,22 @@ adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
     $scope.tilldelProv = {};
     $scope.tilldelProvArray = [];
 
-
-
     $scope.provNamnet = [
-        {provetsNamn: 'IT-säkerhetsteknik'},
-        {provetsNamn: 'Java SE'},
-        {provetsNamn: 'Java EE'},
-        {provetsNamn: 'Kravanalys 1'},
-        {provetsNamn: '.Net'}
-    ];
-    $scope.provTilldela = [
-        {provTilldel: 'IT-säkerhetsteknik'},
-        {provTilldel: 'Java SE'},
-        {provTilldel: 'Java EE'},
-        {provTilldel: 'Kravanalys 1'},
-        {provTilldel: '.Net'}
-    ];
+        {provNamn:'IT-säkerhetsteknik'},
+        {provNamn:'Java SE'},
+        {provNamn:'Java EE'},
+        {provNamn:'Kravanalys 1'},
+        {provNamn:'.Net'}];
+
+    $scope.name =
+        ["IT", "Java", "Kravanalys"];
+
+    $scope.provTilldela =  [
+        {provTilldel:'IT-säkerhetsteknik'},
+        {provTilldel:'Java SE'},
+        {provTilldel:'Java EE'},
+        {provTilldel:'Kravanalys 1'},
+        {provTilldel:'.Net'}];
 
 
     $scope.count = 1;
@@ -73,11 +68,13 @@ adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
         $scope.resetTilldela();
     };
 
-    $http.get("elever.json").then(function(response) {
+
+
+
+    $http.get('/elever.json').then(function(response) {
         $scope.myData = response.data.elever;
     });
 
-    
 
 
     $scope.myDate = new Date();
@@ -93,12 +90,9 @@ adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
         var day = date.getDay();
         return day === 0 || day === 6;
     }
-    
 
 
-
-
-        });
+});
 
 
 
@@ -107,7 +101,6 @@ adminApp.controller('skapaProvController',function($scope, $http, $mdDialog) {
 
 
    
-    
 
 
 

@@ -1,4 +1,6 @@
-var app = angular.module('app', ['ngRoute', 'testController']);
+var app = angular.module('app', ['ngRoute', 'testController','ngMaterial','ngMessages']);
+
+//'ngMaterial','ngMessages',
 
 <!-- vid användande av auto validate ska 'jcs-autoValidate' vara i module -->
 
@@ -30,7 +32,8 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
 
         .when('/adminMenu', {
-            templateUrl: 'partials/adminMenu.html'
+            templateUrl: 'partials/adminMenu.html',
+            controller: 'skapaProvController'
         })
         .when('/adminCreateTest', {
             templateUrl: 'partials/adminCreateTest.html'

@@ -22,7 +22,8 @@ ul#menuAdm li  {
 ul#menuAdm li a {
     background-color: #030604;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
+
     text-decoration: none;
     border-radius: 5px;
     font-size: 100%;}
@@ -118,6 +119,11 @@ ul#menuAdm li a:hover {
 
 #btnklar {
     margin-left: 2%;}
+
+.adminMenuHeader {
+    background-color: white;
+    border: white;
+}
 
 
 /*-------------------------
@@ -224,5 +230,8 @@ th {
 #btnAdmin2 {
     margin-left:42%;
     margin-top: -22%;}
+
+
+
 
 

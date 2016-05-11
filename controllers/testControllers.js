@@ -100,7 +100,20 @@ testControllers.controller('testCtrl', ['$scope', '$interval', 'loadTestFactory'
 
 
     $scope.endQuiz = function () {
+        var numOfcorrectAnswers = 0;
+
         $scope.testStatus = "inactive";
+
+
+        for(var i = 0; i < $scope.allQuesitons.length; i++){
+
+            if($scope.allQuesitons[i].correctAns == $scope.allQuesitons[i].userAns ){
+                numOfcorrectAnswers ++;
+            }
+        }
+      $scope.totalCorrAns =  100 *( numOfcorrectAnswers / $scope.qLength  );
+        console.log($scope.totalCorrAns + "%");
+
     };
 
 }]);
