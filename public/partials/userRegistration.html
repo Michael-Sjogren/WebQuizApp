@@ -368,24 +368,30 @@
                     <thead>
                         <tr>
                             <th>Förnamn</th>
-                            <th>Mellanamn</th>
                             <th>Efternamn</th>
+                            <th>Personummer</th>
+                            <th>Telefon</th>
+                            <th>Klass</th>
+                            <th>Behörighet</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users">
+                            <td>
+                                {{user.fName}}</td>
+                            <td>{{user.lName}}</td>
+                        </tr>
+                    </tbody>
                 </table>
-                <ul>
-                    <li ng-repeat="user in gu.allUsers">
-                        {{user.username}} ({{user.firstName}} {{user.lastName}})
-                        {{user.address}}
-                        {{user.postalCode}}
-                        {{user.city}}
-                        {{user.phone}}
-                        {{user.email}}
-                        - <a href="#" ng-click="gu.deleteUser(user.id)">Delete</a>
-                        - <a href="#" ng-click="gu.updateUser(user.id)">Update</a>
-                    </li>
-                </ul>
+
             </div>
+            <div class="listCtrl" ng-app="app">
+
+                <div ng-controller="listCtrl"></div>
+
+            </div>
+            <pre>{{ listCtrl | json }}</pre>
         </article>
     </div>
 </section>

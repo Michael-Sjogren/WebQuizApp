@@ -6,14 +6,14 @@ body {
     text-align:center;
 }
 
-input, textarea {
+input, textarea, #tblUser, #tblUser1, #tblUser2{
 
     margin-top: 10px;
     border-radius: 4px;
     horiz-align: center;
     border: 1px solid;
     border-color: #DF690C;
-
+    background: white;
 }
 
 h2 {
