@@ -46,61 +46,17 @@ app.controller('userRegistryCtrl', function($scope, $http) {
 
 })
 
-.controller("listCtrl", function ($scope, userSearchService)
+    /*
+.controller("userSearchCtrl", function ($scope, userSearchService)
 {
     var promise = userSearchService.getusers();
     promise.then(function (data) {
         $scope.users = data.data;
         console.log($scope.users);
     })
-});
+}); */
 
-(function () {
-    'use strict';
 
-    angular
-        .module('app')
-        .controller('listCtrl', listCtrl);
-
-    listCtrl.$inject = ['userSearchService', '$scope'];
-    function listCtrl(userSearchService, $scope) {
-        var users = [];
-        users = GetAll;
-        console.log('usersLoaded');
-        gu.user = null;
-        gu.allUsers = [];
-        gu.deleteUser = deleteUser;
-
-        initController();
-
-        function initController() {
-            loadCurrentUser();
-            loadAllUsers();
-        }
-
-        function loadCurrentUser() {
-            userSearchService.GetByUsername($scope.globals.currentUser.username)
-                .then(function (user) {
-                    gu.user = user;
-                });
-        }
-
-        function loadAllUsers() {
-            userSearchService.GetAll()
-                .then(function (users) {
-                    gu.allUsers = users;
-                });
-        }
-
-        function deleteUser(id) {
-            UserService.Delete(id)
-                .then(function () {
-                    loadAllUsers();
-                });
-        }
-    }
-
-})();
 
 
 /* controller för att hämta data

@@ -1,20 +1,20 @@
 
-<h1>Hi {{user.firstName}}!</h1>
-<p>You're logged in!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li ng-repeat="user in users">
-        {{user._id}} ({{user.username}} {{user.fName}})
-        {{user.lName}}
-        {{user.password}}
-        {{user.role}}
+<div id="userChange" ng-controller="userSearchCtrl">
+    <h1>Hi {{fName}}!</h1>
+    <p>You're logged in!!</p>
+    <h3>All registered users:</h3>
+        <ul>
+            <li ng-repeat="user in users">
+                {{user._id}} ({{user.username}} {{user.fName}})
+                {{user.lName}}
+                {{user.password}}
+                {{user.role}}
 
-        console.log()
+                console.log('halojt')
 
-        - <a href="#" ng-click="gu.deleteUser(user.id)">Delete</a>
-        - <a href="#" ng-click="gu.updateUser(user.id)">Update</a>
-    </li>
-</ul>
-<p>&nbsp;</p>
-<p><a href="#/login" class="btn btn-primary">Logout</a></p>
+                - <a href="#" ng-click="gu.deleteUser(user.id)">Delete</a>
+                - <a href="#" ng-click="gu.updateUser(user.id)">Update</a>
+            </li>
+        </ul>
 
+</div>
