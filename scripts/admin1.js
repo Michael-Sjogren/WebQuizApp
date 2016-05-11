@@ -14,7 +14,7 @@ adminApp.config(['$routeProvider', function($routeProvider) {
     when('/skapaProv', {
         //console.log('testingtesting');
         templateUrl: 'skapaProv.html',
-        controller:'skapaProvController'
+        controller:'skapaProvControlller'
     }).
     otherwise({
         redirectTo: 'adm1.html'
