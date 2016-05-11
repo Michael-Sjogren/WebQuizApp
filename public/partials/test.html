@@ -48,6 +48,7 @@
         <div class="center-wrapper">
             <article>
                 <table id="test-answers">
+
                     <tr>
                         <td>Fråga</td>
                         <td>Ditt svar</td>
@@ -64,7 +65,7 @@
                 </table>
 
             </article>
-            <span class="buttonGroup"><button id="submit-test" ng-click="pushData(answers)">Lämna in</button></span>
+            <span class="buttonGroup grid-100 tablet-grid-100 mobile-grid-100"><button id="submit-test" ng-click="endQuiz()">Lämna in</button>  <span id="result" >{{totalCorrAns}}% </span></span>
         </div>
     </div>
 

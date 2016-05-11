@@ -8,7 +8,7 @@ module.exports = (function() {
     var router = require('express').Router();
 
   router.get('/adminMenu', function (req , res) {
-        res.send("fasgasga");
+    
   });
 
     router.post('/userRegistration' , function (req , res) {
@@ -21,6 +21,8 @@ module.exports = (function() {
 
         return usersCtrl.authenticateLogin(req,res);
     });
+    
+    
 
     return router;
 })();

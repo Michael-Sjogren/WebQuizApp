@@ -162,3 +162,13 @@ header {
   margin-left: 10px;
 }
 /*# sourceMappingURL=main.css.map */
+#result {
+  margin: 0 10px 0;
+  max-width: 50px;
+  padding: 10px;
+  background: #efefef;
+  border: #ff8b2a;
+  border-radius: 10px;
+  color : green;
+  text-align: center;
+}
