@@ -31,3 +31,10 @@ exports.createUser = function (req , res) {
     });
 };
 
+exports.authenticateLogin = function (req , res) {
+     var pw = req.body.loginPassword;
+     var userName = req.body.loginUsername;
+    var query = users.findOne({password : pw , username : userName},function (err , user) {
+        console.log(user);
+    })
+};

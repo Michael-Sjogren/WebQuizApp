@@ -17,5 +17,10 @@ module.exports = (function() {
         console.log("post success" , index , req);
     });
 
+    router.post('/login' , function (req , res) {
+
+        return usersCtrl.authenticateLogin(req,res);
+    });
+
     return router;
 })();
