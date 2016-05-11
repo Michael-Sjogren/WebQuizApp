@@ -35,6 +35,15 @@ exports.authenticateLogin = function (req , res) {
      var pw = req.body.loginPassword;
      var userName = req.body.loginUsername;
     var query = users.findOne({password : pw , username : userName},function (err , user) {
-        console.log(user);
-    })
+        if(err) return console.error(err);
+        if(!user) return console.log("wrong username / password");
+        console.log("login success!");
+
+        if(user.role == "student"){
+            res.redirect("/#/userMenu");
+        }else{
+            res.redirect("/#/adminMenu");
+        }
+
+    });
 };
