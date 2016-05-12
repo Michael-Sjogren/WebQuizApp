@@ -5,8 +5,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Questions = require('./webquiz.server.test.QuestionModel.js');
 var Users = require('./webquiz.server.UsersModel.js');
+var questionSchema = require('./webquiz.server.QuestionModel');
+
 
 
 
@@ -18,10 +19,10 @@ var testTitleValidator = [function (val) {
 // validates string
 var requireStringValidator = [
     /*function (val) {
-        var testVal = val.trim();
-        return (testVal.length > 0)
-    }, //error msg
-    '{{PATH}} cannot be empty'*/];
+     var testVal = val.trim();
+     return (testVal.length > 0)
+     }, //error msg
+     '{{PATH}} cannot be empty'*/];
 
 //validates numbers
 var requireNumberValidator = [
@@ -32,24 +33,23 @@ var requireNumberValidator = [
 ];
 
 // SCHEMA: questions
-var questionSchema = new Schema({
-    title: {type: String, required: true, default: 'Icke namngivet', validation: requireStringValidator},
-    description: {type: String, required: false, validation: requireStringValidator},
-    type: {type: String, required: true, validation: requireStringValidator},
-    options: [{option: String, required:false, validation: requireStringValidator}]
-});
+/*var questionSchema = new Schema({
+ questionTitle: {type: String, default: 'Icke namngivet'},
+ options: [{type: String, required:false}],
+ correctAns: {type:Number}
+ });*/
 
 //SCHEMA: test
 var testSchema = new Schema({
-    title: {type: String, required: true, validation: testTitleValidator},
-    description: {type: String, required: false, validation: requireStringValidator},
-    isActive: {type: Boolean, required: true, default: false},
+    title: {type: String},
+    description: {type: String, required: false},
+    type:{type:String, required:false},
     course: {type: String, required: false, validation: requireStringValidator},
-    limitMinutes: {type: Number, required: true, default: 10, validation: requireNumberValidator},
+    limitMinutes: {type: Number, required: true, default: 10},
     questions: [ questionSchema ],
     expireDate: {type: Date, required: false},
     testAdmin: {type:Schema.ObjectId, ref: Users},
     assignedUsers: [ Users ]
 });
 
-module.exports = mongoose.model('Test', testSchema);
+module.exports = mongoose.model('TestSchema', testSchema);

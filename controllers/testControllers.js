@@ -37,7 +37,7 @@ testControllers.controller('testCtrl', ['$scope', '$interval', 'loadTestFactory'
     /*start quiz*/
     $scope.startQuiz = function () {
         $scope.testStatus = "inProgress";
-        $scope.activequiz = loadTestFactory.getQuiz(0);
+        $scope.activequiz = loadTestFactory.getQuiz(0); // here pass what quiz to load
         $scope.testTitle = $scope.activequiz.title;
         $scope.questions = $scope.activequiz.questions;
         $scope.qTitle = $scope.activequiz.questions[ counter ].questionTitle;

@@ -5,7 +5,7 @@
     </article>
     <div ng-show="quizData">
     <ul id="test-details">
-       <li ng-repeat="x in quizData"><a href="#/test"> {{x[$index].title}}</a> </li>
+       <li ng-repeat="x in quizData" ng-click=""><a href="#/test"> {{x.title}}</a> </li>
     </ul>
     </div>
 </section>
