@@ -17,6 +17,15 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
     $scope.tilldelProv = {};
     $scope.tilldelProvArray = [];
 
+    $scope.adminProv = {
+       title: '',
+       limitMinutes: '',
+       assignedUsers: [],
+       questions: [{qTitle:'', options: []}],
+       course: ''
+     };
+
+
     $scope.provNamnet = [
         {provNamn:'IT-säkerhetsteknik'},
         {provNamn:'Java SE'},
@@ -67,8 +76,11 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
     };
 
 
-    $http.get('../../data/elever.json').then(function(response) {
-        $scope.myData = response.data.elever;
+    $http.get('/adminMenu').then(function(response) {
+        $scope.myData = [];
+        console.log("elever loaded");
+        console.log(response.data[0].fName);
+        $scope.myData = response.data;
     });
 
 

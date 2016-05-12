@@ -15,7 +15,7 @@
         </div>
 
 
-        <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv1.provtid" required></p>
+        <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv1.limitMinutes" required></p>
         <br>
 
 
@@ -38,8 +38,8 @@
 
             <div ng-switch-when="flerval">
                 <p class="pRubrik">Formulera din fråga:</p>
-                <input type="text" class="formuleraFraga" name="flerFraga" ng-model="adminProv.flerFraga" id="txt_FlervalsFraga">
-                <p class="pRubrik">   {{message3}} </p>
+                <input type="text" class="formuleraFraga" name="flerFraga" ng-model="adminProv.questions" id="txt_FlervalsFraga">
+                <p class="pRubrik">Välj antal svarsalternativ:</p>
                 <div class="dropFlerval">
                     <select class="dropAntal" ng-model="valjAntal">
                         <option value="ett">1
@@ -100,6 +100,8 @@
                         <p class="pRubrik">Du angav: {{adminProv.rattSvar}} som det rätta svarsalternativet.</p>
                     </div>
 
+
+
                     <div class="antalRadio" ng-switch-when="fem">
                         <ol class="olAntalRadio">
                             <li><input type="radio" name="radio1" ng-model="adminProv.rattSvar"
@@ -146,7 +148,7 @@
     <article class="grid-60">
         <label class="pRubrik2">Välj prov att tilldela:</label>
         <div class="dropprovNamn2">
-            <input type="text"  name="tilldelaProv" ng-model="tilldelProv.provTilldel" required>
+            <input type="text"  name="tilldelaProv" ng-model="tilldelProv.title" required>
             <!--
             <select name="provNamn" ng-model="tilldelProv.provTilldel" required
                     ng-options="x.provTilldel for x in provTilldela" ng-change="changedValue(provNamn.provTilldela)">
@@ -156,7 +158,7 @@
 
         <div class="bar">
             <!-- Create a binding between the searchString model and the text field -->
-            <input type="text" ng-model="tilldelProv.searchText" placeholder="Välj klass eller elev att tilldela provet" />
+            <input type="text" ng-model="tilldelProv.assignedUsers" placeholder="Välj klass eller elev att tilldela provet" />
         </div>
         <br/><br/>
         <ul id="search">
@@ -169,7 +171,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="elev in myData | filter: tilldelProv.searchText">
+                <tr ng-repeat="elev in myData | filter: tilldelProv.assignedUsers">
                     <td>{{elev.fName}}</td>
                     <td>{{elev.lName}}</td>
                     <td>{{elev.class}}</td>
@@ -194,8 +196,10 @@
 
         <br/><br/>
         <button type="button" class="btnAdmin" id="btnAdmin2" ng-click= "saveTilldela(); loadUserData();" value="Tilldela">Tilldela</button>
-
     </article>
+
+    <!--Show data from inputs as they are being typed -->
+    <pre>  {{tilldelProv | json}}</pre>
 
 </section>
 
