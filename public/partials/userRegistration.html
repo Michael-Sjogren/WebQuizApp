@@ -9,12 +9,13 @@
           name="userForm"
           novalidate="novalidate">
 
-        <div class="form-group
-             {
-             'has-error':!userForm.firstName.$valid && (!userForm.$pristine || userForm.$submitted),
-             'has-error':userForm.email.$valid && (!userForm.$pristine || userForm.$submitted)
-             }
-             ">
+        <div class="label-formControl grid-100 tablet-grid-100 mobile-grid-100">
+            <div class="form-group
+                {
+                'has-error':!userForm.firstName.$valid && (!userForm.$pristine || userForm.$submitted),
+                'has-error':userForm.email.$valid && (!userForm.$pristine || userForm.$submitted)
+                }
+                ">
             <label for="firstName">Förnamn</label>
             <input name="firstName"
                    type="text"
@@ -27,24 +28,24 @@
             <p class="help-block" ng-show="userForm.firstName.$error.required && (!userForm.$pristine || userForm.$submitted)">
                    Detta fält måste fyllas i med Bokstäver aA-zZ.
             </p>
-        </div>
+            </div>
 
-        <div class="form-group">
+            <div class="form-group">
             <label for="midName">Mellanamn</label>
             <input name="midName"
                    type="text"
                    ng-model="midName"
                    class="formControl"
                    id="midName">
-        </div>
+            </div>
 
-        <div class="form-group
-            {
-            'has-error':!userForm.lastName.$valid && (!userForm.$pristine || userForm.$submitted),
-            'has-error':userForm.lastName.$valid && (!userForm.$pristine || userForm.$submitted)
-            }
-            ">
-            <label for="lastName">Efternamn</label>
+            <div class="form-group
+                {
+                'has-error':!userForm.lastName.$valid && (!userForm.$pristine || userForm.$submitted),
+                'has-error':userForm.lastName.$valid && (!userForm.$pristine || userForm.$submitted)
+                }
+                ">
+            <label for="lastName" class="label-group">Efternamn:</label>
             <input name="lastName"
                    type="text"
                    ng-model="lastName"
@@ -56,230 +57,210 @@
             <p class="help-block" ng-show="userForm.lastName.$error.required && (!userForm.$pristine || userForm.$submitted)">
                Detta fält måste fyllas i med Bokstäver aA-zZ.
             </p>
-        </div>
+            </div>
 
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.userName.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.userName.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="userName">Användarnamn</label>
-                <input name="userName"
-                       type="text"
-                       class="formControl"
-                       id="userName"
-                       ng-model="userName">
+            <label for="userName" class="label-group">Användarnamn</label>
+            <input name="userName"
+                   type="text"
+                   class="formControl"
+                   id="userName"
+                   ng-model="userName">
 
+            <p class="help-block" ng-show="userForm.userName.$error.required && (!userForm.$pristine || userForm.$submitted)">
+               Detta fält måste fyllas i med minst 6 Bokstäver aA-zZ och siffror 0-9.
+            </p>
+            </div>
 
-                <p class="help-block" ng-show="userForm.userName.$error.required && (!userForm.$pristine || userForm.$submitted)">
-                    Detta fält måste fyllas i med minst 6 Bokstäver aA-zZ och siffror 0-9.
-                </p>
-
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.password.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.password.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="password" >Lösenord</label>
-                <input name="password"
-                       type="password"
-                       id="password"
-                       class="formControl"
-                       ng-model="password">
+            <label for="password" class="label-group">Lösenord:</label>
+            <input name="password"
+                   type="password"
+                   id="password"
+                   class="formControl"
+                   ng-model="password">
 
+            <p class="help-block" ng-show="userForm.password.$error.required && (!userForm.$pristine || userForm.$submitted)">
+               Detta fält måste fyllas i med minst 10 Bokstäver aA-zZ och siffror 0-9.
+            </p>
+            </div>
 
-                <p class="help-block" ng-show="userForm.password.$error.required && (!userForm.$pristine || userForm.$submitted)">
-                    Detta fält måste fyllas i med minst 10 Bokstäver aA-zZ och siffror 0-9.
-                </p>
-
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.ssn.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.ssn.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="ssn" >Personummer</label>
-                <input name="ssn"
-                       placeholder=""
-                       type="text"
-                       id="ssn"
-                       class="formControl"
-                       ng-model="ssn">
-
+            <label for="ssn" class="label-group">Personummer:</label>
+            <input name="ssn"
+                   placeholder=""
+                   type="text"
+                   id="ssn"
+                   class="formControl"
+                   ng-model="ssn">
 
                 <p class="help-block" ng-show="userForm.ssn.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med format YYYY-MM-DD
                 </p>
+            </div>
 
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.address.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.address.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="address" >Adress</label>
-                <input name="address"
-                       type="text"
-                       id="address"
-                       class="formControl"
-                       ng-model="address">
-
+            <label for="address" class="label-group">Adress:</label>
+            <input name="address"
+                   type="text"
+                   id="address"
+                   class="formControl"
+                   ng-model="address">
 
                 <p class="help-block" ng-show="userForm.address.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med Bokstäver aA-zZ och siffror 0-9.
                 </p>
+            </div>
 
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.postalCode.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.postalCode.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="postalCode" >Postnummer</label>
-                <input name="postalCode"
-                       type="text"
-                       id="postalCode"
-                       class="formControl"
-                       ng-model="postalCode">
-
+            <label for="address" class="label-group">Adress:</label>
+            <input name="postalCode"
+                   type="text"
+                   id="postalCode"
+                   class="formControl"
+                   ng-model="postalCode">
 
                 <p class="help-block" ng-show="userForm.postalCode.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med format 12345.
                 </p>
+            </div>
 
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.city.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.city.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="city" >Stad</label>
-                <input name="city"
-                       type="text"
-                       id="city"
-                       class="formControl"
-                       ng-model="city">
-
+            <label for="city" class="label-group">Stad:</label>
+            <input name="city"
+                   type="text"
+                   id="city"
+                   class="formControl"
+                   ng-model="city">
 
                 <p class="help-block" ng-show="userForm.city.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med Bokstäver aA-zZ.
                 </p>
+            </div>
 
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.phone.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.phone.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="phone" >Telefon</label>
-                <input name="phone"
-                       type="text"
-                       id="phone"
-                       class="formControl"
-                       ng-model="phone">
-
+            <label for="phone" class="label-group">Telefon:</label>
+            <input name="phone"
+                   type="text"
+                   id="phone"
+                   class="formControl"
+                   ng-model="phone">
 
                 <p class="help-block" ng-show="userForm.phone.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med tecken + och siffror 0-9.
                 </p>
+            </div>
 
-                </div>
-
-                <div class="form-group" ng-class="
+            <div class="form-group" ng-class="
                 {
                 'has-error':!userForm.email.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.email.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="email">E-mail</label>
-                <input type="email"
-                       name="email"
-                       ng-model="email"
-                       class="formControl"
-                       id="email">
-
+            <label for="email" class="label-group">E-mail:</label>
+            <input type="email"
+                   name="email"
+                   ng-model="email"
+                   class="formControl"
+                   id="email">
 
                 <p class="help-block" ng-show="userForm.email.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i
                 </p>
+            </div>
 
-
-                </div>
-
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.class.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.class.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="class">Klass</label>
-                <input name="class"
-                       type="text"
-                       id="class"
-                       class="formControl"
-                       ng-model="class">
-
-
+            <label for="class" class="label-group">Klass:</label>
+            <input name="class"
+                   type="text"
+                   id="class"
+                   class="formControl"
+                   ng-model="class">
 
                 <p class="help-block" ng-show="userForm.class.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med Bokstäver aA-zZ och siffror 0-9.
                 </p>
 
-                </div>
+            </div>
 
-                <div class="form-group
+            <div class="form-group
                 {
                 'has-error':!userForm.registrerad.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.registrerad.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="registrerad">Registrerad Datum</label>
-                <input name="registrerad"
-                       placeholder=""
-                       type="text"
-                       id="registrerad"
-                       class="formControl"
-                       ng-model="registrerad">
-
+            <label for="registrerad" class="label-group">Registrerad Datum:</label>
+            <input name="registrerad"
+                   placeholder=""
+                   type="text"
+                   id="registrerad"
+                   class="formControl"
+                   ng-model="registrerad">
 
                 <p class="help-block" ng-show="userForm.registrerad.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste fyllas i med format YYYYMMDD.
                 </p>
+            </div>
 
-                </div>
-
-                <div class="form-group">
-                <label for="deregistered">Avregistrerad Datum</label>
-                <input name="deregistered"
-                       type="text"
-                       id="deregistered"
-                       class="formControl"
-                       ng-model="deregistered">
-
+            <div class="form-group">
+            <label for="deregistered" class="label-group">Avregistrerad Datum:</label>
+            <input name="deregistered"
+                   type="text"
+                   id="deregistered"
+                   class="formControl"
+                   ng-model="deregistered">
                 <br /><br />
-                </div>
+            </div>
+        </div>
 
+            <div class="option-group">
                 <div class="form-group
                 {
                 'has-error':!userForm.userAttachment.$valid && (!userForm.$pristine || userForm.$submitted),
                 'has-error':userForm.userAttachment.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="userAttachment">Behörighet</label>
+                <label for="userAttachment" class="label-group">Behörighet:</label>
                 <select name="userAttachment"
                         id="userAttachment"
                         class="formControl"
@@ -287,14 +268,13 @@
 
                     <option value="">Välj Behörighet</option>
                     <option value="student">Student</option>
-                    <option value="employee">Anställd</option>
-                    <option value="consultants">Konsult</option>
+                    <option value="Admin">Administratör</option>
+                    <option value="superAdmin">SuperAdministratör</option>
                 </select><br>  <br>
 
                 <p class="help-block" ng-show="userAttachment.userAttachment.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste ett val göras.
                 </p>
-
                 </div>
 
                 <div class="form-group
@@ -303,7 +283,7 @@
                 'has-error':userForm.userStatus.$valid && (!userForm.$pristine || userForm.$submitted)
                 }
                 ">
-                <label for="userStatus">Status</label>
+                <label for="userStatus" class="label-group">Status:</label>
                 <select name="userStatus"
                         id="userStatus"
                         class="formControl"
@@ -318,28 +298,23 @@
                 <p class="help-block" ng-show="userStatus.deregistered.$error.required && (!userForm.$pristine || userForm.$submitted)">
                     Detta fält måste ett val göras.
                 </p>
-
                 </div>
+            </div>
 
-                <div class="form-group">
-                <button ng-click="reset()">
-                    RESET
-                </button>
+                <div class="btn-group" id="btnReset">
+                    <button class="btn-reset" id="btnClear" ng-model=""
+                        type="reset" value="reset" ng-klick="reset()">Återställ
+                    </button>
 
-                <button
-                input class="btnSubmit" type="submit" ng-disabled="userForm.$invalid">Spara</input>
-                </button>
-                <input class="btnSubmit"
-                    type="submit" ng-disabled='userForm.$invalid'>
-                </input>
+                    <button class="btnSubmit" id="btnSubmit"
+                        type="submit" ng-disabled='userForm.$invalid'>Skicka
+                    </button>
 
-                <button ng-click="cancel()">
-                    CANCEL
-                </button>
-
+                    <md-button ng-klick="goBack()" id="btnCancel">
+                        Tillbaka
+                    </md-button>
                 </div>
-
-                <pre>{{ userForm | json }}</pre>
+                    <!-- <pre>{{ userForm | json }}</pre> -->
     </form>
 </div>
 

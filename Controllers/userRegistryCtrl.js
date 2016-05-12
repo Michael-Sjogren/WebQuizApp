@@ -3,6 +3,14 @@
 
 app.controller('userRegistryCtrl', function($scope, $http) {
 
+    $scope.goBack = function(){
+        window.history.back();
+    }
+
+    $scope.reset =function () {
+        $scope.userForm = {};
+    }
+    
     $scope.userForm = {};
     
     $scope.userForm = {
