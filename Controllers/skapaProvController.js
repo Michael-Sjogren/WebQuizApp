@@ -16,6 +16,7 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
     $scope.adminProv1 = {};
     $scope.tilldelProv = {};
     $scope.tilldelProvArray = [];
+    $scope.valjAntal = {};
 
     $scope.adminProv = {
        title: '',
