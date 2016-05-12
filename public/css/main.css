@@ -183,7 +183,7 @@ h1 {
 
 .formControl {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   margin-left: 50px;
   margin-top: 3px;
 
@@ -194,13 +194,12 @@ h1 {
   float: left;
   clear: left;
   width: 250px;
-  text-align: right;
+  text-align: left;
   margin-top: 3px;
 
 }
 .btn-group {
   display: inline-block;
-
   clear: left;
   text-align: center;
   border-radius: 5px;

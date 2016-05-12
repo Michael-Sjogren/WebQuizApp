@@ -52,7 +52,11 @@ app.controller('userRegistryCtrl', function($scope, $http) {
         }
     };
 
+    
+    
 })
+
+
 
     /*
 .controller("userSearchCtrl", function ($scope, userSearchService)

@@ -302,19 +302,16 @@
             </div>
 
                 <div class="btn-group" id="btnReset">
-                    <button class="btn-reset" id="btnClear" ng-model=""
-                        type="reset" value="reset" ng-klick="reset()">Återställ
-                    </button>
+                    <INPUT Type="reset" VALUE="Återställ" ng-klick="reset()">
 
-                    <button class="btnSubmit" id="btnSubmit"
-                        type="submit" ng-disabled='userForm.$invalid'>Skicka
-                    </button>
+                    <INPUT Type="submit" VALUE="Skicka" ng-disabled='userForm.$invalid'>
 
-                    <md-button ng-klick="goBack()" id="btnCancel">
-                        Tillbaka
-                    </md-button>
+                    <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
                 </div>
-                    <!-- <pre>{{ userForm | json }}</pre> -->
+
+
+
+        <!-- <pre>{{ userForm | json }}</pre> -->
     </form>
 </div>
 
