@@ -6,9 +6,7 @@ var usersCtrl = require('../server.controllers/webquiz.server.controller');
 module.exports = (function() {
     var router = require('express').Router();
 
-  router.get('/adminMenu', function (req , res) {
-    
-  });
+
 
     router.post('/userRegistration' , function (req , res) {
         
@@ -18,6 +16,10 @@ module.exports = (function() {
     router.post('/login' , function (req , res) {
 
         return usersCtrl.authenticateLogin(req,res);
+    });
+
+    router.get('/adminMenu', function (req , res) {
+       return usersCtrl.getUsers(req  ,res);
     });
 
  

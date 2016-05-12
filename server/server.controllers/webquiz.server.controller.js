@@ -44,6 +44,16 @@ exports.authenticateLogin = function (req , res) {
         }else{
             res.redirect("/#/adminMenu");
         }
-
     });
 };
+
+exports.getUsers = function(req , res) {
+    var query = users.find({},'-_id fName lName username email phone' ,function (err , allusers) {
+        if(err){
+            return console.log(err);
+        }else{
+            return res.json(allusers);
+        }
+    });
+
+}
