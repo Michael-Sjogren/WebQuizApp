@@ -1,4 +1,4 @@
-<section class="skapaProv" class="grid-40">
+<section class="skapaProv" class="grid-40" ng-controller="skapaProvController">
 
     <form novalidate name="formSkapaProv" class="mainFormSkapaProv" id="mainFormProv">
 
@@ -162,7 +162,7 @@
         </div>
         <br/><br/>
         <ul id="search">
-            <table>
+            <table class="tablet-grid-100 mobile-grid-100 grid-100">
                 <thead>
                 <tr>
                     <th>Namn</th>
@@ -171,10 +171,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="elev in myData | filter: tilldelProv.assignedUsers">
-                    <td>{{elev.fName}}</td>
-                    <td>{{elev.lName}}</td>
-                    <td>{{elev.class}}</td>
+                <tr ng-repeat="student in myData">
+                    <td>{{student.fName}}</td>
+                    <td>{{student.lName}}</td>
+                    <td>{{student.phone}}</td>
                 </tr>
                 </tbody>
             </table>

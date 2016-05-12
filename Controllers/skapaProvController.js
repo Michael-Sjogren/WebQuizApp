@@ -17,6 +17,7 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
     $scope.tilldelProv = {};
     $scope.tilldelProvArray = [];
     $scope.valjAntal = {};
+    $scope.mydata = [];
 
     $scope.adminProv = {
        title: '',
@@ -78,10 +79,10 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
 
 
     $http.get('/adminMenu').then(function(response) {
-        $scope.myData = [];
+
         console.log("elever loaded");
-        console.log(response.data[0].fName);
         $scope.myData = response.data;
+        console.table($scope.myData);
     });
 
 

@@ -47,12 +47,11 @@ exports.authenticateLogin = function (req , res) {
     });
 };
 
-exports.getUsers = function(req , res) {
-    var query = users.find({},'-_id fName lName username email phone' ,function (err , allusers) {
+exports.getStudents = function(req , res) {
+    var query = users.find({'role':'student'},'-_id fName lName username email phone role' ,function (err , allStudents) {
         if(err){
             return console.log(err);
         }else{
-            return res.json(allusers);
         }
     });
 

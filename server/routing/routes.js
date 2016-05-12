@@ -19,7 +19,7 @@ module.exports = (function() {
     });
 
     router.get('/adminMenu', function (req , res) {
-       return usersCtrl.getUsers(req  ,res);
+       return usersCtrl.getStudents(req  ,res);
     });
 
  
