@@ -52,6 +52,7 @@ exports.getStudents = function(req , res) {
         if(err){
             return console.log(err);
         }else{
+            return res.json(allStudents);
         }
     });
 
