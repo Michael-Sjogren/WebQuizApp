@@ -4,15 +4,15 @@
 
         <p class="pRubrik">Ange namn på provet:</p>
 
+
         <div class="dropprovNamn">
+        <input type="text"  name="provTitel" ng-model="adminProv.title" required id="titelnProv">
+        <!--
             <select class="dropDownProv" name="provNamn" ng-model="adminProv1.provNamnet" required
                     ng-options="item.provNamn for item in provNamnet">
             </select>
+             -->
         </div>
-
-        <select>
-            <option ng-repeat="x in names">{{x.name}}</option>
-        </select>
 
 
         <p class="pRubrik">Ange provtid (min): <input type="number" name="provtid" id="inputProvtid" ng-model="adminProv1.provtid" required></p>
@@ -32,12 +32,12 @@
 
         <div ng-switch="adminProv.frageTyp">
             <div ng-switch-when="oppenText">
-                <p class="pRubrik">   {{message4}} </p>
+                <p class="pRubrik">Formulera din fråga:</p>
                 <input type="text" class="formuleraFraga" name="oppenFraga" ng-model="adminProv.oppenFraga" required id="txt_OppenFraga">
             </div>
 
             <div ng-switch-when="flerval">
-                <p class="pRubrik">   {{message4}} </p>
+                <p class="pRubrik">Formulera din fråga:</p>
                 <input type="text" class="formuleraFraga" name="flerFraga" ng-model="adminProv.flerFraga" id="txt_FlervalsFraga">
                 <p class="pRubrik">   {{message3}} </p>
                 <div class="dropFlerval">
@@ -135,7 +135,6 @@
 
         <!--Show data from inputs as they are being typed -->
         <pre  class="oversikt">Översikt: {{adminProv1 | json}}{{adminProv | json}}</pre>
-
 
         </article>
         </div>

@@ -24,8 +24,6 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
         {provNamn:'Kravanalys 1'},
         {provNamn:'.Net'}];
 
-    $scope.name =
-        ["IT", "Java", "Kravanalys"];
 
     $scope.provTilldela =  [
         {provTilldel:'IT-säkerhetsteknik'},
@@ -56,7 +54,7 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
 
     // When the user clicks the 'Nästa' or 'Avsluta' knappen.
     $scope.saveAdminProv = function() {
-        $scope.adminProvArray.push($scope.adminProv,$scope.adminProv1);
+        $scope.adminProvArray.push($scope.adminProv1,$scope.adminProv1,$scope.count);
         console.table($scope.adminProvArray);
         $scope.reset();
     };
@@ -67,8 +65,6 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
         console.table($scope.tilldelProvArray);
         $scope.resetTilldela();
     };
-
-
 
 
     $http.get('../../data/elever.json').then(function(response) {
