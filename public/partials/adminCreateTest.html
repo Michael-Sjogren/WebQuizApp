@@ -146,9 +146,12 @@
     <article class="grid-60">
         <label class="pRubrik2">Välj prov att tilldela:</label>
         <div class="dropprovNamn2">
+            <input type="text"  name="tilldelaProv" ng-model="tilldelProv.provTilldel" required>
+            <!--
             <select name="provNamn" ng-model="tilldelProv.provTilldel" required
                     ng-options="x.provTilldel for x in provTilldela" ng-change="changedValue(provNamn.provTilldela)">
             </select>
+            -->
         </div>
 
         <div class="bar">
