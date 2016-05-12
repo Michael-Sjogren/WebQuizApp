@@ -58,8 +58,24 @@ exports.getAllTests = function (req,res) {
             res.json({info: 'error finding tests in db', error:err});
             console.log('error getting all tests');
         }
-        
-        res.json(tests)
+
+
+        for(var test in tests){
+            var questions = [];
+            for(var question in test.questions){
+                var options = [];
+                for(var option in question.options){
+                    options.push(option);
+                }
+                var questionObj = new questionModel({questionTitle: question.questionTitle, options: options, correctAns: question.correctAns });
+                console.log('added a question');
+                questions.push(questionObj);
+            }
+            test.questions = questions;
+        }
+
+
+        res.json(tests);
         console.log('tests found successfully');
     });
 };
