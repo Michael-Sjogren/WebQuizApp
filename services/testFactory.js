@@ -7,9 +7,9 @@ angular.module('app')
     var quizData = [];
 
     function loadData() {
-        $http.get('/api/test').then(function (response) {
-            quizData  = response.data;
-            console.log('quizdata loaded... displaying table:');
+        $http.get('../data/quizzes.json').success(function (response) {
+            quizData  = response;
+            console.log('quizdata loaded...');
             console.table(quizData);
         });
     }
@@ -19,7 +19,7 @@ angular.module('app')
             return quizData;
         },
         getQuiz: function(quizIndex){
-            return quizData[quizIndex];
+            return quizData.quizzes[quizIndex];
         },
         loadData:loadData
     }

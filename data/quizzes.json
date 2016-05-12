@@ -6,7 +6,6 @@
       "type": "Flervalsfrågor",
       "limitMinutes" : 10,
       "expireDate": "2016-05-30",
-      "adminId" : "superadmin",
       "assignedUsers": [
         {"userId": "samplestudent"}
       ],
@@ -34,6 +33,37 @@
         }
       ]
 
+    },
+    {
+      "title" : "Test",
+      "description" : "This is a test",
+      "type": "Flervalsfrågor",
+      "course" : "Java 1",
+      "limitMinutes" : 10,
+      "expireDate": "2016-05-30",
+      "assignedUsers": [
+        {"userId": "samplestudent"}
+      ],
+      "questions" : [
+        {
+          "questionTitle" : "Question 1",
+          "description" : "This is the first question",
+          "options" : [
+            "option 1",
+            "option 2",
+            "option 3"
+          ]
+        },
+        {
+          "questionTitle" : "Question 2",
+          "description" : "This is the second question",
+          "options" : [
+            "option 1",
+            "option 2",
+            "option 3"
+          ]
+        }
+      ]
     }
 
   ]
