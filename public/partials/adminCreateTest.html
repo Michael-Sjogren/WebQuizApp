@@ -22,7 +22,7 @@
         <p class="pFraga">Fråga nr: <em name="fragaNr" ng-model="adminProv.fragaCounter" id="fragaCounter" >{{count}}</em></p>
 
 
-        <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="flerval" checked>Flervalsalternativ<br>
+        <input type="radio" ng-click="setNrRadioBtn()" class="radioA" ng-model="adminProv.frageTyp" value="flerval" checked>Flervalsalternativ<br>
         <input type="radio" class="radioA" ng-model="adminProv.frageTyp" value="oppenText">Öppen fråga<br>
         <br/><br/>
         <p class="pRubrik">Välj om det ska vara en G eller Vg-fråga:</p>
@@ -41,7 +41,7 @@
                 <input type="text" class="formuleraFraga" name="flerFraga" ng-model="adminProv.questions" id="txt_FlervalsFraga">
                 <p class="pRubrik">Välj antal svarsalternativ:</p>
                 <div class="dropFlerval">
-                    <select class="dropAntal" id="dropdownRadio" ng-model="valjAntal" onclick="">
+                    <select class="dropAntal" id="dropdownRadio" ng-model="valjAntal" ng-click="setNrRadioBtn();">
                         <option id="ettRadio"  value="ett">1
                         <option id="tvaRadio"  value="tva">2
                         <option id="treRadio"  value="tre">3
@@ -51,7 +51,7 @@
                 </div>
 
                     <div class="antalRadio">
-                        <ol class="olAntalRadio">
+                        <ol class="olAntalRadio" >
                             <li><input type="radio" id="varde1" name="radio1" ng-model="adminProv.rattSvar" value="svar1">
                                 <input type="text" id="txtvarde1" ng-model="adminProv.options1"></li>
 

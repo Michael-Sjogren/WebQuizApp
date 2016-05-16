@@ -106,16 +106,80 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
 
 // Number of Radio buttons selected.
 var getdropdownRadio = document.getElementById("dropdownRadio");
-var setRadio = document.getElementById("varde1");
-var txtRadio = document.getElementById(txtvarde1);
+var setRadio1 = document.getElementById("varde1");
+var txtRadio1 = document.getElementById("txtvarde1");
+var setRadio2 = document.getElementById("varde2");
+var txtRadio2 = document.getElementById("txtvarde2");
+var setRadio3 = document.getElementById("varde3");
+var txtRadio3 = document.getElementById("txtvarde3");
+var setRadio4 = document.getElementById("varde4");
+var txtRadio4 = document.getElementById("txtvarde4");
+var setRadio5 = document.getElementById("varde5");
+var txtRadio5 = document.getElementById("txtvarde5");
 
-function setNrRadioBtn() {
+function setNrRadioBtn(getdropdownRadio) {
     if(getdropdownRadio === 1) {
-        setRadio
-        txtRadio
+        setRadio1
+        txtRadio1
         
     }
-}
+    if(getdropdownRadio === 2){
+        setRadio1
+        txtRadio1
+        setRadio2
+        txtRadio2
+    }
+    if(getdropdownRadio === 3){
+        setRadio1
+        txtRadio1
+        setRadio2
+        txtRadio2
+        setRadio3
+        txtRadio3
+        setRadio4
+        txtRadio4
+        setRadio5
+        txtRadio5
+    }
+    if(getdropdownRadio === 4){
+        setRadio1
+        txtRadio1
+        setRadio2
+        txtRadio2
+        setRadio3
+        txtRadio3
+        setRadio4
+        txtRadio4
+    }
+    if(getdropdownRadio === 5){
+        setRadio1
+        txtRadio1
+        setRadio2
+        txtRadio2
+        setRadio3
+        txtRadio3
+        setRadio4
+        txtRadio4
+        setRadio5
+        txtRadio5
+    }
+
+    else if (getdropdownRadio === ""){
+        setRadio1 = "";
+        txtRadio1 = "";
+        setRadio2 = "";
+        txtRadio2 = "";
+        setRadio3 = "";
+        txtRadio3 = "";
+        setRadio4 = "";
+        txtRadio4 = "";
+        setRadio5 = "";
+        txtRadio5 = "";
+    }
+    console.log(setNrRadioBtn())
+
+
+};
 
 
 
