@@ -104,6 +104,23 @@ app.controller('skapaProvController',function($scope, $http,$mdDialog) {
 
 });
 
+// Number of Radio buttons selected.
+var getdropdownRadio = document.getElementById("dropdownRadio");
+var setRadio = document.getElementById("varde1");
+var txtRadio = document.getElementById(txtvarde1);
+
+function setNrRadioBtn() {
+    if(getdropdownRadio === 1) {
+        setRadio
+        txtRadio
+        
+    }
+}
+
+
+
+
+
 
 
 
